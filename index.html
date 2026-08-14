@@ -8,7 +8,6 @@
 
 <title>Kelab Muzium dan Warisan Universiti Malaya</title>
 
-
 <style>
 
 *{
@@ -16,14 +15,11 @@ box-sizing:border-box;
 scroll-behavior:smooth;
 }
 
-
 body{
-
 margin:0;
 font-family:"Segoe UI", Arial, sans-serif;
 background:#f4f4f4;
 color:#333;
-
 }
 
 
@@ -32,54 +28,43 @@ color:#333;
 header{
 
 background:
-linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
 url("https://drive.google.com/uc?export=view&id=1g1CuUgiushs0nDFpSxuxnLGYy_v6jOQM");
 
 background-size:cover;
 background-position:center;
 
 color:white;
-
 padding:70px 20px;
-
 text-align:center;
 
 }
 
 
-
 .logo{
 
 width:150px;
-
 height:auto;
-
 margin-bottom:20px;
 
 }
 
 
-
 header h1{
 
 font-size:42px;
-
 margin:10px;
-
 font-weight:bold;
 
 }
 
 
-
 header h2{
 
 font-size:26px;
-
 font-weight:normal;
 
 }
-
 
 
 header p{
@@ -95,33 +80,23 @@ font-size:18px;
 nav{
 
 background:#800000;
-
 padding:15px;
-
 text-align:center;
-
 position:sticky;
-
 top:0;
-
 z-index:100;
 
 }
 
 
-
 nav a{
 
 color:white;
-
 text-decoration:none;
-
 margin:15px;
-
 font-weight:bold;
 
 }
-
 
 
 nav a:hover{
@@ -132,7 +107,7 @@ color:#FFD700;
 
 
 
-/* SECTION */
+/* CONTENT */
 
 section{
 
@@ -141,21 +116,15 @@ padding:40px 10%;
 }
 
 
-
 .card{
 
 background:white;
-
 padding:30px;
-
 margin-bottom:30px;
-
 border-radius:15px;
-
 box-shadow:0 5px 15px rgba(0,0,0,0.12);
 
 }
-
 
 
 .card h2{
@@ -166,45 +135,36 @@ color:#800000;
 
 
 
-/* BUTTON */
-
-.button{
-
-display:inline-block;
-
-background:#800000;
-
-color:white;
-
-padding:12px 25px;
-
-border-radius:5px;
-
-text-decoration:none;
-
-}
-
-
-
 /* GALERI */
 
 .gallery{
 
 display:flex;
-
 gap:20px;
-
 flex-wrap:wrap;
 
 }
 
 
-
 .gallery img{
 
 width:30%;
-
 border-radius:10px;
+
+}
+
+
+
+/* BUTTON */
+
+.button{
+
+display:inline-block;
+background:#800000;
+color:white;
+padding:12px 25px;
+border-radius:5px;
+text-decoration:none;
 
 }
 
@@ -215,19 +175,17 @@ border-radius:10px;
 footer{
 
 background:#800000;
-
 color:white;
-
 text-align:center;
-
 padding:20px;
 
 }
 
 
 
-@media(max-width:700px){
+/* MOBILE */
 
+@media(max-width:700px){
 
 header h1{
 
@@ -246,11 +204,9 @@ width:100%;
 nav a{
 
 display:block;
-
 margin:10px;
 
 }
-
 
 }
 
@@ -259,7 +215,6 @@ margin:10px;
 
 
 </head>
-
 
 
 <body>
@@ -300,20 +255,17 @@ Official Website | Museum and Heritage Club
 
 
 
-
 <nav>
 
+<a href="#about">TENTANG KAMI</a>
 
-<a href="#about">Tentang Kami</a>
+<a href="#activity">AKTIVITI</a>
 
-<a href="#activity">Aktiviti</a>
+<a href="#board">LEMBAGA PENASIHAT</a>
 
-<a href="#board">Lembaga Penasihat</a>
+<a href="#gallery">GALERI</a>
 
-<a href="#gallery">Galeri</a>
-
-<a href="#contact">Hubungi</a>
-
+<a href="#contact">HUBUNGI</a>
 
 </nav>
 
@@ -327,9 +279,7 @@ Official Website | Museum and Heritage Club
 
 <div class="card" id="about">
 
-
 <h2>Tentang Kami</h2>
-
 
 <p>
 
@@ -349,7 +299,6 @@ warisan.
 
 </p>
 
-
 </div>
 
 
@@ -358,8 +307,7 @@ warisan.
 
 <div class="card" id="activity">
 
-
-<h2>Aktiviti Kami</h2>
+<h2>AktIVITI KAMI</h2>
 
 
 <ul>
@@ -374,9 +322,7 @@ warisan.
 
 <li>Kolaborasi Bersama Organisasi Luar</li>
 
-
 </ul>
-
 
 </div>
 
@@ -386,18 +332,17 @@ warisan.
 
 <div class="card" id="board">
 
-
 <h2>Lembaga Penasihat</h2>
 
 
 <p>
 
-Lembaga Penasihat berperanan memberikan pandangan,
-nasihat dan sokongan dalam memastikan hala tuju serta
-pembangunan Kelab Muzium dan Warisan Universiti Malaya.
+Lembaga Penasihat merupakan badan yang memberikan
+pandangan, nasihat dan sokongan strategik dalam memastikan
+hala tuju serta pembangunan Kelab Muzium dan Warisan
+Universiti Malaya.
 
 </p>
-
 
 </div>
 
@@ -406,7 +351,6 @@ pembangunan Kelab Muzium dan Warisan Universiti Malaya.
 
 
 <div class="card" id="gallery">
-
 
 <h2>Galeri</h2>
 
@@ -434,16 +378,13 @@ pembangunan Kelab Muzium dan Warisan Universiti Malaya.
 
 <div class="card" id="contact">
 
-
 <h2>Hubungi Kami</h2>
 
 
 <p>
 
 Kelab Muzium dan Warisan<br>
-
 Universiti Malaya<br>
-
 Kuala Lumpur, Malaysia
 
 </p>
@@ -465,19 +406,13 @@ Hubungi Kami
 
 
 
-
 <footer>
 
-
 <p>
-
 © 2025/2026 Kelab Muzium dan Warisan Universiti Malaya
-
 </p>
 
-
 </footer>
-
 
 
 
