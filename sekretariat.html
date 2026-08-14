@@ -85,6 +85,14 @@ font-size:38px;
 
 
 
+header h2{
+
+font-weight:normal;
+
+}
+
+
+
 /* MENU */
 
 
@@ -159,6 +167,9 @@ color:#800000;
 
 
 
+/* CARTA ORGANISASI */
+
+
 .org{
 
 text-align:center;
@@ -174,6 +185,64 @@ max-width:100%;
 border-radius:10px;
 
 }
+
+
+
+
+
+/* LEMBAGA PENASIHAT */
+
+
+.advisor-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:30px;
+
+margin-top:20px;
+
+}
+
+
+
+.advisor-card{
+
+background:#fafafa;
+
+padding:20px;
+
+text-align:center;
+
+border-radius:15px;
+
+box-shadow:
+0 5px 15px rgba(0,0,0,0.12);
+
+}
+
+
+
+.advisor-card img{
+
+width:100%;
+
+max-width:350px;
+
+border-radius:10px;
+
+}
+
+
+
+.advisor-card h3{
+
+color:#800000;
+
+}
+
+
 
 
 
@@ -202,6 +271,8 @@ color:#800000;
 
 
 
+
+
 /* FOOTER */
 
 
@@ -219,13 +290,22 @@ padding:20px;
 
 
 
+
 @media(max-width:700px){
+
 
 nav a{
 
 display:block;
 
 margin:10px;
+
+}
+
+
+.advisor-grid{
+
+grid-template-columns:1fr;
 
 }
 
@@ -301,6 +381,11 @@ GALERI
 </a>
 
 
+<a href="hubungi.html">
+HUBUNGI
+</a>
+
+
 </nav>
 
 
@@ -310,6 +395,7 @@ GALERI
 
 
 <section>
+
 
 
 
@@ -339,7 +425,6 @@ pentadbiran, perancangan program serta pembangunan kelab.
 
 
 
-
 <div class="card org">
 
 
@@ -349,9 +434,7 @@ CARTA ORGANISASI
 
 
 <p>
-
-Letakkan gambar carta organisasi rasmi di sini.
-
+Carta organisasi rasmi Kelab Muzium dan Warisan Universiti Malaya.
 </p>
 
 
@@ -359,8 +442,6 @@ Letakkan gambar carta organisasi rasmi di sini.
 
 
 </div>
-
-
 
 
 
@@ -376,33 +457,141 @@ LEMBAGA PENASIHAT
 </h2>
 
 
-<div class="position">
-
-
-<h3>
-Penasihat Kelab
-</h3>
-
-
 <p>
-Nama Penasihat
+
+Barisan Lembaga Penasihat Kelab Muzium dan Warisan
+Universiti Malaya bagi sesi 2025/2026.
+
 </p>
 
 
-</div>
+
+<div class="advisor-grid">
 
 
-<div class="position">
+<div class="advisor-card">
 
+<img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/2.png">
 
 <h3>
 Lembaga Penasihat
 </h3>
 
+<p>
+Nama & Jawatan
+</p>
+
+</div>
+
+
+
+<div class="advisor-card">
+
+<img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/3.png">
+
+<h3>
+Lembaga Penasihat
+</h3>
 
 <p>
-Nama ahli Lembaga Penasihat
+Nama & Jawatan
 </p>
+
+</div>
+
+
+
+<div class="advisor-card">
+
+<img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/4.png">
+
+<h3>
+Lembaga Penasihat
+</h3>
+
+<p>
+Nama & Jawatan
+</p>
+
+</div>
+
+
+
+<div class="advisor-card">
+
+<img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/5.png">
+
+<h3>
+Lembaga Penasihat
+</h3>
+
+<p>
+Nama & Jawatan
+</p>
+
+</div>
+
+<div class="advisor-card">
+
+<img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/6.png">
+
+<h3>
+Lembaga Penasihat
+</h3>
+
+<p>
+Nama & Jawatan
+</p>
+
+</div>
+
+
+
+<div class="advisor-card">
+
+<img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/7.png">
+
+<h3>
+Lembaga Penasihat
+</h3>
+
+<p>
+Nama & Jawatan
+</p>
+
+</div>
+
+
+
+<div class="advisor-card">
+
+<img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/8.png">
+
+<h3>
+Lembaga Penasihat
+</h3>
+
+<p>
+Nama & Jawatan
+</p>
+
+</div>
+
+
+
+<div class="advisor-card">
+
+<img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/9.png">
+
+<h3>
+Lembaga Penasihat
+</h3>
+
+<p>
+Nama & Jawatan
+</p>
+
+</div>
 
 
 </div>
@@ -429,57 +618,73 @@ MAJLIS TERTINGGI (MT)
 
 <div class="position">
 
+
 <h3>
 Presiden
 </h3>
+
 
 <p>
 Nama Presiden
 </p>
 
+
 </div>
 
 
 
+
 <div class="position">
+
 
 <h3>
 Timbalan Presiden
 </h3>
 
+
 <p>
 Nama Timbalan Presiden
 </p>
+
 
 </div>
 
 
 
+
 <div class="position">
+
 
 <h3>
 Setiausaha
 </h3>
 
+
 <p>
 Nama Setiausaha
 </p>
 
+
 </div>
+
 
 
 
 <div class="position">
 
+
 <h3>
 Bendahari
 </h3>
+
 
 <p>
 Nama Bendahari
 </p>
 
+
 </div>
+
 
 
 </div>
@@ -500,17 +705,23 @@ EXCO PROGRAM DAN PROTOKOL
 </h2>
 
 
+
 <div class="position">
+
 
 <h3>
 Exco Program dan Protokol
 </h3>
 
+
 <p>
+
 Menguruskan perancangan,
 pelaksanaan serta perjalanan protokol
 bagi setiap program kelab.
+
 </p>
+
 
 </div>
 
@@ -533,7 +744,14 @@ EXCO PERHUBUNGAN LUAR
 </h2>
 
 
+
 <div class="position">
+
+
+<h3>
+Exco Perhubungan Luar
+</h3>
+
 
 <p>
 
@@ -542,6 +760,7 @@ antara kelab dengan pihak luar,
 agensi dan organisasi berkaitan.
 
 </p>
+
 
 </div>
 
@@ -564,7 +783,14 @@ EXCO DANA DAN TAJAAN
 </h2>
 
 
+
 <div class="position">
+
+
+<h3>
+Exco Dana dan Tajaan
+</h3>
+
 
 <p>
 
@@ -573,6 +799,7 @@ penajaan serta kerjasama strategik
 bagi menjayakan program kelab.
 
 </p>
+
 
 </div>
 
@@ -595,7 +822,14 @@ EXCO MULTIMEDIA DAN PUBLISITI
 </h2>
 
 
+
 <div class="position">
+
+
+<h3>
+Exco Multimedia dan Publisiti
+</h3>
+
 
 <p>
 
@@ -604,6 +838,7 @@ reka bentuk grafik,
 promosi dan dokumentasi aktiviti kelab.
 
 </p>
+
 
 </div>
 
@@ -626,7 +861,14 @@ EXCO AKADEMIK DAN INTELEKTUAL
 </h2>
 
 
+
 <div class="position">
+
+
+<h3>
+Exco Akademik dan Intelektual
+</h3>
+
 
 <p>
 
@@ -635,6 +877,7 @@ perkongsian akademik, seminar
 dan wacana warisan.
 
 </p>
+
 
 </div>
 
@@ -657,7 +900,14 @@ EXCO LOGISTIK DAN TEKNIKAL
 </h2>
 
 
+
 <div class="position">
+
+
+<h3>
+Exco Logistik dan Teknikal
+</h3>
+
 
 <p>
 
@@ -667,10 +917,12 @@ dan logistik program.
 
 </p>
 
+
 </div>
 
 
 </div>
+
 
 
 
@@ -678,6 +930,9 @@ dan logistik program.
 
 
 </section>
+
+
+
 
 
 
@@ -695,6 +950,8 @@ dan logistik program.
 
 
 </footer>
+
+
 
 
 
