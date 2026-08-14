@@ -5,9 +5,9 @@
 
 <meta charset="UTF-8">
 
-<meta name="google-site-verification" content="3MooSAGjA9Aqjdldq0f4K9h3Ft1CknMscefnj5NdBMw" />
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="google-site-verification" content="3MooSAGjA9Aqjdldq0f4K9h3Ft1CknMscefnj5NdBMw">
 
 
 <title>
@@ -15,29 +15,12 @@ Kelab Muzium dan Warisan Universiti Malaya (UMMHC) | Laman Rasmi
 </title>
 
 
-<meta name="description" content="Laman rasmi Kelab Muzium dan Warisan Universiti Malaya (UMMHC) yang memaparkan aktiviti kelab, program warisan, galeri, lembaga penasihat dan maklumat terkini.">
-
-
-<meta name="keywords" content="Kelab Muzium dan Warisan Universiti Malaya, UMMHC, Kelab Muzium UM, Warisan Universiti Malaya, Aktiviti Warisan UM">
-
-
-<meta name="author" content="Kelab Muzium dan Warisan Universiti Malaya">
-
-
-<meta property="og:title" content="Kelab Muzium dan Warisan Universiti Malaya (UMMHC)">
-
-
-<meta property="og:description" content="Laman rasmi Kelab Muzium dan Warisan Universiti Malaya - aktiviti, program warisan dan maklumat kelab.">
-
-
-<meta property="og:type" content="website">
-
-
-<meta property="og:url" content="https://ummhc25.github.io/UMMHC-official.github.io/">
+<meta name="description" content="Laman rasmi Kelab Muzium dan Warisan Universiti Malaya (UMMHC). Maklumat kelab, sekretariat, aktiviti, program warisan dan galeri.">
 
 
 
 <style>
+
 
 *{
 box-sizing:border-box;
@@ -46,66 +29,72 @@ scroll-behavior:smooth;
 
 
 body{
+
 margin:0;
 font-family:"Segoe UI",Arial,sans-serif;
-background:#f4f4f4;
+background:#f5f5f5;
 color:#333;
+
 }
+
 
 
 /* HEADER */
 
 header{
 
+
 background:
-linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
-url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/cb2299ee-0988-419d-9f19-971a9c5b275e.png");
+
+linear-gradient(
+rgba(0,0,0,0.45),
+rgba(0,0,0,0.45)
+),
+
+url("HEADER.png");
+
 
 background-size:cover;
 background-position:center;
 
-color:white;
+
 padding:80px 20px;
 text-align:center;
+color:white;
+
 
 }
+
 
 
 .logo{
 
-width:150px;
-height:auto;
+width:160px;
 margin-bottom:20px;
 
 }
+
 
 
 header h1{
 
 font-size:42px;
 margin:10px;
-font-weight:bold;
 
 }
+
 
 
 header h2{
 
-font-size:26px;
 font-weight:normal;
-
-}
-
-
-header p{
-
-font-size:18px;
 
 }
 
 
 
 /* MENU */
+
 
 nav{
 
@@ -119,6 +108,7 @@ z-index:100;
 }
 
 
+
 nav a{
 
 color:white;
@@ -127,6 +117,7 @@ margin:15px;
 font-weight:bold;
 
 }
+
 
 
 nav a:hover{
@@ -139,6 +130,7 @@ color:#FFD700;
 
 /* CONTENT */
 
+
 section{
 
 padding:40px 10%;
@@ -146,15 +138,20 @@ padding:40px 10%;
 }
 
 
+
 .card{
+
 
 background:white;
 padding:30px;
 margin-bottom:30px;
 border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,0.12);
+
+box-shadow:
+0 5px 15px rgba(0,0,0,0.12);
 
 }
+
 
 
 .card h2{
@@ -164,17 +161,60 @@ color:#800000;
 }
 
 
-hr{
 
-border:none;
-border-top:1px solid #ddd;
-margin:25px 0;
+/* BUTTON */
+
+
+.button{
+
+display:inline-block;
+
+background:#800000;
+
+color:white;
+
+padding:12px 25px;
+
+border-radius:5px;
+
+text-decoration:none;
+
+}
+
+
+
+.button:hover{
+
+background:#a00000;
+
+}
+
+
+
+/* IMAGE */
+
+
+.gallery{
+
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+
+}
+
+
+
+.gallery img{
+
+width:30%;
+border-radius:10px;
 
 }
 
 
 
 /* FOOTER */
+
 
 footer{
 
@@ -186,10 +226,16 @@ padding:20px;
 }
 
 
+
+/* MOBILE */
+
+
 @media(max-width:700px){
 
 header h1{
+
 font-size:28px;
+
 }
 
 
@@ -200,7 +246,16 @@ margin:10px;
 
 }
 
+
+.gallery img{
+
+width:100%;
+
 }
+
+
+}
+
 
 
 </style>
@@ -209,13 +264,15 @@ margin:10px;
 </head>
 
 
+
 <body>
+
 
 
 <header>
 
 
-<img class="logo" src="LOGO.png">
+<img src="LOGO.png" class="logo">
 
 
 <h1>
@@ -229,7 +286,7 @@ UNIVERSITI MALAYA
 
 
 <p>
-Official Website | Museum and Heritage Club
+Museum and Heritage Club (UMMHC)
 </p>
 
 
@@ -237,58 +294,152 @@ Official Website | Museum and Heritage Club
 
 
 
+
 <nav>
 
 
-<a href="#about">TENTANG KAMI</a>
+<a href="index.html">
+UTAMA
+</a>
 
 
-<a href="#activity">AKTIVITI</a>
+<a href="sejarah.html">
+TENTANG KAMI
+</a>
 
 
-<a href="#board">LEMBAGA PENASIHAT</a>
+<a href="sekretariat.html">
+SEKRETARIAT UMMHC
+</a>
 
 
-<a href="#gallery">GALERI</a>
+<a href="aktiviti.html">
+AKTIVITI
+</a>
 
 
-<a href="#contact">HUBUNGI</a>
+<a href="galeri.html">
+GALERI
+</a>
+
+
+<a href="hubungi.html">
+HUBUNGI
+</a>
 
 
 </nav>
 
 
 
+
+
+
 <section>
 
 
-<div class="card" id="about">
+
+<div class="card">
 
 
-<h2>TENTANG KAMI</h2>
-
-
-<p>
-Kelab Muzium dan Warisan Universiti Malaya (UMMHC)
-merupakan sebuah kelab yang memfokuskan kepada
-pemeliharaan, penghayatan dan penyebaran ilmu berkaitan
-sejarah, budaya serta warisan.
-</p>
+<h2>
+SELAMAT DATANG KE LAMAN RASMI UMMHC
+</h2>
 
 
 <p>
-Kelab ini berperanan dalam menggalakkan penglibatan mahasiswa
-melalui aktiviti muzium, kebudayaan, penyelidikan dan program
-warisan.
+
+Selamat datang ke laman rasmi
+Kelab Muzium dan Warisan Universiti Malaya.
+
+UMMHC merupakan sebuah kelab mahasiswa
+yang berperanan dalam mempromosikan
+pemeliharaan sejarah, budaya dan warisan.
+
 </p>
 
 
 </div>
 
-  <div class="card" id="activity">
 
 
-<h2>AKTIVITI KAMI</h2>
+
+
+
+
+<div class="card">
+
+
+<h2>
+TENTANG KAMI
+</h2>
+
+
+<p>
+
+Kelab Muzium dan Warisan Universiti Malaya (UMMHC)
+merupakan sebuah organisasi pelajar yang memberi fokus
+kepada aktiviti berkaitan muzium, sejarah, kebudayaan
+dan warisan.
+
+</p>
+
+
+<a class="button" href="sejarah.html">
+
+BACA SEJARAH UMMHC
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+SEKRETARIAT UMMHC SESI 2025/2026
+</h2>
+
+
+<p>
+
+Ketahui struktur organisasi,
+Lembaga Penasihat,
+Majlis Tertinggi (MT)
+serta barisan Exco UMMHC.
+
+</p>
+
+
+<a class="button" href="sekretariat.html">
+
+LIHAT SEKRETARIAT
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+AKTIVITI UMMHC
+</h2>
 
 
 <ul>
@@ -299,75 +450,20 @@ warisan.
 
 <li>Pameran Kebudayaan</li>
 
-<li>Seminar dan Bengkel Warisan</li>
+<li>Seminar dan Wacana Warisan</li>
 
-<li>Kolaborasi Bersama Organisasi Luar</li>
+<li>Kolaborasi Bersama Agensi</li>
+
 
 </ul>
 
 
-</div>
 
+<a class="button" href="aktiviti.html">
 
+LIHAT AKTIVITI
 
-
-
-<div class="card" id="board">
-
-
-<h2>LEMBAGA PENASIHAT</h2>
-
-
-<p>
-
-Lembaga Penasihat berperanan memberikan pandangan,
-nasihat dan sokongan strategik dalam memastikan hala tuju
-serta pembangunan Kelab Muzium dan Warisan Universiti Malaya.
-
-</p>
-
-
-
-<hr>
-
-
-
-<h3>Instagram Rasmi UMMHC</h3>
-
-
-<p>
-
-Ikuti perkembangan terkini aktiviti Kelab Muzium dan Warisan
-Universiti Malaya melalui Instagram rasmi kami.
-
-</p>
-
-
-
-
-<blockquote class="instagram-media" 
-data-instgrm-captioned 
-data-instgrm-permalink="https://www.instagram.com/p/DaFm_CaGNkz/"
-data-instgrm-version="14"
-style="
-background:#FFF;
-border:0;
-border-radius:3px;
-box-shadow:0 0 1px 0 rgba(0,0,0,0.5),
-0 1px 10px 0 rgba(0,0,0,0.15);
-margin:1px;
-max-width:540px;
-min-width:326px;
-padding:0;
-width:99.375%;
-">
-
-
-</blockquote>
-
-
-<script async src="https://www.instagram.com/embed.js"></script>
-
+</a>
 
 
 </div>
@@ -378,10 +474,13 @@ width:99.375%;
 
 
 
-<div class="card" id="gallery">
+<div class="card">
 
 
-<h2>GALERI</h2>
+<h2>
+GALERI
+</h2>
+
 
 
 <div class="gallery">
@@ -396,6 +495,7 @@ width:99.375%;
 </div>
 
 
+
 </div>
 
 
@@ -404,10 +504,12 @@ width:99.375%;
 
 
 
-<div class="card" id="contact">
+<div class="card">
 
 
-<h2>HUBUNGI KAMI</h2>
+<h2>
+HUBUNGI KAMI
+</h2>
 
 
 <p>
@@ -421,6 +523,7 @@ Kuala Lumpur, Malaysia
 </p>
 
 
+
 </div>
 
 
@@ -428,8 +531,6 @@ Kuala Lumpur, Malaysia
 
 
 </section>
-
-
 
 
 
@@ -450,8 +551,6 @@ Kuala Lumpur, Malaysia
 
 
 
-
 </body>
-
 
 </html>
