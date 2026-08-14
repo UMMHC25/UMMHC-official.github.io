@@ -16,20 +16,30 @@ Hubungi Kami | UMMHC
 <style>
 
 
+*{
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+
+
 body{
 
 margin:0;
 
 font-family:"Segoe UI",Arial,sans-serif;
 
+
 background:
+
 
 linear-gradient(
 rgba(255,255,255,0.85),
 rgba(255,255,255,0.85)
 ),
 
-url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/e107d3ef-aade-4f84-89da-37e176a92e0a%20(1).png");
+
+url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/77527381-a7e9-48d4-b26f-6abc8b8e22df.png");
 
 
 background-size:cover;
@@ -38,38 +48,91 @@ background-position:center;
 
 background-attachment:fixed;
 
+background-repeat:no-repeat;
+
 
 color:#333;
 
 }
 
 
+
+
+
+/* HEADER */
+
 header{
 
-background:#800000;
-color:white;
-padding:50px;
+background:
+
+linear-gradient(
+rgba(0,0,0,0.20),
+rgba(0,0,0,0.20)
+),
+
+url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/2cc73193-f7f9-4326-a5e7-a58cdb55d0c0.png");
+
+
+background-size:cover;
+
+background-position:center;
+
+height:350px;
+
 text-align:center;
 
 }
+
+
+
+
+
+/* MENU */
 
 
 nav{
 
 background:#800000;
+
 padding:15px;
+
 text-align:center;
 
+position:sticky;
+
+top:0;
+
+z-index:100;
+
 }
+
 
 
 nav a{
 
 color:white;
+
 text-decoration:none;
+
 margin:15px;
 
+font-weight:bold;
+
 }
+
+
+
+nav a:hover{
+
+color:#FFD700;
+
+}
+
+
+
+
+
+/* CONTENT */
 
 
 section{
@@ -79,23 +142,117 @@ padding:40px 10%;
 }
 
 
+
 .card{
 
 background:white;
+
 padding:30px;
+
 border-radius:15px;
 
+box-shadow:
+
+0 5px 15px rgba(0,0,0,0.12);
+
+
+text-align:center;
+
 }
+
+
+
+
+
+.card h2{
+
+color:#800000;
+
+text-align:center;
+
+}
+
+
+
+.card p{
+
+text-align:center;
+
+line-height:1.8;
+
+}
+
+
+
+
+
+/* BUTTON */
+
+
+.button{
+
+display:inline-block;
+
+background:#800000;
+
+color:white;
+
+padding:12px 25px;
+
+border-radius:8px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+
+
+.button:hover{
+
+background:#FFD700;
+
+color:#800000;
+
+}
+
+
+
+
+
+/* FOOTER */
 
 
 footer{
 
 background:#800000;
+
 color:white;
+
 padding:20px;
+
 text-align:center;
 
 }
+
+
+
+
+@media(max-width:700px){
+
+
+nav a{
+
+display:block;
+
+margin:10px;
+
+}
+
+
+}
+
 
 
 </style>
@@ -104,31 +261,34 @@ text-align:center;
 </head>
 
 
+
 <body>
 
 
 
 <header>
 
-<h1>
-HUBUNGI KAMI
-</h1>
-
-
-<p>
-Kelab Muzium dan Warisan Universiti Malaya
-</p>
-
-
 </header>
+
 
 
 
 
 <nav>
 
+
 <a href="index.html">
 UTAMA
+</a>
+
+
+<a href="sejarah.html">
+TENTANG KAMI
+</a>
+
+
+<a href="sekretariat.html">
+SEKRETARIAT UMMHC
 </a>
 
 
@@ -142,7 +302,13 @@ GALERI
 </a>
 
 
+<a href="hubungi.html">
+HUBUNGI
+</a>
+
+
 </nav>
+
 
 
 
@@ -155,13 +321,15 @@ GALERI
 
 
 <h2>
-Kelab Muzium dan Warisan
+HUBUNGI KAMI
 </h2>
 
 
 <p>
 
-Universiti Malaya<br><br>
+Kelab Muzium dan Warisan<br>
+
+Universiti Malaya<br>
 
 Kuala Lumpur, Malaysia
 
@@ -169,13 +337,65 @@ Kuala Lumpur, Malaysia
 
 
 
+
 <h3>
-Instagram Rasmi
+MEDIA SOSIAL RASMI
 </h3>
 
 
 <p>
-@um_mhc
+
+Instagram : @um_mhc
+
+</p>
+
+
+
+<a class="button" 
+href="https://www.instagram.com/um_mhc/"
+target="_blank">
+
+LAWATI INSTAGRAM
+
+</a>
+
+
+
+<h3>
+
+ALAMAT
+
+</h3>
+
+
+<p>
+
+Kelab Muzium dan Warisan (UMMHC)<br>
+
+Universiti Malaya<br>
+
+50603 Kuala Lumpur<br>
+
+Wilayah Persekutuan Kuala Lumpur<br>
+
+Malaysia
+
+</p>
+
+
+
+
+<h3>
+
+E-MEL
+
+</h3>
+
+
+<p>
+
+Sila hubungi pihak pengurusan Kelab Muzium dan Warisan Universiti Malaya melalui saluran rasmi.
+
 </p>
 
 
@@ -183,16 +403,24 @@ Instagram Rasmi
 </div>
 
 
+
 </section>
+
+
+
 
 
 
 
 <footer>
 
+
 © 2025/2026 Kelab Muzium dan Warisan Universiti Malaya
 
+
 </footer>
+
+
 
 
 
