@@ -820,6 +820,242 @@ HUBUNGI KAMI
 
 
 
+<!-- MUSIC PLAYLIST UMMHC -->
+
+<div class="music-player">
+
+<h3>
+🎵 UMMHC Heritage Playlist
+</h3>
+
+
+<audio id="audioPlayer" controls>
+</audio>
+
+
+<div class="music-buttons">
+
+<button onclick="previousSong()">
+⏮ Lagu Sebelum
+</button>
+
+
+<button onclick="playSong()">
+▶ Mainkan
+</button>
+
+
+<button onclick="nextSong()">
+Lagu Seterusnya ⏭
+</button>
+
+
+</div>
+
+
+<p id="songName"></p>
+
+
+</div>
+
+
+
+
+
+<style>
+
+.music-player{
+
+background:white;
+
+padding:25px;
+
+margin:30px 10%;
+
+border-radius:15px;
+
+text-align:center;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.12);
+
+}
+
+
+.music-player h3{
+
+color:#800000;
+
+}
+
+
+.music-player audio{
+
+width:100%;
+
+margin:15px 0;
+
+}
+
+
+.music-buttons button{
+
+background:#800000;
+
+color:white;
+
+border:none;
+
+padding:12px 20px;
+
+margin:5px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+font-weight:bold;
+
+}
+
+
+.music-buttons button:hover{
+
+background:#FFD700;
+
+color:#800000;
+
+}
+
+
+#songName{
+
+color:#800000;
+
+font-weight:bold;
+
+}
+
+
+</style>
+
+
+
+
+
+<script>
+
+
+let songs=[
+
+
+{
+
+name:"Dato' Sri Siti Nurhaliza - Kesuma",
+
+src:"https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/Dato'_Sri_Siti_Nurhaliza_Kesuma_Accurate_Lyrics_Reupload_lirik.mp3"
+
+},
+
+
+{
+
+name:"Dato' Sri Siti Nurhaliza - Rencong",
+
+src:"https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/Dato'%20Sri%20Nurhaliza%20-%20Rencong%20(%20Lirik%20).mp3"
+
+}
+
+
+];
+
+
+
+let currentSong=0;
+
+
+let player=document.getElementById("audioPlayer");
+
+let title=document.getElementById("songName");
+
+
+
+
+
+function loadSong(){
+
+player.src=songs[currentSong].src;
+
+title.innerHTML="Sedang dimainkan: "+songs[currentSong].name;
+
+}
+
+
+
+
+
+function playSong(){
+
+player.play();
+
+}
+
+
+
+
+
+function nextSong(){
+
+currentSong++;
+
+
+if(currentSong>=songs.length){
+
+currentSong=0;
+
+}
+
+
+loadSong();
+
+player.play();
+
+}
+
+
+
+
+
+function previousSong(){
+
+currentSong--;
+
+
+if(currentSong<0){
+
+currentSong=songs.length-1;
+
+}
+
+
+loadSong();
+
+player.play();
+
+}
+
+
+
+
+
+loadSong();
+
+
+
+</script>
+
+
+
+
 
 
 </body>
