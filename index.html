@@ -1,87 +1,329 @@
 <!DOCTYPE html>
-<html>
+<html lang="ms">
+
 <head>
-<title>Kelab Muzium dan Warisan UM</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kelab Muzium dan Warisan Universiti Malaya</title>
 
 <style>
-body {
-font-family: Arial;
-margin:0;
-background:#f5f5f5;
+
+*{
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
-header {
-background:#800000;
+body{
+margin:0;
+font-family:"Segoe UI", Arial, sans-serif;
+background:#f4f4f4;
+color:#333;
+}
+
+
+/* HEADER */
+
+header{
+background:linear-gradient(rgba(80,0,0,0.85),rgba(80,0,0,0.85)),
+url("https://images.unsplash.com/photo-1564399579883-451a5d44ec08");
+background-size:cover;
+background-position:center;
 color:white;
-padding:40px;
+padding:70px 20px;
 text-align:center;
 }
 
-section {
-padding:30px;
+header h1{
+font-size:42px;
+margin:10px;
 }
 
-.card {
-background:white;
-padding:20px;
-margin:20px;
-border-radius:10px;
+header h2{
+font-size:25px;
+font-weight:normal;
 }
+
+header p{
+font-size:18px;
+}
+
+
+/* MENU */
+
+nav{
+background:#5a0000;
+padding:15px;
+text-align:center;
+position:sticky;
+top:0;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:15px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#ffd700;
+}
+
+
+/* CONTENT */
+
+section{
+padding:40px 10%;
+}
+
+
+.card{
+
+background:white;
+padding:30px;
+margin-bottom:30px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+}
+
+
+.card h2{
+
+color:#800000;
+
+}
+
+
+
+/* BUTTON */
+
+.button{
+
+display:inline-block;
+background:#800000;
+color:white;
+padding:12px 25px;
+border-radius:5px;
+text-decoration:none;
+
+}
+
+
+/* GALERI */
+
+.gallery{
+
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+
+}
+
+
+.gallery img{
+
+width:30%;
+border-radius:10px;
+
+}
+
+
+
+/* FOOTER */
+
+footer{
+
+background:#5a0000;
+color:white;
+text-align:center;
+padding:20px;
+
+}
+
+
+
+@media(max-width:700px){
+
+header h1{
+font-size:28px;
+}
+
+.gallery img{
+width:100%;
+}
+
+nav a{
+display:block;
+margin:10px;
+}
+
+}
+
 
 </style>
 
 </head>
 
+
 <body>
 
+
 <header>
-<h1>Kelab Muzium dan Warisan</h1>
-<h2>Universiti Malaya</h2>
-<p>Official Website</p>
+
+<h1>KELAB MUZIUM DAN WARISAN</h1>
+
+<h2>UNIVERSITI MALAYA</h2>
+
+<p>Official Website | Museum and Heritage Club</p>
+
 </header>
+
+
+
+<nav>
+
+<a href="#about">Tentang Kami</a>
+
+<a href="#activity">Aktiviti</a>
+
+<a href="#board">Lembaga Penasihat</a>
+
+<a href="#gallery">Galeri</a>
+
+<a href="#contact">Hubungi</a>
+
+</nav>
+
 
 
 <section>
 
-<div class="card">
+
+<div class="card" id="about">
+
 <h2>Tentang Kami</h2>
 
 <p>
-Kelab Muzium dan Warisan Universiti Malaya
-merupakan sebuah kelab yang memfokuskan
-pemeliharaan warisan, sejarah dan budaya.
+Kelab Muzium dan Warisan Universiti Malaya (UMMHC)
+merupakan sebuah organisasi pelajar yang memfokuskan
+pemeliharaan, penghayatan dan penyebaran ilmu berkaitan
+sejarah, budaya serta warisan.
+</p>
+
+<p>
+Kelab ini berperanan dalam menggalakkan penglibatan mahasiswa
+melalui aktiviti muzium, kebudayaan, penyelidikan dan program
+warisan.
 </p>
 
 </div>
 
 
-<div class="card">
 
-<h2>Aktiviti</h2>
+
+<div class="card" id="activity">
+
+<h2>Aktiviti Kami</h2>
 
 <ul>
+
 <li>Jelajah Warisan</li>
+
 <li>Program Muzium</li>
+
 <li>Pameran Kebudayaan</li>
+
+<li>Seminar dan Bengkel Warisan</li>
+
+<li>Aktiviti Kolaborasi Bersama Organisasi Luar</li>
+
 </ul>
 
 </div>
 
 
-<div class="card">
 
-<h2>Hubungi Kami</h2>
+
+
+<div class="card" id="board">
+
+<h2>Lembaga Penasihat</h2>
 
 <p>
-Kelab Muzium dan Warisan,
-Universiti Malaya
+
+Lembaga Penasihat berperanan memberikan pandangan,
+nasihat dan sokongan strategik dalam memastikan
+hala tuju serta pembangunan Kelab Muzium dan Warisan
+Universiti Malaya.
+
 </p>
 
 </div>
 
 
+
+
+
+<div class="card" id="gallery">
+
+<h2>Galeri</h2>
+
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1564399579883-451a5d44ec08">
+
+<img src="https://images.unsplash.com/photo-1577083288073-40892c0860a4">
+
+<img src="https://images.unsplash.com/photo-1594736797933-d0401ba2fe65">
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card" id="contact">
+
+<h2>Hubungi Kami</h2>
+
+
+<p>
+Kelab Muzium dan Warisan<br>
+Universiti Malaya<br>
+Kuala Lumpur, Malaysia
+</p>
+
+
+<a class="button" href="#">
+Hubungi Kami
+</a>
+
+
+</div>
+
+
+
 </section>
 
 
+
+<footer>
+
+<p>
+© 2025/2026 Kelab Muzium dan Warisan Universiti Malaya
+</p>
+
+</footer>
+
+
+
 </body>
+
 </html>
