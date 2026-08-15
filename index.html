@@ -301,9 +301,9 @@
   <div class="music-player">
     <h3>🎵 MAINKAN MUZIK KELAB MUZIUM DAN WARISAN UNIVERSITI MALAYA (UMMHC)</h3>
     <p style="color:#800000; font-weight:bold;">
-      ✨ Sila tekan butang ▶ pada pemain muzik untuk menikmati pengalaman melayari laman rasmi Kelab Muzium dan Warisan (UMMHC) dengan iringan muzik warisan.
+      ✨ Muzik warisan akan dimainkan secara automatik untuk mengiringi perjalan anda di laman rasmi Kelab Muzium dan Warisan (UMMHC).
     </p>
-    <audio id="audioPlayer" controls></audio>
+    <audio id="audioPlayer" controls autoplay></audio>
     <p id="songName"></p>
   </div>
 
@@ -334,7 +334,6 @@
         <a class="button" href="sekretariat.html">LIHAT SEKRETARIAT</a>
       </div>
 
-      <!-- KAD BAHARU: MUZIUM DAN GALERI UNIVERSITI MALAYA -->
       <div class="card">
         <h2>MUZIUM DAN GALERI UNIVERSITI MALAYA</h2>
         <p>
@@ -389,7 +388,7 @@
     <p>© 2025/2026 Kelab Muzium dan Warisan Universiti Malaya</p>
   </footer>
 
-  <!-- SCRIPT MUZIK & SPA NAVIGASI -->
+  <!-- SCRIPT MUZIK (AUTO-PLAY PINTAR) & SPA NAVIGASI -->
   <script>
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
@@ -408,6 +407,26 @@
 
     player.src = songList[0].src;
     title.innerHTML = "Sedang dimainkan: " + songList[0].name;
+
+    // FUNGSI PINTAR UNTUK AUTOPLAY APABILA ADA INTERAKSI
+    function startAudio() {
+      player.play().then(() => {
+        // Selepas berjaya dimainkan, buang listener interaksi
+        document.removeEventListener('click', startAudio);
+        document.removeEventListener('touchstart', startAudio);
+        document.removeEventListener('scroll', startAudio);
+      }).catch(err => {
+        console.log("Menunggu interaksi pengguna untuk memainkan lagu.");
+      });
+    }
+
+    // Cuba mainkan secara biasa dulu
+    player.play().catch(() => {
+      // Jika pelayar menyekat autoplay, tunggu sebarang klik/sentuhan/scroll dari pengguna
+      document.addEventListener('click', startAudio);
+      document.addEventListener('touchstart', startAudio);
+      document.addEventListener('scroll', startAudio);
+    });
 
     function loadPage(url) {
       fetch(url)
@@ -441,6 +460,10 @@
           link.dataset.spaBound = "true";
           link.addEventListener('click', function(e) {
             e.preventDefault();
+            // Bermain audio jika belum bermula semasa klik pautan pertama
+            if (player.paused) {
+              player.play();
+            }
             loadPage(href);
             history.pushState({ page: href }, '', href);
           });
