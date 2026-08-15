@@ -25,14 +25,41 @@
       text-align: center;
     }
 
-    /* HEADER GAMBAR SAHAJA */
+    /* HEADER SAMA MACAM INDEX */
     header {
-      background: linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)),
+      background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
         url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/2cc73193-f7f9-4326-a5e7-a58cdb55d0c0.png");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      height: 350px;
+      min-height: 350px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .header-logo {
+      max-width: 140px;
+      height: auto;
+      margin-bottom: 15px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    header p {
+      margin: 10px 0 0 0;
+      font-size: 1.1rem;
+      color: #FFD700;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     }
 
     /* MENU */
@@ -67,7 +94,7 @@
       text-align: center;
     }
 
-    /* SEMUA KOTAK & AYAT KE TENGAH */
+    /* KOTAK & AYAT KE TENGAH */
     .card {
       background: white;
       padding: 30px;
@@ -77,14 +104,12 @@
       text-align: center;
     }
 
-    /* SEMUA TAJUK KE TENGAH */
     .card h2 {
       color: #800000;
       text-align: center;
       margin-top: 0;
     }
 
-    /* SEMUA AYAT KE TENGAH */
     .card p {
       text-align: center;
       line-height: 1.6;
@@ -131,7 +156,7 @@
       margin: 0 auto;
     }
 
-    /* FOOTER KE TENGAH */
+    /* FOOTER */
     footer {
       background: #800000;
       color: white;
@@ -145,6 +170,10 @@
     }
 
     @media(max-width:700px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+
       .grid {
         grid-template-columns: 1fr;
       }
@@ -159,7 +188,12 @@
 
 <body>
 
-  <header></header>
+  <!-- HEADER SAMA DENGAN INDEX -->
+  <header>
+    <img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/2cc73193-f7f9-4326-a5e7-a58cdb55d0c0.png" alt="Logo UMMHC" class="header-logo">
+    <h1>KELAB MUZIUM DAN WARISAN</h1>
+    <p>UNIVERSITI MALAYA (UMMHC)</p>
+  </header>
 
   <nav>
     <a href="index.html">UTAMA</a>
@@ -251,7 +285,7 @@
     <!-- EXCO MULTIMEDIA DAN PUBLISITI -->
     <div class="card">
       <h2>EXCO MULTIMEDIA DAN PUBLISITI</h2>
-      <p>Barisan Exco Multimedia dan Publisiti Kelab Muzium dan Warisan Universiti Malaya Sesi 2025/2026.</p>
+      <p>Menguruskan media sosial, bahan promosi, reka bentuk grafik, hebahan dan dokumentasi aktiviti kelab.</p>
       <div class="grid">
         <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/33.png" alt="Exco Multimedia dan Publisiti"></div>
         <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/34.png" alt="Exco Multimedia dan Publisiti"></div>
