@@ -732,20 +732,20 @@ HUBUNGI KAMI
 
 
 
-<!-- MAINKAN MUZIK KELAB MUZIUM DAN WARISAN UNIVERSITI MALAYA (UMMHC) -->
+<!-- MAINKAN MUZIK WARISAN KELAB MUZIUM DAN WARISAN UNIVERSITI MALAYA (UMMHC) -->
 
 <div class="music-player">
 
 
 <h3>
-🎵 PMAINKAN MUZIK WARISAN KELAB MUZIUM DAN WARISAN UNIVERSITI MALAYA (UMMHC)
+🎵 MAINKAN MUZIK WARISAN KELAB MUZIUM DAN WARISAN UNIVERSITI MALAYA (UMMHC)
 </h3>
 
 
 
 <p style="color:#800000; font-weight:bold;">
 
-✨ Sila tekan butang ▶ Mainkan untuk menikmati pengalaman melayari laman rasmi Kelab Muzium dan Warisan Universiti Malaya (UMMHC) dengan iringan muzik warisan.
+✨ Sila tekan butang ▶ pada pemain muzik untuk menikmati pengalaman melayari laman rasmi UMMHC dengan iringan muzik warisan.
 
 </p>
 
@@ -755,9 +755,6 @@ HUBUNGI KAMI
 
 </audio>
 
-</div>
-
-
 
 
 <p id="songName"></p>
@@ -765,7 +762,6 @@ HUBUNGI KAMI
 
 
 </div>
-
 
 
 
@@ -1154,62 +1150,27 @@ title.innerHTML="Sedang dimainkan: "+songs[currentSong].name;
 
 
 
-function playSong(){
+let songs=[
 
+{
+name:"Dato' Sri Siti Nurhaliza - Kesuma",
 
-player.play();
-
-
-
-}
-
-
-
-
-
-
-
-
-function nextSong(){
-
-
-
-currentSong++;
-
-
-
-
-if(currentSong>=songs.length){
-
-
-currentSong=0;
-
+src:"https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/Dato'_Sri_Siti_Nurhaliza_Kesuma_Accurate_Lyrics_Reupload_lirik.mp3"
 
 }
 
+];
 
 
+let player=document.getElementById("audioPlayer");
 
-loadSong();
-
-
-player.play();
+let title=document.getElementById("songName");
 
 
-
-}
-
+player.src=songs[0].src;
 
 
-
-
-
-
-
-
-
-function previousSong(){
-
+title.innerHTML="Sedang dimainkan: "+songs[0].name;
 
 
 currentSong--;
