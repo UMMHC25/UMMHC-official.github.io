@@ -1085,70 +1085,7 @@ HUBUNGI KAMI
 
 <!-- SCRIPT PLAYLIST UMMHC -->
 
-
 <script>
-
-
-
-let songs=[
-
-
-
-{
-
-
-name:"Dato' Sri Siti Nurhaliza - Kesuma",
-
-
-src:"https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/Dato'_Sri_Siti_Nurhaliza_Kesuma_Accurate_Lyrics_Reupload_lirik.mp3"
-
-
-
-},
-
-
-
-];
-
-
-
-
-
-
-let currentSong=0;
-
-
-
-let player=document.getElementById("audioPlayer");
-
-
-let title=document.getElementById("songName");
-
-
-
-
-
-
-
-
-function loadSong(){
-
-
-player.src=songs[currentSong].src;
-
-
-title.innerHTML="Sedang dimainkan: "+songs[currentSong].name;
-
-
-
-}
-
-
-
-
-
-
-
 
 let songs=[
 
@@ -1173,54 +1110,8 @@ player.src=songs[0].src;
 title.innerHTML="Sedang dimainkan: "+songs[0].name;
 
 
-currentSong--;
-
-
-
-
-
-if(currentSong<0){
-
-
-currentSong=songs.length-1;
-
-
-}
-
-
-
-
-
-loadSong();
-
-
-player.play();
-
-
-
-}
-
-
-
-
-
-
-
-loadSong();
-
-
-
-
 </script>
-
-
-
-
-
-
-
-
-
+  
 <!-- FOOTER -->
 
 
