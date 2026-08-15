@@ -88,7 +88,7 @@
       background: #800000;
     }
 
-    /* MUSIC PLAYER (KEKAL DI ATAS) */
+    /* MUSIC PLAYER (KEKAL DI ATAS PROSES PENUKARAN HALAMAN) */
     .music-player {
       background: white;
       padding: 25px;
@@ -131,22 +131,60 @@
 
     .card h2 {
       color: #800000;
+      text-align: center;
     }
 
-    /* BUTTON */
-    .button {
+    .card p {
+      line-height: 1.6;
+    }
+
+    /* GAYA BUTANG SERAGAM (MERAH & EMAS) */
+    .button, button {
       display: inline-block;
-      background: #800000;
-      color: white;
+      background: #800000 !important;
+      color: white !important;
       padding: 12px 25px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s, color 0.3s;
     }
 
-    .button:hover {
-      background: #FFD700;
-      color: #800000;
+    .button:hover, button:hover {
+      background: #FFD700 !important;
+      color: #800000 !important;
+    }
+
+    /* CARTA ORGANISASI & GRID SEKRETARIAT ASAL */
+    .org {
+      text-align: center;
+    }
+
+    .org img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .item {
+      background: #fafafa;
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    .item img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 10px;
     }
 
     /* GALERI */
@@ -182,6 +220,10 @@
       .gallery img {
         width: 100%;
       }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -204,7 +246,7 @@
   <!-- BAR MERAH BAWAH HEADER -->
   <div class="header-space"></div>
 
-  <!-- MUSIC PLAYER (KEKAL DAN TIDAK REFRESH) -->
+  <!-- MUSIC PLAYER -->
   <div class="music-player">
     <h3>🎵 MAINKAN MUZIK KELAB MUZIUM DAN WARISAN UNIVERSITI MALAYA (UMMHC)</h3>
     <p style="color:#800000; font-weight:bold;">
@@ -214,7 +256,7 @@
     <p id="songName"></p>
   </div>
 
-  <!-- KANDUNGAN DINAMIK (AKAN BERTUKAR APABILA KLIK MENU) -->
+  <!-- KANDUNGAN UTAMA -->
   <main id="app-content">
     <section>
       <div class="card">
@@ -278,21 +320,19 @@
     <p>© 2025/2026 Kelab Muzium dan Warisan Universiti Malaya</p>
   </footer>
 
-  <!-- SCRIPT AUDIO & NAVIGASI TANPA RELOAD -->
+  <!-- SCRIPT MUZIK & SPA NAVIGASI -->
   <script>
-    // 1. Pengurusan Pemain Audio
-    const songList = [{
+    let songList = [{
       name: "Dato' Sri Siti Nurhaliza - Kesuma",
       src: "https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/Dato'_Sri_Siti_Nurhaliza_Kesuma_Accurate_Lyrics_Reupload_lirik.mp3"
     }];
 
-    const player = document.getElementById("audioPlayer");
-    const title = document.getElementById("songName");
+    let player = document.getElementById("audioPlayer");
+    let title = document.getElementById("songName");
 
     player.src = songList[0].src;
     title.innerHTML = "Sedang dimainkan: " + songList[0].name;
 
-    // 2. Pengurusan Sistem Navigasi SPA (Muat Kandungan Tanpa Henti Audio)
     function loadPage(url) {
       fetch(url)
         .then(response => {
@@ -303,7 +343,6 @@
           const parser = new DOMParser();
           const doc = parser.parseFromString(html, 'text/html');
 
-          // Ambil elemen <section> dari fail yang dipanggil
           const newSection = doc.querySelector('section');
           const contentContainer = document.getElementById('app-content');
 
@@ -311,18 +350,16 @@
             contentContainer.innerHTML = newSection.outerHTML;
             document.title = doc.title || "Kelab Muzium dan Warisan Universiti Malaya";
             window.scrollTo(0, 0);
-            attachLinkListeners(); // Mengaktifkan semula butang pautan dalam kandungan baharu
+            attachLinkListeners();
           }
         })
         .catch(err => console.error("Ralat muat halaman:", err));
     }
 
     function attachLinkListeners() {
-      // Tangkap semua elemen <a> dalam laman web
       document.querySelectorAll('a').forEach(link => {
         const href = link.getAttribute('href');
 
-        // Pastikan hanya fail tempatan (.html) yang dimuatkan secara dinamik
         if (href && href.endsWith('.html') && !href.startsWith('http') && !link.dataset.spaBound) {
           link.dataset.spaBound = "true";
           link.addEventListener('click', function(e) {
@@ -334,13 +371,11 @@
       });
     }
 
-    // Sokongan untuk butang 'Back' & 'Forward' pada pelayar web
     window.addEventListener('popstate', (e) => {
       const page = e.state ? e.state.page : 'index.html';
       loadPage(page);
     });
 
-    // Jalankan skrip navigasi
     attachLinkListeners();
   </script>
 
