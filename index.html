@@ -301,7 +301,7 @@
   <div class="music-player">
     <h3>🎵 MAINKAN MUZIK KELAB MUZIUM DAN WARISAN UNIVERSITI MALAYA (UMMHC)</h3>
     <p style="color:#800000; font-weight:bold;">
-      ✨ Muzik warisan akan dimainkan secara automatik untuk mengiringi perjalan anda di laman rasmi Kelab Muzium dan Warisan (UMMHC).
+      ✨ Muzik warisan akan dimainkan secara automatik untuk mengiringi perjalanan anda di laman rasmi Kelab Muzium dan Warisan (UMMHC).
     </p>
     <audio id="audioPlayer" controls autoplay></audio>
     <p id="songName"></p>
@@ -321,7 +321,7 @@
       <div class="card">
         <h2>TENTANG KAMI</h2>
         <p>
-          Kelab Muzium dan Warisan Universiti Malaya (UMMHC) merupakan sebuah organisasi pelajar yang memberi fokus kepada aktiviti berkaitan muzium, sejarah, kebudayaan dan warisan.
+          Kelab Muzium dan Warisan Universiti Malaya (UMMHC) merupakan sebuah organisasi pelajar yang memberi fokus kepada aktiviti berkaitan muzium, sejarah, kebudayaan dan warisan yang diasaskan bersama oleh <strong>Encik Rizqullah Al-Bariq Bin Azmi</strong>, <strong>Mendiang Tan Aik Kai</strong>, <strong>Muhamad Faiz Azrin Bin Sapuwan</strong>, <strong>Muhammad Faisal Bin Zubir</strong>, dan <strong>Muhammad Haziq Bin Abdullah</strong>.
         </p>
         <a class="button" href="sejarah.html">BACA SEJARAH KELAB MUZIUM DAN WARISAN UNIVERSITI MALAYA (UMMHC)</a>
       </div>
@@ -411,7 +411,6 @@
     // FUNGSI PINTAR UNTUK AUTOPLAY APABILA ADA INTERAKSI
     function startAudio() {
       player.play().then(() => {
-        // Selepas berjaya dimainkan, buang listener interaksi
         document.removeEventListener('click', startAudio);
         document.removeEventListener('touchstart', startAudio);
         document.removeEventListener('scroll', startAudio);
@@ -420,9 +419,7 @@
       });
     }
 
-    // Cuba mainkan secara biasa dulu
     player.play().catch(() => {
-      // Jika pelayar menyekat autoplay, tunggu sebarang klik/sentuhan/scroll dari pengguna
       document.addEventListener('click', startAudio);
       document.addEventListener('touchstart', startAudio);
       document.addEventListener('scroll', startAudio);
@@ -460,7 +457,6 @@
           link.dataset.spaBound = "true";
           link.addEventListener('click', function(e) {
             e.preventDefault();
-            // Bermain audio jika belum bermula semasa klik pautan pertama
             if (player.paused) {
               player.play();
             }
