@@ -123,6 +123,11 @@
 
     .music-player h3 {
       color: #800000;
+      text-align: center;
+    }
+
+    .music-player p {
+      text-align: center;
     }
 
     .music-player audio {
@@ -137,9 +142,10 @@
       padding: 10px;
       background: #fff5f5;
       border-radius: 8px;
+      text-align: center;
     }
 
-    /* CONTENT & TEKS KE TENGAH */
+    /* CONTENT & TEKS */
     section {
       padding: 40px 10%;
     }
@@ -150,24 +156,32 @@
       margin-bottom: 30px;
       border-radius: 15px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
-      text-align: center;
+      text-align: left; /* ISI DI TEPI */
     }
 
+    /* TAJUK DI TENGAH */
     .card h2 {
       color: #800000;
       text-align: center;
     }
 
+    /* ISI KAT TEPI */
     .card p {
       line-height: 1.6;
-      text-align: center;
+      text-align: left;
     }
 
     .card ul {
       list-style-position: inside;
       padding-left: 0;
-      text-align: center;
+      text-align: left;
       line-height: 1.8;
+    }
+
+    /* CONTAINER BUTANG SUPAYA KEKAL DI TENGAH */
+    .btn-container {
+      text-align: center;
+      margin-top: 15px;
     }
 
     /* GAYA BUTANG SERAGAM */
@@ -183,7 +197,6 @@
       cursor: pointer;
       font-size: 16px;
       transition: background 0.3s, color 0.3s;
-      margin-top: 10px;
     }
 
     .button:hover, button:not(.menu-toggle):hover {
@@ -233,12 +246,17 @@
       border-radius: 10px;
     }
 
-    /* FOOTER */
+    /* FOOTER DI TENGAH */
     footer {
       background: #800000;
       color: white;
       text-align: center;
       padding: 20px;
+    }
+
+    footer p {
+      text-align: center;
+      margin: 0;
     }
 
     /* RESPONSIVE DESIGN */
@@ -334,7 +352,9 @@
         <p>
           Kelab Muzium dan Warisan Universiti Malaya (UMMHC) merupakan sebuah organisasi pelajar yang memberi fokus kepada aktiviti berkaitan muzium, sejarah, kebudayaan dan warisan yang diasaskan bersama oleh <strong>Encik Rizqullah Al-Bariq Bin Azmi</strong>, <strong>Mendiang Tan Aik Kai</strong>, <strong>Muhamad Faiz Azrin Bin Sapuwan</strong>, <strong>Muhammad Faisal Bin Zubir</strong>, dan <strong>Muhammad Haziq Bin Abdullah</strong>.
         </p>
-        <a class="button" href="sejarah.html">BACA SEJARAH</a>
+        <div class="btn-container">
+          <a class="button" href="sejarah.html">BACA SEJARAH</a>
+        </div>
       </div>
 
       <div class="card">
@@ -342,7 +362,9 @@
         <p>
           Ketahui struktur organisasi yang menggerakkan Kelab Muzium dan Warisan Universiti Malaya (UMMHC) yang dinasihati oleh Lembaga Penasihat, dipimpin oleh Majlis Tertinggi (MT) dan digerakkan oleh barisan Exco kelab.
         </p>
-        <a class="button" href="sekretariat.html">LIHAT SEKRETARIAT</a>
+        <div class="btn-container">
+          <a class="button" href="sekretariat.html">LIHAT SEKRETARIAT</a>
+        </div>
       </div>
 
       <div class="card">
@@ -359,7 +381,9 @@
           <li>Galeri Sultan Nazrin Shah</li>
           <li>Galeri Rimba Ilmu</li>
         </ul>
-        <a class="button" href="muzium-galeri.html">TEROKAI MUZIUM DAN GALERI</a>
+        <div class="btn-container">
+          <a class="button" href="muzium-galeri.html">TEROKAI MUZIUM DAN GALERI</a>
+        </div>
       </div>
 
       <div class="card">
@@ -371,7 +395,9 @@
           <li>Seminar dan Wacana Warisan</li>
           <li>Kolaborasi Bersama Agensi</li>
         </ul>
-        <a class="button" href="aktiviti.html">LIHAT AKTIVITI</a>
+        <div class="btn-container">
+          <a class="button" href="aktiviti.html">LIHAT AKTIVITI</a>
+        </div>
       </div>
 
       <div class="card">
@@ -389,7 +415,9 @@
           Universiti Malaya<br>
           Kuala Lumpur, Malaysia
         </p>
-        <a class="button" href="hubungi.html">HUBUNGI KAMI</a>
+        <div class="btn-container">
+          <a class="button" href="hubungi.html">HUBUNGI KAMI</a>
+        </div>
       </div>
     </section>
   </main>
