@@ -59,13 +59,33 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* BUTANG HAMBURGER (TERSEMBUNYI SECARA LALAI) */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 5px 15px;
+    }
+
+    .nav-links {
+      display: flex;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin: 15px;
+      margin: 0 15px;
       font-weight: bold;
+      padding: 5px 0;
     }
 
     nav a:hover {
@@ -88,7 +108,7 @@
       background: #800000;
     }
 
-    /* MUSIC PLAYER (KEKAL DI ATAS PROSES PENUKARAN HALAMAN) */
+    /* MUSIC PLAYER */
     .music-player {
       background: white;
       padding: 25px;
@@ -138,8 +158,8 @@
       line-height: 1.6;
     }
 
-    /* GAYA BUTANG SERAGAM (MERAH & EMAS) */
-    .button, button {
+    /* GAYA BUTANG SERAGAM */
+    .button, button:not(.menu-toggle) {
       display: inline-block;
       background: #800000 !important;
       color: white !important;
@@ -153,12 +173,12 @@
       transition: background 0.3s, color 0.3s;
     }
 
-    .button:hover, button:hover {
+    .button:hover, button:not(.menu-toggle):hover {
       background: #FFD700 !important;
       color: #800000 !important;
     }
 
-    /* CARTA ORGANISASI & GRID SEKRETARIAT ASAL */
+    /* CARTA ORGANISASI & GRID SEKRETARIAT */
     .org {
       text-align: center;
     }
@@ -207,14 +227,37 @@
       padding: 20px;
     }
 
-    @media(max-width:700px) {
-      header {
-        height: 250px;
+    /* RESPONSIVE DESIGN FOR MOBILE MENU */
+    @media(max-width:750px) {
+      nav {
+        justify-content: space-between;
+        padding: 10px 20px;
+      }
+
+      .menu-toggle {
+        display: block; /* Paparkan ikon ☰ pada skrin kecil */
+      }
+
+      .nav-links {
+        display: none; /* Sembunyikan pautan secara lalai */
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .nav-links.active {
+        display: flex; /* Paparkan menu apabila butang ☰ ditekan */
       }
 
       nav a {
-        display: block;
-        margin: 10px;
+        margin: 8px 0;
+        padding: 8px;
+        background: #660000;
+        border-radius: 5px;
+      }
+
+      header {
+        height: 250px;
       }
 
       .gallery img {
@@ -230,14 +273,17 @@
 
 <body>
 
-  <!-- MENU MERAH ATAS -->
+  <!-- MENU MERAH ATAS (BERSAMA FUNGSI MENU TERSEMBUNYI) -->
   <nav>
-    <a href="index.html">UTAMA</a>
-    <a href="sejarah.html">TENTANG KAMI</a>
-    <a href="sekretariat.html">SEKRETARIAT</a>
-    <a href="aktiviti.html">AKTIVITI</a>
-    <a href="galeri.html">GALERI</a>
-    <a href="hubungi.html">HUBUNGI KAMI</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Buka Menu">☰ MENU</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">UTAMA</a>
+      <a href="sejarah.html">TENTANG KAMI</a>
+      <a href="sekretariat.html">SEKRETARIAT</a>
+      <a href="aktiviti.html">AKTIVITI</a>
+      <a href="galeri.html">GALERI</a>
+      <a href="hubungi.html">HUBUNGI KAMI</a>
+    </div>
   </nav>
 
   <!-- HEADER GAMBAR -->
@@ -320,8 +366,17 @@
     <p>© 2025/2026 Kelab Muzium dan Warisan Universiti Malaya</p>
   </footer>
 
-  <!-- SCRIPT MUZIK & SPA NAVIGASI -->
+  <!-- SCRIPT MUZIK, MENU TERSEMBUNYI & SPA NAVIGASI -->
   <script>
+    // 1. Kawalan Menu Tersembunyi (Hamburger Menu)
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    // 2. Kawalan Pemain Muzik
     let songList = [{
       name: "Dato' Sri Siti Nurhaliza - Kesuma",
       src: "https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/Dato'_Sri_Siti_Nurhaliza_Kesuma_Accurate_Lyrics_Reupload_lirik.mp3"
@@ -333,6 +388,7 @@
     player.src = songList[0].src;
     title.innerHTML = "Sedang dimainkan: " + songList[0].name;
 
+    // 3. Kawalan Navigasi Dinamik (Lagu Kekal Dimainkan)
     function loadPage(url) {
       fetch(url)
         .then(response => {
@@ -351,6 +407,8 @@
             document.title = doc.title || "Kelab Muzium dan Warisan Universiti Malaya";
             window.scrollTo(0, 0);
             attachLinkListeners();
+            // Tutup menu secara automatik selepas pautan ditekan di telefon
+            navLinks.classList.remove("active");
           }
         })
         .catch(err => console.error("Ralat muat halaman:", err));
