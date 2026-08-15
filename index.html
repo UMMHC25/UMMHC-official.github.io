@@ -139,7 +139,7 @@
       border-radius: 8px;
     }
 
-    /* CONTENT */
+    /* CONTENT & TEKS KE TENGAH */
     section {
       padding: 40px 10%;
     }
@@ -150,6 +150,7 @@
       margin-bottom: 30px;
       border-radius: 15px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+      text-align: center;
     }
 
     .card h2 {
@@ -159,6 +160,14 @@
 
     .card p {
       line-height: 1.6;
+      text-align: center;
+    }
+
+    .card ul {
+      list-style-position: inside;
+      padding-left: 0;
+      text-align: center;
+      line-height: 1.8;
     }
 
     /* GAYA BUTANG SERAGAM */
@@ -174,6 +183,7 @@
       cursor: pointer;
       font-size: 16px;
       transition: background 0.3s, color 0.3s;
+      margin-top: 10px;
     }
 
     .button:hover, button:not(.menu-toggle):hover {
@@ -215,6 +225,7 @@
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     .gallery img {
@@ -323,7 +334,7 @@
         <p>
           Kelab Muzium dan Warisan Universiti Malaya (UMMHC) merupakan sebuah organisasi pelajar yang memberi fokus kepada aktiviti berkaitan muzium, sejarah, kebudayaan dan warisan yang diasaskan bersama oleh <strong>Encik Rizqullah Al-Bariq Bin Azmi</strong>, <strong>Mendiang Tan Aik Kai</strong>, <strong>Muhamad Faiz Azrin Bin Sapuwan</strong>, <strong>Muhammad Faisal Bin Zubir</strong>, dan <strong>Muhammad Haziq Bin Abdullah</strong>.
         </p>
-        <a class="button" href="sejarah.html">BACA SEJARAH KELAB MUZIUM DAN WARISAN UNIVERSITI MALAYA (UMMHC)</a>
+        <a class="button" href="sejarah.html">BACA SEJARAH</a>
       </div>
 
       <div class="card">
@@ -348,7 +359,7 @@
           <li>Galeri Sultan Nazrin Shah</li>
           <li>Galeri Rimba Ilmu</li>
         </ul>
-        <a class="button" href="muzium-galeri.html">TEROKAI MUZIUM & GALERI UM</a>
+        <a class="button" href="muzium-galeri.html">TEROKAI MUZIUM DAN GALERI</a>
       </div>
 
       <div class="card">
@@ -388,7 +399,7 @@
     <p>© 2025/2026 Kelab Muzium dan Warisan Universiti Malaya</p>
   </footer>
 
-  <!-- SCRIPT MUZIK (AUTO-PLAY PINTAR) & SPA NAVIGASI -->
+  <!-- SCRIPT MUZIK (PLAYLIST & AUTO-PLAY PINTAR) & SPA NAVIGASI -->
   <script>
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
@@ -397,18 +408,34 @@
       navLinks.classList.toggle("active");
     });
 
-    let songList = [{
-      name: "Dato' Sri Siti Nurhaliza - Kesuma",
-      src: "https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/Dato'_Sri_Siti_Nurhaliza_Kesuma_Accurate_Lyrics_Reupload_lirik.mp3"
-    }];
+    let songList = [
+      {
+        name: "Dato' Sri Siti Nurhaliza - Kesuma",
+        src: "https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/Dato'_Sri_Siti_Nurhaliza_Kesuma_Accurate_Lyrics_Reupload_lirik.mp3"
+      },
+      {
+        name: "Rencong",
+        src: "https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/rencong.mp3"
+      }
+    ];
 
+    let currentTrack = 0;
     let player = document.getElementById("audioPlayer");
     let title = document.getElementById("songName");
 
-    player.src = songList[0].src;
-    title.innerHTML = "Sedang dimainkan: " + songList[0].name;
+    function loadTrack(index) {
+      player.src = songList[index].src;
+      title.innerHTML = "Sedang dimainkan (" + (index + 1) + "/" + songList.length + "): " + songList[index].name;
+    }
 
-    // FUNGSI PINTAR UNTUK AUTOPLAY APABILA ADA INTERAKSI
+    loadTrack(currentTrack);
+
+    player.addEventListener("ended", () => {
+      currentTrack = (currentTrack + 1) % songList.length;
+      loadTrack(currentTrack);
+      player.play();
+    });
+
     function startAudio() {
       player.play().then(() => {
         document.removeEventListener('click', startAudio);
