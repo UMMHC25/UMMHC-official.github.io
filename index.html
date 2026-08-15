@@ -8,9 +8,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<meta name="google-site-verification" content="3MooSAGjA9Aqjdldq0f4K9h3Ft1CknMscefnj5NdBMw">
-
-
 <title>
 Kelab Muzium dan Warisan Universiti Malaya (UMMHC) | Laman Rasmi
 </title>
@@ -19,7 +16,6 @@ Kelab Muzium dan Warisan Universiti Malaya (UMMHC) | Laman Rasmi
 <meta name="application-name" content="Kelab Muzium dan Warisan Universiti Malaya">
 
 <meta property="og:site_name" content="Kelab Muzium dan Warisan Universiti Malaya">
-
 
 
 <meta name="description" content="Laman rasmi Kelab Muzium dan Warisan Universiti Malaya (UMMHC). Maklumat kelab, sekretariat, aktiviti, program warisan dan galeri.">
@@ -32,39 +28,8 @@ Kelab Muzium dan Warisan Universiti Malaya (UMMHC) | Laman Rasmi
 
 
 
-
-
-<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png">
-
-
-
-
-
-
-
-<script type="application/ld+json">
-
-{
-
-"@context":"https://schema.org",
-
-"@type":"Organization",
-
-"name":"Kelab Muzium dan Warisan Universiti Malaya",
-
-"alternateName":"UMMHC",
-
-"url":"https://ummhc25.github.io/UMMHC-official.github.io/",
-
-"logo":"https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png",
-
-"description":"Laman rasmi Kelab Muzium dan Warisan Universiti Malaya berkaitan sejarah, budaya dan warisan."
-
-}
-
-</script>
-
-
+<link rel="icon" type="image/png"
+href="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/LOGO.png">
 
 
 
@@ -76,15 +41,11 @@ Kelab Muzium dan Warisan Universiti Malaya (UMMHC) | Laman Rasmi
 <meta property="og:description" content="Laman rasmi UMMHC yang memaparkan sekretariat, aktiviti, program warisan dan galeri.">
 
 
-<meta property="og:image" content="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png">
-
-
-<meta property="og:url" content="https://ummhc25.github.io/UMMHC-official.github.io/">
+<meta property="og:image"
+content="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/LOGO.png">
 
 
 <meta property="og:type" content="website">
-
-
 
 
 
@@ -104,13 +65,14 @@ scroll-behavior:smooth;
 
 
 
-
-
 body{
+
 
 margin:0;
 
+
 font-family:"Segoe UI",Arial,sans-serif;
+
 
 
 background:
@@ -125,6 +87,7 @@ rgba(255,255,255,0.85)
 url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/77527381-a7e9-48d4-b26f-6abc8b8e22df.png");
 
 
+
 background-size:cover;
 
 
@@ -135,6 +98,7 @@ background-attachment:fixed;
 
 
 background-repeat:no-repeat;
+
 
 
 color:#333;
@@ -169,11 +133,10 @@ position:sticky;
 top:0;
 
 
-z-index:100;
+z-index:1000;
 
 
 }
-
 
 
 
@@ -212,6 +175,7 @@ color:#FFD700;
 
 
 
+
 /* HEADER GAMBAR */
 
 
@@ -221,13 +185,19 @@ header{
 background:
 
 
+
 linear-gradient(
+
 rgba(0,0,0,0.20),
+
 rgba(0,0,0,0.20)
+
 ),
 
 
+
 url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png");
+
 
 
 
@@ -238,6 +208,7 @@ background-position:center;
 
 
 background-repeat:no-repeat;
+
 
 
 height:350px;
@@ -273,9 +244,7 @@ background:#800000;
 
 
 
-
-
-/* MUSIC PLAYER */
+/* MUSIC BOX */
 
 
 .music-player{
@@ -296,16 +265,35 @@ border-radius:15px;
 text-align:center;
 
 
-box-shadow:0 5px 15px rgba(0,0,0,0.12);
+box-shadow:
+
+0 5px 15px rgba(0,0,0,0.12);
 
 
 
 }
 
-.music-player h3{
+
+
+
+.music-player h2{
 
 
 color:#800000;
+
+
+}
+
+
+
+
+.music-player p{
+
+
+color:#800000;
+
+
+font-weight:bold;
 
 
 }
@@ -318,39 +306,7 @@ color:#800000;
 width:100%;
 
 
-margin:15px 0;
-
-
-}
-
-
-
-
-.music-buttons button{
-
-
-background:#800000;
-
-
-color:white;
-
-
-border:none;
-
-
-padding:12px 20px;
-
-
-margin:5px;
-
-
-border-radius:8px;
-
-
-cursor:pointer;
-
-
-font-weight:bold;
+margin-top:15px;
 
 
 }
@@ -359,27 +315,28 @@ font-weight:bold;
 
 
 
+.song-title{
 
-
-
-
-#songName{
-
-color:#800000;
-
-font-weight:bold;
 
 margin-top:15px;
 
+
 padding:10px;
+
 
 background:#fff5f5;
 
+
 border-radius:8px;
 
+
+color:#800000;
+
+
+font-weight:bold;
+
+
 }
-
-
 
 
 
@@ -397,9 +354,6 @@ padding:40px 10%;
 
 
 }
-
-
-
 
 
 
@@ -422,14 +376,11 @@ border-radius:15px;
 
 box-shadow:
 
-
 0 5px 15px rgba(0,0,0,0.12);
 
 
 
 }
-
-
 
 
 
@@ -440,10 +391,6 @@ color:#800000;
 
 
 }
-
-
-
-
 
 
 
@@ -476,7 +423,6 @@ text-decoration:none;
 font-weight:bold;
 
 
-
 }
 
 
@@ -491,7 +437,6 @@ color:#800000;
 
 
 }
-
 
 
 
@@ -514,9 +459,7 @@ gap:20px;
 flex-wrap:wrap;
 
 
-
 }
-
 
 
 
@@ -530,10 +473,7 @@ width:30%;
 border-radius:10px;
 
 
-
 }
-
-
 
 
 
@@ -559,10 +499,7 @@ text-align:center;
 padding:20px;
 
 
-
 }
-
-
 
 
 
@@ -583,8 +520,6 @@ height:250px;
 
 
 
-
-
 nav a{
 
 
@@ -595,8 +530,6 @@ margin:10px;
 
 
 }
-
-
 
 
 
@@ -629,44 +562,64 @@ width:100%;
 
 
 
+<!-- MENU MERAH -->
 
-
-<!-- MENU MERAH ATAS -->
 
 <nav>
 
-<a href="index.html">
+
+<a href="#utama">
+
 UTAMA
+
 </a>
 
 
-<a href="music.html">
+
+<a href="#muzik">
+
 🎵 MUZIK WARISAN
+
 </a>
 
 
-<a href="sejarah.html">
+
+<a href="#tentang">
+
 TENTANG KAMI
+
 </a>
 
 
-<a href="sekretariat.html">
+
+<a href="#sekretariat">
+
 SEKRETARIAT
+
 </a>
 
 
-<a href="aktiviti.html">
+
+<a href="#aktiviti">
+
 AKTIVITI
+
 </a>
 
 
-<a href="galeri.html">
+
+<a href="#galeri">
+
 GALERI
+
 </a>
 
 
-<a href="hubungi.html">
+
+<a href="#hubungi">
+
 HUBUNGI KAMI
+
 </a>
 
 
@@ -677,13 +630,10 @@ HUBUNGI KAMI
 
 
 
-
-
-<!-- HEADER GAMBAR -->
+<!-- HEADER -->
 
 
 <header>
-
 
 </header>
 
@@ -691,57 +641,51 @@ HUBUNGI KAMI
 
 
 
-
-
-
-
-<!-- BAR MERAH BAWAH HEADER -->
-
-
 <div class="header-space">
-
 
 </div>
 
+<!-- MUZIK WARISAN -->
+
+<div class="music-player" id="muzik">
+
+
+<h2>
+🎵 MUZIK WARISAN KELAB MUZIUM DAN WARISAN UNIVERSITI MALAYA (UMMHC)
+</h2>
 
 
 
+<p>
 
-
-
-
-
-<!-- MAINKAN MUZIK KELAB MUZIUM DAN WARISAN UNIVERSITI MALAYA (UMMHC) -->
-
-<div class="music-player">
-
-
-<h3>
-🎵 MAINKAN MUZIK KELAB MUZIUM DAN WARISAN UNIVERSITI MALAYA (UMMHC)
-</h3>
-
-
-
-<p style="color:#800000; font-weight:bold;">
-
-✨ Sila tekan butang ▶ pada pemain muzik untuk menikmati pengalaman melayari laman rasmi Kelab Muzium dan Warisan (UMMHC) dengan iringan muzik warisan.
+✨ Sila tekan butang ▶ pada pemain muzik untuk menikmati pengalaman melayari laman rasmi UMMHC dengan iringan muzik warisan.
 
 </p>
 
 
 
+
 <audio id="audioPlayer" controls>
+
+
+<source src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/Dato'_Sri_Siti_Nurhaliza_Kesuma_Accurate_Lyrics_Reupload_lirik.mp3" type="audio/mpeg">
+
+
+Pelayar anda tidak menyokong audio.
+
 
 </audio>
 
 
 
-<p id="songName"></p>
+<div class="song-title" id="songName">
 
-
+Sedang dimainkan: Dato' Sri Siti Nurhaliza - Kesuma
 
 </div>
 
+
+</div>
 
 
 
@@ -758,11 +702,10 @@ HUBUNGI KAMI
 
 
 
+<!-- UTAMA -->
 
 
-
-<div class="card">
-
+<div class="card" id="utama">
 
 
 <h2>
@@ -773,15 +716,25 @@ SELAMAT DATANG KE LAMAN RASMI KELAB MUZIUM DAN WARISAN UNIVERSITI MALAYA (UMMHC)
 
 
 
+<p>
+
+
+Selamat datang ke laman rasmi Kelab Muzium dan Warisan Universiti Malaya (UMMHC).
+
+
+Kelab Muzium dan Warisan Universiti Malaya (UMMHC) merupakan sebuah kelab mahasiswa yang berperanan dalam mempromosikan pemeliharaan sejarah, budaya dan warisan.
+
+
+
+</p>
+
 
 
 <p>
 
 
-Selamat datang ke laman rasmi Kelab Muzium dan Warisan Universiti Malaya (UMMHC) .
+Laman rasmi ini memaparkan maklumat berkaitan kelab, struktur organisasi, aktiviti, program warisan serta galeri dokumentasi UMMHC.
 
-
-Kelab Muzium dan Warisan Universiti Malaya (UMMHC) merupakan sebuah kelab mahasiswa yang berperanan dalam mempromosikan pemeliharaan sejarah, budaya dan warisan.
 
 
 </p>
@@ -798,8 +751,10 @@ Kelab Muzium dan Warisan Universiti Malaya (UMMHC) merupakan sebuah kelab mahasi
 
 
 
-<div class="card">
+<!-- TENTANG KAMI -->
 
+
+<div class="card" id="tentang">
 
 
 <h2>
@@ -811,47 +766,14 @@ TENTANG KAMI
 
 
 
-
 <p>
 
 
 Kelab Muzium dan Warisan Universiti Malaya (UMMHC) merupakan sebuah organisasi pelajar yang memberi fokus kepada aktiviti berkaitan muzium, sejarah, kebudayaan dan warisan.
 
 
+
 </p>
-
-
-
-
-
-<a class="button" href="sejarah.html">
-
-BACA SEJARAH KELAB MUZIUM DAN WARISAN UNIVERSITI MALAYA (UMMHC)
-
-</a>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="card">
-
-
-
-<h2>
-
-SEKRETARIAT KELAB MUZIUM DAN WARISAN UNIVERSITI MALAYA (UMMHC) SESI 2025/2026
-
-</h2>
-
 
 
 
@@ -859,7 +781,8 @@ SEKRETARIAT KELAB MUZIUM DAN WARISAN UNIVERSITI MALAYA (UMMHC) SESI 2025/2026
 <p>
 
 
-Ketahui struktur organisasi yang menggerakkan Kelab Muzium dan Warisan Universiti Malaya (UMMHC) yang dinasihati oleh Lembaga Penasihat, dipimpin oleh Majlis Tertinggi (MT) dan digerakkan oleh barisan Exco kelab.
+Kelab ini berperanan sebagai platform mahasiswa Universiti Malaya untuk mengenali, menghargai serta memelihara khazanah sejarah dan warisan.
+
 
 
 </p>
@@ -867,55 +790,132 @@ Ketahui struktur organisasi yang menggerakkan Kelab Muzium dan Warisan Universit
 
 
 
+<h3>
 
-<a class="button" href="sekretariat.html">
+Sejarah Kelab Muzium dan Warisan Universiti Malaya (UMMHC)
 
-LIHAT SEKRETARIAT
+</h3>
 
-</a>
+
+
+<p>
+
+
+Kelab Muzium dan Warisan Universiti Malaya ditubuhkan bagi memperkukuhkan kesedaran mahasiswa terhadap kepentingan sejarah, budaya dan warisan.
+
+
+
+</p>
+
+
+
+
+<p>
+
+
+Melalui pelbagai program, aktiviti kebudayaan, lawatan muzium serta kerjasama bersama agensi berkaitan, UMMHC berusaha memupuk minat mahasiswa terhadap bidang warisan.
+
+
+
+</p>
+
+
+
+
+<p>
+
+
+Kelab ini juga menjadi medium untuk menghubungkan mahasiswa dengan komuniti serta institusi yang berkaitan dengan pemeliharaan warisan.
+
+
+
+</p>
 
 
 
 </div>
 
-<div class="card">
+<!-- SEKRETARIAT UMMHC -->
+
+
+<div class="card" id="sekretariat">
 
 
 <h2>
 
-AKTIVITI UMMHC
+SEKRETARIAT KELAB MUZIUM DAN WARISAN UNIVERSITI MALAYA (UMMHC)
 
 </h2>
 
 
 
+<p>
+
+
+Struktur organisasi Kelab Muzium dan Warisan Universiti Malaya (UMMHC) yang menggerakkan perancangan, pengurusan dan pelaksanaan aktiviti kelab.
+
+
+
+</p>
+
+
+
+
+<h3>
+
+Lembaga Penasihat
+
+</h3>
+
+
+
+<p>
+
+
+Lembaga Penasihat berperanan memberikan pandangan, nasihat serta bimbingan dalam memastikan perjalanan kelab berjalan dengan baik dan tersusun.
+
+
+
+</p>
+
+
+
+
+<h3>
+
+Majlis Tertinggi (MT)
+
+</h3>
+
 
 
 <ul>
 
-
 <li>
-Jelajah Warisan
+
+Yang Dipertua
+
 </li>
 
 
 <li>
-Program Muzium
+
+Naib Yang Dipertua
+
 </li>
 
 
 <li>
-Pameran Kebudayaan
+
+Setiausaha
+
 </li>
 
 
 <li>
-Seminar dan Wacana Warisan
-</li>
 
+Bendahari
 
-<li>
-Kolaborasi Bersama Agensi
 </li>
 
 
@@ -926,11 +926,54 @@ Kolaborasi Bersama Agensi
 
 
 
-<a class="button" href="aktiviti.html">
+<h3>
 
-LIHAT AKTIVITI
+Barisan Exco UMMHC
 
-</a>
+</h3>
+
+
+
+<ul>
+
+
+<li>
+
+Exco Aktiviti
+
+</li>
+
+
+<li>
+
+Exco Perhubungan Luar
+
+</li>
+
+
+<li>
+
+Exco Media dan Publisiti
+
+</li>
+
+
+<li>
+
+Exco Logistik dan Teknikal
+
+</li>
+
+
+<li>
+
+Exco Kebajikan
+
+</li>
+
+
+
+</ul>
 
 
 
@@ -944,16 +987,270 @@ LIHAT AKTIVITI
 
 
 
-<div class="card">
+<!-- SEKRETARIAT 2025/2026 -->
 
+
+<div class="card">
 
 
 <h2>
 
-GALERI
+SEKRETARIAT UMMHC SESI 2025/2026
 
 </h2>
 
+
+
+<p>
+
+
+Barisan kepimpinan Kelab Muzium dan Warisan Universiti Malaya (UMMHC) bagi sesi 2025/2026 yang terdiri daripada Lembaga Penasihat, Majlis Tertinggi (MT) serta barisan Exco kelab.
+
+
+
+</p>
+
+
+
+
+<h3>
+
+Lembaga Penasihat
+
+</h3>
+
+
+
+<p>
+
+Penasihat Kelab Muzium dan Warisan Universiti Malaya (UMMHC)
+
+</p>
+
+
+
+
+
+
+<h3>
+
+Majlis Tertinggi (MT)
+
+</h3>
+
+
+
+
+<ul>
+
+
+<li>
+
+Yang Dipertua
+
+</li>
+
+
+<li>
+
+Naib Yang Dipertua
+
+</li>
+
+
+<li>
+
+Setiausaha
+
+</li>
+
+
+<li>
+
+Bendahari
+
+</li>
+
+
+
+</ul>
+
+
+
+
+
+
+<h3>
+
+Exco UMMHC Sesi 2025/2026
+
+</h3>
+
+
+
+<ul>
+
+
+<li>
+
+Sekretariat
+
+</li>
+
+
+<li>
+
+Exco Aktiviti
+
+</li>
+
+
+<li>
+
+Exco Perhubungan Luar
+
+</li>
+
+
+<li>
+
+Exco Logistik dan Teknikal
+
+</li>
+
+
+<li>
+
+Exco Media dan Publisiti
+
+</li>
+
+
+<li>
+
+Exco Kebajikan
+
+</li>
+
+
+</ul>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- AKTIVITI UMMHC -->
+
+
+<div class="card" id="aktiviti">
+
+
+<h2>
+
+AKTIVITI UMMHC
+
+</h2>
+
+
+
+<p>
+
+
+Kelab Muzium dan Warisan Universiti Malaya (UMMHC) menjalankan pelbagai aktiviti berkaitan sejarah, budaya, muzium dan warisan.
+
+
+
+</p>
+
+
+
+
+<ul>
+
+
+<li>
+
+Jelajah Warisan
+
+</li>
+
+
+<li>
+
+Program Muzium
+
+</li>
+
+
+<li>
+
+Pameran Kebudayaan
+
+</li>
+
+
+<li>
+
+Seminar dan Wacana Warisan
+
+</li>
+
+
+<li>
+
+Kolaborasi Bersama Agensi
+
+</li>
+
+
+<li>
+
+Aktiviti Kesedaran Warisan
+
+</li>
+
+
+
+</ul>
+
+
+
+
+
+</div>
+
+
+<!-- GALERI -->
+
+
+<div class="card" id="galeri">
+
+
+<h2>
+
+GALERI UMMHC
+
+</h2>
+
+
+
+<p>
+
+
+Koleksi gambar aktiviti, logo dan dokumentasi Kelab Muzium dan Warisan Universiti Malaya (UMMHC).
+
+
+
+</p>
 
 
 
@@ -973,8 +1270,6 @@ alt="Header UMMHC">
 
 
 
-
-
 <img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/LOGO.png"
 
 alt="Logo UMMHC">
@@ -983,23 +1278,25 @@ alt="Logo UMMHC">
 
 
 
-
-</div>
-
-
-
 </div>
 
 
 
 
+</div>
 
 
 
 
 
-<div class="card">
 
+
+
+
+<!-- HUBUNGI KAMI -->
+
+
+<div class="card" id="hubungi">
 
 
 <h2>
@@ -1011,10 +1308,7 @@ HUBUNGI KAMI
 
 
 
-
-
 <p>
-
 
 Kelab Muzium dan Warisan<br>
 
@@ -1028,25 +1322,28 @@ Kuala Lumpur, Malaysia
 
 
 
+<p>
+
+Email:
+<br>
+
+unimalayamhc@gmail.com
+
+</p>
 
 
 
-<a class="button" href="hubungi.html">
 
+<a class="button" href="mailto:unimalayamhc@gmail.com">
 
-HUBUNGI KAMI
-
+EMAIL KAMI
 
 </a>
 
 
 
 
-
-
 </div>
-
-
 
 
 
@@ -1062,50 +1359,72 @@ HUBUNGI KAMI
 
 
 
-<!-- SCRIPT PLAYLIST UMMHC -->
+<!-- SCRIPT MUZIK -->
+
 
 <script>
 
-let songs=[
+
+const songs=[
+
 
 {
+
 name:"Dato' Sri Siti Nurhaliza - Kesuma",
 
-src:"https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/Dato'_Sri_Siti_Nurhaliza_Kesuma_Accurate_Lyrics_Reupload_lirik.mp3"
+src:"https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/Dato'_Sri_Siti_Nurhaliza_Kesuma_Accurate_Lyrics_Reupload_lirik.mp3"
+
 
 }
+
 
 ];
 
 
-let player=document.getElementById("audioPlayer");
-
-let title=document.getElementById("songName");
 
 
-player.src=songs[0].src;
+let currentSong=0;
 
 
-title.innerHTML="Sedang dimainkan: "+songs[0].name;
+const player=document.getElementById("audioPlayer");
+
+
+const title=document.getElementById("songName");
+
+
+
+
+
+player.src=songs[currentSong].src;
+
+
+title.innerHTML="Sedang dimainkan: "+songs[currentSong].name;
+
+
+
 
 
 </script>
-  
+
+
+
+
+
+
+
+
+
 <!-- FOOTER -->
 
 
 <footer>
 
 
-
 <p>
-
 
 © 2025/2026 Kelab Muzium dan Warisan Universiti Malaya
 
-
 </p>
-
 
 
 </footer>
@@ -1116,7 +1435,7 @@ title.innerHTML="Sedang dimainkan: "+songs[0].name;
 
 
 
-</body>
 
+</body>
 
 </html>
