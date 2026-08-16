@@ -2,311 +2,405 @@
 <html lang="ms">
 
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-<title>
-Sekretariat | Kelab Muzium dan Warisan Universiti Malaya
-</title>
-
-
-<style>
-
-
-body{
-
-margin:0;
-
-font-family:"Segoe UI",Arial,sans-serif;
-
-
-background:
-
-
-linear-gradient(
-rgba(255,255,255,0.85),
-rgba(255,255,255,0.85)
-),
-
-
-url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/77527381-a7e9-48d4-b26f-6abc8b8e22df.png");
-
-
-
-background-size:cover;
-
-
-background-position:center;
-
-
-background-attachment:fixed;
-
-
-background-repeat:no-repeat;
-
-
-color:#333;
-
-
-}
-
-
-
-header{
-
-background:
-
-linear-gradient(
-rgba(0,0,0,0.45),
-rgba(0,0,0,0.45)
-),
-
-url("HEADER.png");
-
-
-background-size:cover;
-
-background-position:center;
-
-padding:70px 20px;
-
-text-align:center;
-
-color:white;
-
-}
-
-
-
-.logo{
-
-width:150px;
-
-}
-
-
-
-nav{
-
-background:#800000;
-
-padding:15px;
-
-text-align:center;
-
-}
-
-
-
-nav a{
-
-color:white;
-
-text-decoration:none;
-
-margin:15px;
-
-font-weight:bold;
-
-}
-
-
-
-section{
-
-padding:50px 10%;
-
-}
-
-
-
-.card{
-
-background:white;
-
-padding:40px;
-
-border-radius:15px;
-
-text-align:center;
-
-box-shadow:0 5px 15px rgba(0,0,0,0.15);
-
-}
-
-
-
-button{
-
-background:#800000;
-
-color:white;
-
-padding:15px 35px;
-
-border:none;
-
-border-radius:10px;
-
-font-size:17px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-}
-
-
-
-button:hover{
-
-background:#FFD700;
-
-color:#800000;
-
-}
-
-
-
-footer{
-
-background:#800000;
-
-color:white;
-
-text-align:center;
-
-padding:20px;
-
-}
-
-
-
-</style>
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="3MooSAGjA9Aqjdldq0f4K9h3Ft1CknMscefnj5NdBMw">
+  <title>Sekretariat | Kelab Muzium dan Warisan Universiti Malaya (UMMHC)</title>
+
+  <meta name="application-name" content="Kelab Muzium dan Warisan Universiti Malaya">
+  <meta property="og:site_name" content="Kelab Muzium dan Warisan Universiti Malaya">
+  <meta name="description" content="Laman rasmi Kelab Muzium dan Warisan Universiti Malaya (UMMHC). Maklumat barisan sekretariat kelab.">
+  <meta name="keywords" content="Kelab Muzium dan Warisan Universiti Malaya, UMMHC, Museum and Heritage Club UM, Sekretariat UMMHC">
+  <meta name="author" content="Kelab Muzium dan Warisan Universiti Malaya">
+
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png">
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Kelab Muzium dan Warisan Universiti Malaya",
+    "alternateName":"UMMHC",
+    "url":"https://ummhc25.github.io/UMMHC-official.github.io/",
+    "logo":"https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png",
+    "description":"Laman rasmi Sekretariat Kelab Muzium dan Warisan Universiti Malaya."
+  }
+  </script>
+
+  <meta property="og:title" content="Sekretariat UMMHC">
+  <meta property="og:description" content="Maklumat barisan sekretariat Kelab Muzium dan Warisan Universiti Malaya.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png">
+  <meta property="og:url" content="https://ummhc25.github.io/UMMHC-official.github.io/sekretariat.html">
+  <meta property="og:type" content="website">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+        url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/77527381-a7e9-48d4-b26f-6abc8b8e22df.png");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      color: #333;
+    }
+
+    /* MENU MERAH ATAS */
+    nav {
+      background: #800000;
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* BUTANG HAMBURGER */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 5px 15px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 5px 12px;
+      font-weight: bold;
+      padding: 5px 0;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #FFD700;
+    }
+
+    /* HEADER GAMBAR KHAS SEKRETARIAT */
+    header {
+      background: linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)),
+        url("https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 350px;
+    }
+
+    /* BAR MERAH BAWAH HEADER */
+    .header-space {
+      height: 50px;
+      background: #800000;
+    }
+
+    /* MUSIC PLAYER */
+    .music-player {
+      background: white;
+      padding: 25px;
+      margin: 30px 10%;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+    }
+
+    .music-player h3 {
+      color: #800000;
+      text-align: center;
+    }
+
+    .music-player p {
+      text-align: center;
+    }
+
+    .music-player audio {
+      width: 100%;
+      margin: 15px 0;
+    }
+
+    #songName {
+      color: #800000;
+      font-weight: bold;
+      margin-top: 15px;
+      padding: 10px;
+      background: #fff5f5;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    /* CONTENT & TEKS */
+    section {
+      padding: 40px 10%;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      margin-bottom: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+      text-align: left;
+    }
+
+    /* TAJUK DI TENGAH */
+    .card h1, .card h2 {
+      color: #800000;
+      text-align: center;
+    }
+
+    /* ISI KAT TEPI */
+    .card p {
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    /* CONTAINER BUTANG SUPAYA KEKAL DI TENGAH */
+    .btn-container {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    /* GAYA BUTANG SERAGAM */
+    .button, button:not(.menu-toggle) {
+      display: inline-block;
+      background: #800000 !important;
+      color: white !important;
+      padding: 15px 35px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      font-size: 17px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .button:hover, button:not(.menu-toggle):hover {
+      background: #FFD700 !important;
+      color: #800000 !important;
+    }
+
+    /* FOOTER DI TENGAH */
+    footer {
+      background: #800000;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer p {
+      text-align: center;
+      margin: 0;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media(max-width:850px) {
+      nav {
+        justify-content: space-between;
+        padding: 10px 20px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      nav a {
+        margin: 6px 0;
+        padding: 8px;
+        background: #660000;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      header {
+        height: 250px;
+      }
+    }
+  </style>
 </head>
-
-
 
 <body>
 
-
-<header>
-
-
-<img src="LOGO.png" class="logo">
-
-
-<h1>
-SEKRETARIAT
-</h1>
-
-
-<h2>
-Kelab Muzium dan Warisan Universiti Malaya
-</h2>
-
-
-</header>
-
-
-
-
-<nav>
-
-
-<a href="index.html">
-UTAMA
-</a>
-
-
-<a href="sejarah.html">
-SEJARAH UMMHC
-</a>
-
-
-<a href="sekretariat.html">
-SEKRETARIAT
-</a>
-
-
-<a href="aktiviti.html">
-AKTIVITI
-</a>
-
-
-<a href="galeri.html">
-GALERI
-</a>
-
-
-</nav>
-
-
-
-
-
-<section>
-
-
-<div class="card">
-
-
-<h1>
-SEKRETARIAT KELAB MUZIUM DAN WARISAN
-</h1>
-
-
-
-<p>
-
-Laman ini memaparkan maklumat berkaitan
-barisan sekretariat Kelab Muzium dan Warisan
-Universiti Malaya.
-
-</p>
-
-
-
-<br>
-
-
-<a href="sekretariat-2025.html">
-
-
-<button>
-
-SEKRETARIAT UMMHC SESI 2025/2026
-
-</button>
-
-
-</a>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-<footer>
-
-
-© 2025/2026 Kelab Muzium dan Warisan Universiti Malaya
-
-
-</footer>
-
-
+  <!-- MENU MERAH ATAS -->
+  <nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Buka Menu">☰ MENU</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">UTAMA</a>
+      <a href="sejarah.html">SEJARAH UMMHC</a>
+      <a href="sekretariat.html">SEKRETARIAT</a>
+      <a href="aktiviti.html">AKTIVITI</a>
+      <a href="galeri.html">GALERI</a>
+    </div>
+  </nav>
+
+  <!-- HEADER GAMBAR KHAS SEKRETARIAT -->
+  <header></header>
+
+  <!-- BAR MERAH BAWAH HEADER -->
+  <div class="header-space"></div>
+
+  <!-- MUSIC PLAYER -->
+  <div class="music-player">
+    <h3>🎵 MAINKAN MUZIK KELAB MUZIUM DAN WARISAN UNIVERSITI MALAYA (UMMHC)</h3>
+    <p style="color:#800000; font-weight:bold;">
+      ✨ Muzik warisan akan dimainkan secara automatik untuk mengiringi perjalanan anda di laman rasmi Kelab Muzium dan Warisan (UMMHC).
+    </p>
+    <audio id="audioPlayer" controls autoplay></audio>
+    <p id="songName"></p>
+  </div>
+
+  <!-- KANDUNGAN UTAMA -->
+  <main id="app-content">
+    <section>
+      <div class="card">
+        <h1>SEKRETARIAT KELAB MUZIUM DAN WARISAN</h1>
+        <p>
+          Laman ini memaparkan maklumat berkaitan barisan sekretariat Kelab Muzium dan Warisan Universiti Malaya.
+        </p>
+        <div class="btn-container">
+          <a href="sekretariat-2025.html" class="button">
+            SEKRETARIAT UMMHC SESI 2025/2026
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025/2026 Kelab Muzium dan Warisan Universiti Malaya</p>
+  </footer>
+
+  <!-- SCRIPT MUZIK & SPA NAVIGASI -->
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    let songList = [
+      {
+        name: "Dato' Sri Siti Nurhaliza - Kesuma",
+        src: "https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/Dato'_Sri_Siti_Nurhaliza_Kesuma_Accurate_Lyrics_Reupload_lirik.mp3"
+      },
+      {
+        name: "Dato' Sri Siti Nurhaliza - Rencong",
+        src: "https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/Dato'%20Sri%20Siti%20Nurhaliza%20-%20Rencong%20(%20Lirik%20).mp3"
+      }
+    ];
+
+    let currentTrack = 0;
+    let player = document.getElementById("audioPlayer");
+    let title = document.getElementById("songName");
+
+    function loadTrack(index) {
+      player.src = songList[index].src;
+      title.innerHTML = "Sedang dimainkan (" + (index + 1) + "/" + songList.length + "): " + songList[index].name;
+    }
+
+    loadTrack(currentTrack);
+
+    player.addEventListener("ended", () => {
+      currentTrack = (currentTrack + 1) % songList.length;
+      loadTrack(currentTrack);
+      player.play();
+    });
+
+    function startAudio() {
+      player.play().then(() => {
+        document.removeEventListener('click', startAudio);
+        document.removeEventListener('touchstart', startAudio);
+        document.removeEventListener('scroll', startAudio);
+      }).catch(err => {
+        console.log("Menunggu interaksi pengguna untuk memainkan lagu.");
+      });
+    }
+
+    player.play().catch(() => {
+      document.addEventListener('click', startAudio);
+      document.addEventListener('touchstart', startAudio);
+      document.addEventListener('scroll', startAudio);
+    });
+
+    function loadPage(url) {
+      fetch(url)
+        .then(response => {
+          if (!response.ok) throw new Error("Halaman tidak dijumpai");
+          return response.text();
+        })
+        .then(html => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+
+          const newSection = doc.querySelector('section');
+          const contentContainer = document.getElementById('app-content');
+
+          if (newSection && contentContainer) {
+            contentContainer.innerHTML = newSection.outerHTML;
+            document.title = doc.title || "Kelab Muzium dan Warisan Universiti Malaya";
+            window.scrollTo(0, 0);
+            attachLinkListeners();
+            navLinks.classList.remove("active");
+          }
+        })
+        .catch(err => console.error("Ralat muat halaman:", err));
+    }
+
+    function attachLinkListeners() {
+      document.querySelectorAll('a').forEach(link => {
+        const href = link.getAttribute('href');
+
+        if (href && href.endsWith('.html') && !href.startsWith('http') && !link.dataset.spaBound) {
+          link.dataset.spaBound = "true";
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (player.paused) {
+              player.play();
+            }
+            loadPage(href);
+            history.pushState({ page: href }, '', href);
+          });
+        }
+      });
+    }
+
+    window.addEventListener('popstate', (e) => {
+      const page = e.state ? e.state.page : 'sekretariat.html';
+      loadPage(page);
+    });
+
+    attachLinkListeners();
+  </script>
 
 </body>
-
 </html>
