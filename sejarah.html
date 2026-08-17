@@ -72,12 +72,16 @@
     nav a {
       color: white;
       text-decoration: none;
-      margin: 15px;
+      margin: 0 15px;
+      padding: 5px 0;
       font-weight: bold;
+      display: inline-block;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav a.active {
       color: #FFD700;
+      border-bottom: 2px solid #FFD700;
     }
 
     /* CONTENT */
@@ -111,8 +115,9 @@
     /* PENGGUNAAN FLEXBOX BAGI MENGELAKKAN RUANG RUNTUH ATAU LARI */
     .founders-grid {
       display: flex;
-      flex-wrap: nowrap; /* Memaksa 4 kad sentiasa sebaris */
+      flex-wrap: nowrap; /* Memaksa 4 kad sentiasa sebaris di desktop */
       justify-content: space-between;
+      align-items: stretch; /* Memastikan ketinggian kad seimbang */
       gap: 15px;
       margin-top: 20px;
       width: 100%;
@@ -168,6 +173,7 @@
       flex-direction: column;
       flex-grow: 1;
       width: 100%;
+      word-break: break-word;
     }
 
     .founder-card.lead-founder .founder-info {
@@ -223,7 +229,7 @@
       }
       nav a {
         display: block;
-        margin: 10px;
+        margin: 10px 0;
       }
     }
 
@@ -238,14 +244,14 @@
 <body>
 
   <header>
-    <img src="LOGO.png?v=10" class="logo" alt="Logo UMMHC">
+    <img src="LOGO.png?v=10" class="logo" alt="Logo Kelab Muzium dan Warisan Universiti Malaya">
     <h1>SEJARAH UMMHC</h1>
     <h2>Kelab Muzium dan Warisan Universiti Malaya</h2>
   </header>
 
   <nav>
     <a href="index.html">UTAMA</a>
-    <a href="sejarah.html">SEJARAH UMMHC</a>
+    <a href="sejarah.html" class="active">SEJARAH UMMHC</a>
     <a href="sekretariat.html">SEKRETARIAT</a>
     <a href="aktiviti.html">AKTIVITI</a>
     <a href="galeri.html">GALERI</a>
@@ -256,7 +262,9 @@
 
     <div class="card">
       <h2>PENGENALAN KELAB</h2>
-      <p></p>
+      <p>
+        Kelab Muzium dan Warisan Universiti Malaya (UMMHC) merupakan sebuah kelab mahasiswa rasmi yang berfokus kepada pemeliharaan, apresiasi, dan promosi muzium, galeri, serta khazanah warisan di Universiti Malaya. UMMHC berperanan sebagai platfom penggerak aktiviti kebudayaan, keilmuan, dan sejarah dalam memupuk kesedaran warisan di kalangan warga kampus serta masyarakat luar.
+      </p>
     </div>
 
     <div class="card">
@@ -275,7 +283,7 @@
 
       <!-- PENGASAS UTAMA (ENCIK BARIQ) -->
       <div class="founder-card lead-founder">
-        <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/photo_2026-08-17_11-57-11.jpg?v=10" alt="Encik Rizqullah Al-Bariq Bin Azmi">
+        <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/photo_2026-08-17_11-57-11.jpg?v=10" alt="Potret Encik Rizqullah Al-Bariq Bin Azmi" loading="lazy">
         <div class="founder-info">
           <div class="name"><strong>Encik Rizqullah Al-Bariq Bin Azmi</strong></div>
           <div class="role-title">Pengasas Utama <br>Kelab Muzium dan Warisan Universiti Malaya</div>
@@ -290,7 +298,7 @@
         
         <!-- PENGASAS 2 (KAI) -->
         <div class="founder-card">
-          <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/photo_2026-08-17_19-26-50-Picsart-AiImageEnhancer-removebg-preview.png?v=10" alt="Mendiang Tan Aik Kai">
+          <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/photo_2026-08-17_19-26-50-Picsart-AiImageEnhancer-removebg-preview.png?v=10" alt="Potret Mendiang Tan Aik Kai" loading="lazy">
           <div class="founder-info">
             <div class="name"><strong>Mendiang Tan Aik Kai</strong></div>
             <div class="role-title">Pengasas Bersama<br>Kelab Muzium dan Warisan Universiti Malaya</div>
@@ -302,7 +310,7 @@
 
         <!-- PENGASAS 3 (FAIZ) -->
         <div class="founder-card">
-          <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/photo_2026-08-17_19-26-48-Picsart-AiImageEnhancer-removebg-preview.png?v=10" alt="Muhamad Faiz Azrin Bin Sapuwan">
+          <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/photo_2026-08-17_19-26-48-Picsart-AiImageEnhancer-removebg-preview.png?v=10" alt="Potret Muhamad Faiz Azrin Bin Sapuwan" loading="lazy">
           <div class="founder-info">
             <div class="name"><strong>Muhamad Faiz Azrin Bin Sapuwan</strong></div>
             <div class="role-title">Pengasas Bersama<br>Kelab Muzium dan Warisan Universiti Malaya</div>
@@ -314,7 +322,7 @@
 
         <!-- PENGASAS 4 (FAISAL) -->
         <div class="founder-card">
-          <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/LATIHAN%20INDUSTRI%20MUZIUM%20PERUBATAN%20TAN%20SRI%20DR.%20LIM%20WEE%20CHAI.png?v=10" alt="Muhammad Faisal Bin Zubir">
+          <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/LATIHAN%20INDUSTRI%20MUZIUM%20PERUBATAN%20TAN%20SRI%20DR.%20LIM%20WEE%20CHAI.png?v=10" alt="Potret Muhammad Faisal Bin Zubir" loading="lazy">
           <div class="founder-info">
             <div class="name"><strong>Muhammad Faisal Bin Zubir</strong></div>
             <div class="role-title">Pengasas Bersama<br>Kelab Muzium dan Warisan Universiti Malaya</div>
@@ -326,7 +334,7 @@
 
         <!-- PENGASAS 5 (HAZIQ) -->
         <div class="founder-card">
-          <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/photo_2026-08-17_19-13-55-Picsart-AiImageEnhancer-removebg-preview.png?v=10" alt="Muhammad Haziq Bin Abdullah">
+          <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/photo_2026-08-17_19-13-55-Picsart-AiImageEnhancer-removebg-preview.png?v=10" alt="Potret Muhammad Haziq Bin Abdullah" loading="lazy">
           <div class="founder-info">
             <div class="name"><strong>Muhammad Haziq Bin Abdullah</strong></div>
             <div class="role-title">Pengasas Bersama<br>Kelab Muzium dan Warisan Universiti Malaya</div>
