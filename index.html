@@ -112,7 +112,6 @@
       transform: scale(1.1);
     }
 
-    /* SUSUNAN 2 RUANGAN SEBELAH-MENSEBELAH */
     .ad-poster-col {
       display: table-cell;
       width: 45%;
@@ -202,7 +201,6 @@
       flex-wrap: wrap;
     }
 
-    /* BUTANG HAMBURGER */
     .menu-toggle {
       display: none;
       background: none;
@@ -232,20 +230,23 @@
       color: #FFD700;
     }
 
-    /* HEADER GAMBAR ASAL INDEX */
+    /* HEADER FULL - DENGAN ASPECT RATIO */
     header {
-      background: linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)),
+      background: linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)),
         url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png");
-      background-size: cover;
+      background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
-      height: 350px;
+      background-color: #800000;
+      width: 100%;
+      height: 0;
+      padding-top: 32%; /* Nisbah tinggi gambar supaya nampak penuh */
       transition: background 0.3s ease-in-out;
     }
 
     /* BAR MERAH BAWAH HEADER */
     .header-space {
-      height: 50px;
+      height: 20px;
       background: #800000;
     }
 
@@ -297,13 +298,11 @@
       text-align: left;
     }
 
-    /* TAJUK DI TENGAH */
     .card h2 {
       color: #800000;
       text-align: center;
     }
 
-    /* ISI KAT TEPI */
     .card p {
       line-height: 1.6;
       text-align: left;
@@ -316,13 +315,11 @@
       line-height: 1.8;
     }
 
-    /* CONTAINER BUTANG SUPAYA KEKAL DI TENGAH */
     .btn-container {
       text-align: center;
       margin-top: 15px;
     }
 
-    /* GAYA BUTANG SERAGAM */
     .button, button:not(.menu-toggle):not(.ad-popup-close) {
       display: inline-block;
       background: #800000 !important;
@@ -355,7 +352,6 @@
       border-radius: 10px;
     }
 
-    /* FOOTER DI TENGAH */
     footer {
       background: #800000;
       color: white;
@@ -410,7 +406,7 @@
       }
 
       header {
-        height: 250px;
+        padding-top: 50%; /* Menyesuaikan ketinggian header pada telefon bimbit */
       }
 
       .gallery img {
@@ -422,17 +418,15 @@
 
 <body>
 
-  <!-- POPUP IKLAN (SEBELAH-MENSEBELAH: POSTER KIRI, KAPSYEN KANAN) -->
+  <!-- POPUP IKLAN -->
   <div class="ad-popup-overlay" id="adPopup">
     <div class="ad-popup-content">
       <button class="ad-popup-close" id="closeAdBtn" aria-label="Tutup Iklan">&times;</button>
       
-      <!-- RUANGAN KIRI: POSTER -->
       <div class="ad-poster-col">
         <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/photo_2026-08-17_08-50-33.jpg" alt="Iklan UMMHC" class="ad-popup-img">
       </div>
       
-      <!-- RUANGAN KANAN: KAPSYEN & FONT ROYAL -->
       <div class="ad-caption-col">
         <div class="royal-heading">✨ AKAN DATANG ✨</div>
         <div class="royal-subheading">SATU SIRI: JEJAK WARISAN NEGERI 🌿</div>
@@ -475,7 +469,7 @@
     </div>
   </nav>
 
-  <!-- HEADER GAMBAR -->
+  <!-- HEADER GAMBAR FULL -->
   <header id="mainHeader"></header>
 
   <!-- BAR MERAH BAWAH HEADER -->
@@ -582,9 +576,7 @@
     <p>© 2025/2026 Kelab Muzium dan Warisan Universiti Malaya</p>
   </footer>
 
-  <!-- SCRIPT MUZIK, POPUP & SPA NAVIGASI -->
   <script>
-    // SCRIPT POPUP IKLAN
     const adPopup = document.getElementById("adPopup");
     const closeAdBtn = document.getElementById("closeAdBtn");
 
@@ -598,7 +590,6 @@
       }
     });
 
-    // SCRIPT MENU
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
     const mainHeader = document.getElementById("mainHeader");
@@ -653,9 +644,9 @@
 
     function updateHeaderImage(url) {
       if (url.includes("sekretariat.html")) {
-        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)), url("https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png")';
+        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url("https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png")';
       } else {
-        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)), url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png")';
+        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png")';
       }
     }
 
