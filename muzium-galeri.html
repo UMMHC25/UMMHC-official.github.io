@@ -17,38 +17,41 @@
     }
 
     section {
-      padding: 40px 5%;
+      padding: 30px 5%;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     /* SUSUNAN GRID 2 KOLUM SEBELAH-MENYEBELAH */
     .museum-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2 Kolum Sebelah-menyebelah */
-      gap: 25px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
       align-items: stretch;
     }
 
     .card {
       background: white;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       text-align: left;
       width: 100%;
       overflow: hidden;
+      border: 1px solid #e2e8f0;
     }
 
-    /* KOTAK GAMBAR */
+    /* KOTAK GAMBAR COMPACT */
     .card-image-box {
       width: 100%;
-      height: 220px;
-      border-radius: 10px;
+      height: 130px;
+      border-radius: 6px;
       overflow: hidden;
-      margin-bottom: 8px;
-      background: #fafafa;
+      margin-bottom: 5px;
+      background: #f8f9fa;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -59,17 +62,17 @@
       width: 100% !important;
       height: 100% !important;
       object-fit: cover !important;
-      object-position: top center !important;
-      border-radius: 10px;
+      object-position: center !important;
+      border-radius: 6px;
       display: block;
     }
 
-    /* TEKS KREDIT GAMBAR */
+    /* KREDIT GAMBAR COMPACT */
     .image-credit {
-      font-size: 11px;
+      font-size: 10px;
       color: #666;
       text-align: center;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       width: 100%;
     }
 
@@ -87,33 +90,43 @@
       color: #800000;
       text-align: center;
       margin-top: 0;
-      margin-bottom: 15px;
-      border-bottom: 2px solid #800000;
-      padding-bottom: 10px;
-      font-size: 1.25rem;
+      margin-bottom: 8px;
+      border-bottom: 1.5px solid #800000;
+      padding-bottom: 5px;
+      font-size: 1.05rem;
       width: 100%;
+      letter-spacing: 0.5px;
     }
 
     .card p {
-      line-height: 1.6;
+      line-height: 1.45;
       color: #333;
-      margin-bottom: 15px;
+      font-size: 0.88rem;
+      margin-top: 0;
+      margin-bottom: 10px;
       width: 100%;
     }
 
     .card ul {
-      line-height: 1.8;
+      line-height: 1.5;
       color: #444;
-      padding-left: 20px;
-      margin-top: auto; /* Memastikan senarai duduk kemas di bahagian bawah */
+      font-size: 0.83rem;
+      padding-left: 16px;
+      margin-top: auto;
       margin-bottom: 0;
       width: 100%;
     }
 
-    /* KAWALAN UNTUK TELEFON BIMBIT (1 KOLUM) */
+    .card ul li {
+      margin-bottom: 3px;
+    }
+
     @media (max-width: 768px) {
       .museum-grid {
-        grid-template-columns: 1fr; /* Bertukar 1 kolum pada telefon */
+        grid-template-columns: 1fr;
+      }
+      section {
+        padding: 20px 4%;
       }
     }
   </style>
@@ -132,7 +145,7 @@
         </div>
         <h2>1. MUZIUM SENI ASIA</h2>
         <p>
-          Muzium Seni Asia Universiti Malaya merumuskan kepelbagaian seni dan kebudayaan dari pelbagai tamadun Asia termasuk tamadun Melayu, Cina, India dan Asia Tenggara. Muzium ini menyimpan ribuan koleksi khazanah bersejarah seperti seramik purba, tekstil warisan, patung keagamaan, serta senjata tradisional.
+          Merumuskan kepelbagaian seni dan kebudayaan dari pelbagai tamadun Asia termasuk tamadun Melayu, Cina, India dan Asia Tenggara. Menyimpan ribuan koleksi khazanah bersejarah seperti seramik purba, tekstil warisan, patung keagamaan, serta senjata tradisional.
         </p>
         <ul>
           <li><strong>Koleksi Utama:</strong> Seramik dinasti purba, tekstil patola, arca tembaga dan keris warisan.</li>
@@ -150,10 +163,10 @@
         </div>
         <h2>2. MUZIUM ETNOGRAFI MELAYU</h2>
         <p>
-          Muzium Etnografi Melayu didedikasikan khas untuk memelihara dan menonjolkan cara hidup, budaya, dan kraf tradisional masyarakat Melayu. Koleksi di sini merangkumi alatan domestik, alatan pertanian, seni pertukangan kayu, pakaian tradisional, serta kelengkapan adat istiadat.
+          Didedikasikan khas untuk memelihara dan menonjolkan cara hidup, budaya, dan kraf tradisional masyarakat Melayu. Koleksi di sini merangkumi alatan domestik, alatan pertanian, seni pertukangan kayu, pakaian tradisional, serta kelengkapan adat istiadat.
         </p>
         <ul>
-          <li><strong>Koleksi Utama:</strong> Peralatan menenun, senjata tradisional, model rumah Melayu, dan alat muzik tradisional.</li>
+          <li><strong>Koleksi Utama:</strong> Peralatan menenun, senjata tradisional, model rumah Melayu, dan alat muzik.</li>
           <li><strong>Fungsi:</strong> Memelihara warisan etnografi dan kearifan tempatan masyarakat Melayu.</li>
         </ul>
       </div>
@@ -162,7 +175,7 @@
       <div class="card">
         <h2>3. MUZIUM ZOOLOGI</h2>
         <p>
-          Terletak di bawah Fakulti Sains, Muzium Zoologi Universiti Malaya merupakan muzium spesimen hidupan haiwan yang amat penting bagi tujuan pendidikan dan penyelidikan biodiversiti. Ia menyimpan pelbagai spesimen haiwan darat dan marin dari seluruh Malaysia dan rantau sekitarnya.
+          Terletak di bawah Fakulti Sains, merupakan muzium spesimen hidupan haiwan yang amat penting bagi tujuan pendidikan dan penyelidikan biodiversiti. Ia menyimpan pelbagai spesimen haiwan darat dan marin dari seluruh Malaysia.
         </p>
         <ul>
           <li><strong>Koleksi Utama:</strong> Spesimen taksidermi haiwan liar, koleksi serangga, rangka mamalia, dan spesimen marin.</li>
@@ -180,10 +193,10 @@
         </div>
         <h2>4. MUZIUM GEOLOGI</h2>
         <p>
-          Muzium Geologi Universiti Malaya mempamerkan pelbagai koleksi batuan, mineral, dan fosil purba yang memberikan gambaran jelas mengenai sejarah geologi dan pembentukan bumi, terutamanya di Semenanjung Malaysia dan Borneo.
+          Mempamerkan pelbagai koleksi batuan, mineral, dan fosil purba yang memberikan gambaran jelas mengenai sejarah geologi dan pembentukan bumi, terutamanya di Semenanjung Malaysia dan Borneo.
         </p>
         <ul>
-          <li><strong>Koleksi Utama:</strong> Fosil tumbuhan dan haiwan purba, batuan metamorf dan igneus, serta spesimen mineral nadir.</li>
+          <li><strong>Koleksi Utama:</strong> Fosil tumbuhan dan haiwan purba, batuan metamorf, serta spesimen mineral nadir.</li>
           <li><strong>Fungsi:</strong> Rujukan pembelajaran sains bumi, geowarisan, dan pemetaan geologi.</li>
         </ul>
       </div>
@@ -192,7 +205,7 @@
       <div class="card">
         <h2>5. MUZIUM PERUBATAN TAN SRI DR. LIM WEE CHAI</h2>
         <p>
-          Muzium ini terletak di Fakulti Perubatan Universiti Malaya dan memaparkan sejarah perkembangan sains perubatan, peralatan perubatan era awal, serta sumbangan tokoh-tokoh perubatan tempatan dan antarabangsa.
+          Terletak di Fakulti Perubatan Universiti Malaya dan memaparkan sejarah perkembangan sains perubatan, peralatan perubatan era awal, serta sumbangan tokoh-tokoh perubatan tempatan dan antarabangsa.
         </p>
         <ul>
           <li><strong>Koleksi Utama:</strong> Alat perubatan antik, model anatomi bersejarah, serta arkib dokumentasi perubatan awal UM.</li>
@@ -204,11 +217,11 @@
       <div class="card">
         <h2>6. GALERI SULTAN NAZRIN SHAH</h2>
         <p>
-          Galeri Sultan Nazrin Shah merupakan sebuah ruang seni dan pameran eksklusif yang dinamakan sempena Canselor Universiti Malaya. Galeri ini menjadi pentas utama pameran seni halus, seni kontemporari, serta koleksi lukisan daripada seniman terkemuka.
+          Sebuah ruang seni dan pameran eksklusif yang dinamakan sempena Canselor Universiti Malaya. Galeri ini menjadi pentas utama pameran seni halus, seni kontemporari, serta koleksi lukisan daripada seniman terkemuka.
         </p>
         <ul>
           <li><strong>Koleksi Utama:</strong> Karya seni lukis kontemporari, seni arca moden, dan pameran bertema khas.</li>
-          <li><strong>Fungsi:</strong> Menggalakkan aprasiasi seni visual dan wacana kebudayaan antarabangsa.</li>
+          <li><strong>Fungsi:</strong> Menggalakkan apresiasi seni visual dan wacana kebudayaan antarabangsa.</li>
         </ul>
       </div>
 
@@ -216,10 +229,10 @@
       <div class="card">
         <h2>7. GALERI RIMBA ILMU</h2>
         <p>
-          Galeri Rimba Ilmu terletak di dalam Taman Botani Rimba Ilmu Universiti Malaya. Galeri ini memberi fokus kepada pemeliharaan alam sekitar, pemuliharaan flora, serta biodiversiti tumbuhan hutan hujan tropika.
+          Terletak di dalam Taman Botani Rimba Ilmu Universiti Malaya. Galeri ini memberi fokus kepada pemeliharaan alam sekitar, pemuliharaan flora, serta biodiversiti tumbuhan hutan hujan tropika.
         </p>
         <ul>
-          <li><strong>Koleksi Utama:</strong> Spesimen herbarium, maklumat pemuliharaan spesies tumbuhan terancam, dan eksibit ekologi hutan.</li>
+          <li><strong>Koleksi Utama:</strong> Spesimen herbarium, maklumat pemuliharaan tumbuhan terancam, dan eksibit ekologi hutan.</li>
           <li><strong>Fungsi:</strong> Pusat kesedaran alam sekitar, pendidikan botani, dan kajian sains tumbuhan.</li>
         </ul>
       </div>
