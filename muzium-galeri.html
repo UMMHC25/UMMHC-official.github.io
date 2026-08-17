@@ -35,17 +35,24 @@
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
       display: flex;
       flex-direction: column;
-      overflow: hidden; /* Memastikan tiada elemen terkeluar */
+      overflow: hidden;
     }
 
-    /* Kawalan Gambar Supaya Ngam-Ngam Dalam Kad */
-    .card img {
+    /* KONTENA KHAS GAMBAR - MEMASTIKAN GAMBAR SENTIASA KEMAS DALAM KOTAK */
+    .card-image-container {
       width: 100%;
-      max-width: 100%;
       height: 200px;
-      object-fit: cover;
       border-radius: 10px;
+      overflow: hidden;
+      background-color: #e9ecef;
       margin-bottom: 8px;
+      flex-shrink: 0;
+    }
+
+    .card-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
     }
 
@@ -97,7 +104,9 @@
     <div class="museum-grid">
       <!-- KOTAK 1 -->
       <div class="card">
-        <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/images%20(2).jfif" alt="Muzium Seni Asia">
+        <div class="card-image-container">
+          <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/images%20(2).jfif" alt="Muzium Seni Asia">
+        </div>
         <div class="image-credit">
           Sumber Gambar: <a href="https://www.instagram.com/p/Cz77Yp4vUcz/" target="_blank" rel="noopener noreferrer">Instagram Muzium Seni Asia</a>
         </div>
@@ -113,7 +122,9 @@
 
       <!-- KOTAK 2 -->
       <div class="card">
-        <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/MUZIUM%20ETNOGRAFI%20MELAYU.jpg" alt="Muzium Etnografi Melayu">
+        <div class="card-image-container">
+          <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/MUZIUM%20ETNOGRAFI%20MELAYU.jpg" alt="Muzium Etnografi Melayu">
+        </div>
         <div class="image-credit">
           Sumber Gambar: <a href="https://web.facebook.com/muziumetnografimelayu.apmum/?_rdc=1&_rdr#" target="_blank" rel="noopener noreferrer">Facebook Muzium Etnografi Melayu</a>
         </div>
@@ -141,7 +152,9 @@
 
       <!-- KOTAK 4 -->
       <div class="card">
-        <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/MUZIUM%20GEOLOGI.jpg" alt="Muzium Geologi">
+        <div class="card-image-container">
+          <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/MUZIUM%20GEOLOGI.jpg" alt="Muzium Geologi">
+        </div>
         <div class="image-credit">
           Sumber Gambar: <a href="https://geology.um.edu.my/geology-museum" target="_blank" rel="noopener noreferrer">Laman Web Muzium Geologi UM</a>
         </div>
