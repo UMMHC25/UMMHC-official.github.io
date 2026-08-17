@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="3MooSAGjA9Aqjdldq0f4K9h3Ft1CknMscefnj5NdBMw">
   
-  <!-- KAWALAN CACHE SUPAYA TIADA DATA LAMA TERSIMPAN -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <!-- KAWALAN CACHE KETAT UNTUK MEMAKSA MUAT TURUN GAMBAR BAHARU -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0, post-check=0, pre-check=0" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
 
@@ -62,7 +62,7 @@
       color: #333;
     }
 
-    /* GAYA POPUP IKLAN */
+    /* GAYA POPUP IKLAN BERSEBELAHAN (SIDE BY SIDE) */
     .ad-popup-overlay {
       position: fixed;
       top: 0;
@@ -302,7 +302,6 @@
       border-radius: 15px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
       text-align: left;
-      overflow: hidden;
     }
 
     .card h2 {
@@ -346,43 +345,109 @@
       color: #800000 !important;
     }
 
-    /* --- GAYA KHAS SEKRETARIAT & PENGASAS (MEMAKSA GAMBAR SERAGAM AWAL-AWAL) --- */
-    #app-content .grid,
-    .grid {
-      display: grid !important;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
-      gap: 20px !important;
+    /* --- GAYA PENGASAS (SOLUSI PENGAPLIKASIAN SPA GLOBAL) --- */
+    #app-content .founders-grid, 
+    .founders-grid {
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      justify-content: space-between !important;
+      gap: 15px !important;
       margin-top: 20px !important;
-      justify-items: center !important;
-      align-items: stretch !important;
+      width: 100% !important;
     }
 
-    #app-content .item,
-    .item {
+    #app-content .founder-card, 
+    .founder-card {
       background: #fafafa !important;
-      padding: 15px !important;
-      border-radius: 15px !important;
+      border: 1px solid #eee !important;
+      border-radius: 12px !important;
+      padding: 15px 10px !important;
       text-align: center !important;
-      width: 100% !important;
       display: flex !important;
       flex-direction: column !important;
       align-items: center !important;
-      justify-content: center !important;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
-      overflow: hidden !important;
+      flex: 1 1 0 !important;
+      min-width: 0 !important;
     }
 
-    #app-content .item img,
-    .item img {
+    #app-content .founder-card.lead-founder, 
+    .founder-card.lead-founder {
+      background: #fffdf8 !important;
+      border: 1.5px solid #800000 !important;
+      max-width: 350px !important;
       width: 100% !important;
-      max-width: 250px !important;
-      height: auto !important;
-      aspect-ratio: 4 / 5 !important;
+      margin: 0 auto 10px auto !important;
+      box-sizing: border-box !important;
+    }
+
+    /* SEKATAN SAIZ GAMBAR PENGASAS SUPAYA TAK JADI GERGASI DAN BEBAS CACHE LAMA */
+    #app-content .founder-card img, 
+    .founder-card img {
+      width: 100% !important;
+      max-width: 170px !important;
+      height: 200px !important;
       object-fit: cover !important;
       object-position: top center !important;
       border-radius: 10px !important;
+      margin-bottom: 12px !important;
       display: block !important;
-      margin: 0 auto !important;
+    }
+
+    #app-content .founder-card.lead-founder img, 
+    .founder-card.lead-founder img {
+      max-width: 200px !important;
+      height: 230px !important;
+    }
+
+    #app-content .founder-info, 
+    .founder-info {
+      font-size: 12.5px !important;
+      line-height: 1.4 !important;
+      color: #333 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      flex-grow: 1 !important;
+      width: 100% !important;
+    }
+
+    #app-content .founder-card.lead-founder .founder-info, 
+    .founder-card.lead-founder .founder-info {
+      font-size: 14px !important;
+    }
+
+    #app-content .founder-info .name, 
+    .founder-info .name {
+      font-weight: bold !important;
+      font-size: 13.5px !important;
+      color: #800000 !important;
+      margin-bottom: 6px !important;
+      min-height: 40px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    #app-content .founder-card.lead-founder .name, 
+    .founder-card.lead-founder .name {
+      font-size: 16.5px !important;
+      min-height: auto !important;
+    }
+
+    #app-content .founder-info .role-title, 
+    .founder-info .role-title {
+      font-weight: bold !important;
+      color: #111 !important;
+      margin-bottom: 8px !important;
+      min-height: 55px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    #app-content .founder-info .italic-text, 
+    .founder-info .italic-text {
+      font-style: italic !important;
     }
 
     /* GALERI */
@@ -455,8 +520,26 @@
         padding-top: 50%;
       }
 
+      #app-content .founders-grid,
+      .founders-grid {
+        flex-wrap: wrap !important;
+      }
+
+      #app-content .founder-card,
+      .founder-card {
+        flex: 1 1 45% !important;
+        margin-bottom: 10px !important;
+      }
+
       .gallery img {
         width: 100%;
+      }
+    }
+
+    @media(max-width: 480px) {
+      #app-content .founder-card,
+      .founder-card {
+        flex: 1 1 100% !important;
       }
     }
   </style>
@@ -542,12 +625,84 @@
         </p>
       </div>
 
-      <!-- KARD TENTANG KAMI RINGKAS DENGAN BUTANG MERAH -->
+      <!-- KARD TENTANG KAMI & SEJARAH LENGKAP -->
       <div class="card">
-        <h2>TENTANG KAMI</h2>
+        <h2>TENTANG KAMI & SEJARAH PENUBUHAN UMMHC</h2>
         <p>
-          Kelab Muzium dan Warisan Universiti Malaya (UMMHC) merupakan sebuah organisasi pelajar yang memberi fokus kepada aktiviti berkaitan muzium, sejarah, kebudayaan dan warisan.
+          Kelab Muzium dan Warisan Universiti Malaya (UMMHC) merupakan sebuah organisasi pelajar di Universiti Malaya yang memberi fokus kepada aktiviti berkaitan muzium, sejarah, kebudayaan dan pemeliharaan warisan.
         </p>
+        <p>
+          Kelab Muzium dan Warisan Universiti Malaya (UMMHC) ditubuhkan secara rasmi pada <strong>5 Mac 2025</strong> hasil cetusan idea dan inisiatif <strong>Che Muhammad Hilman bin Che Hishamuddin</strong>. Menyedari potensi besar Universiti Malaya yang kaya dengan khazanah sejarah, beliau mengumpulkan lima orang rakan mahasiswa yang berkongsi minat dan keazaman yang sama untuk menubuhkan sebuah kelab khas bagi memelihara, mempromosikan dan memartabatkan warisan sejarah serta kebudayaan di kampus dan masyarakat luar.
+        </p>
+        <p>
+          Jawatankuasa Penaja UMMHC ditubuhkan dengan barisan kepimpinan utama seperti berikut:
+        </p>
+
+        <!-- SUSUNAN PENGASAS UTAMA (PAUTAN GAMBAR DILENGKAPI PARAMETER ANTI-CACHE ?v=5) -->
+        <div class="founders-grid" style="justify-content: center; margin-bottom: 20px;">
+          <div class="founder-card lead-founder">
+            <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/f303fe1c-ee00-4b82-affc-6ffea593258c.png?v=5" alt="Che Muhammad Hilman">
+            <div class="founder-info">
+              <div class="name">Che Muhammad Hilman bin Che Hishamuddin</div>
+              <div class="role-title">Pengasas Utama / Pengerusi Penaja UMMHC</div>
+              <div class="italic-text">Jabatan Sejarah, Fakulti Sastera dan Sains Sosial</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUSUNAN PENGASAS BERSAMA -->
+        <h3 style="color:#800000; text-align:center; margin-top:25px;">BARISAN PENGASAS BERSAMA (JAWATANKUASA PENAJA)</h3>
+        <div class="founders-grid">
+          <div class="founder-card">
+            <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/2ebaa863-7188-4db8-b570-3d77ccfeac6e.png?v=5" alt="Muhammad Faris Daniel">
+            <div class="founder-info">
+              <div class="name">Muhammad Faris Daniel bin Mohd Khairusani</div>
+              <div class="role-title">Pengasas Bersama / Timbalan Pengerusi Penaja UMMHC</div>
+              <div class="italic-text">Jabatan Sejarah, Fakulti Sastera dan Sains Sosial</div>
+            </div>
+          </div>
+
+          <div class="founder-card">
+            <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/83eb7d8e-e274-42f0-bc37-a1cb3647b7aa.png?v=5" alt="Siti Sarah">
+            <div class="founder-info">
+              <div class="name">Siti Sarah binti Abdul Latif</div>
+              <div class="role-title">Pengasas Bersama / Setiausaha Penaja UMMHC</div>
+              <div class="italic-text">Jabatan Sejarah, Fakulti Sastera dan Sains Sosial</div>
+            </div>
+          </div>
+
+          <div class="founder-card">
+            <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/4187ef1c-1c5c-423c-8eb1-cf9787ff0db0.png?v=5" alt="Hoo Yee Chiam">
+            <div class="founder-info">
+              <div class="name">Hoo Yee Chiam</div>
+              <div class="role-title">Pengasas Bersama / Bendahari Penaja UMMHC</div>
+              <div class="italic-text">Jabatan Sejarah, Fakulti Sastera dan Sains Sosial</div>
+            </div>
+          </div>
+
+          <div class="founder-card">
+            <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/a6ee094a-e49c-4977-bc60-d6dc146cdb12.png?v=5" alt="Ahmad Syakirin">
+            <div class="founder-info">
+              <div class="name">Ahmad Syakirin bin Ahmad Rusli</div>
+              <div class="role-title">Pengasas Bersama / Exco Penaja UMMHC</div>
+              <div class="italic-text">Jabatan Sejarah, Fakulti Sastera dan Sains Sosial</div>
+            </div>
+          </div>
+
+          <div class="founder-card">
+            <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/19e8c459-22a8-4c8d-ae2c-29cc726a5c10.png?v=5" alt="Khayra Qistina">
+            <div class="founder-info">
+              <div class="name">Khayra Qistina binti Redzuan</div>
+              <div class="role-title">Pengasas Bersama / Exco Penaja UMMHC</div>
+              <div class="italic-text">Jabatan Sejarah, Fakulti Sastera dan Sains Sosial</div>
+            </div>
+          </div>
+        </div>
+
+        <p style="margin-top:20px;">
+          Berkat kesungguhan dan visi perintis ini, penubuhan Kelab Muzium dan Warisan Universiti Malaya telah diluluskan secara rasmi oleh **Bahagian Hal Ehwal Pelajar (BHEP) Universiti Malaya** pada **22 Mei 2025**. Kelab ini kini berada di bawah naungan **Muzium Seni Asia Universiti Malaya**, menandakan bermulanya sebuah era baharu dalam usaha melestarikan warisan bangsa dan sejarah kampus di kalangan warga Universiti Malaya.
+        </p>
+
         <div class="btn-container">
           <a class="button" href="sejarah.html">BACA SEJARAH</a>
         </div>
@@ -698,10 +853,9 @@
     }
 
     function loadPage(url) {
-      // Tambah v=5 untuk memintas cache lama
-      const fetchUrl = url.includes('?') ? url : url + '?v=5';
-      
-      fetch(fetchUrl)
+      // Menambah parameter penyingkiran cache secara dinamik semasa pemuatan SPA
+      const cacheBustUrl = url.includes('?') ? `${url}&v=${Date.now()}` : `${url}?v=${Date.now()}`;
+      fetch(cacheBustUrl)
         .then(response => {
           if (!response.ok) throw new Error("Halaman tidak dijumpai");
           return response.text();
