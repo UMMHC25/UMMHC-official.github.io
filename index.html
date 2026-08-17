@@ -62,7 +62,7 @@
       color: #333;
     }
 
-    /* GAYA POPUP IKLAN BERSEBELAHAN (SIDE BY SIDE) */
+    /* GAYA POPUP IKLAN */
     .ad-popup-overlay {
       position: fixed;
       top: 0;
@@ -233,7 +233,7 @@
       color: #FFD700;
     }
 
-    /* HEADER FULL - DENGAN ASPECT RATIO */
+    /* HEADER FULL */
     header {
       background: linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)),
         url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png?v=4");
@@ -247,7 +247,6 @@
       transition: background 0.3s ease-in-out;
     }
 
-    /* BAR MERAH BAWAH HEADER */
     .header-space {
       height: 20px;
       background: #800000;
@@ -344,99 +343,6 @@
       color: #800000 !important;
     }
 
-    /* GAYA PENGASAS BERSAMA (UNTUK HALAMAN SEJARAH) */
-    .founders-grid {
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: space-between;
-      gap: 15px;
-      margin-top: 20px;
-      width: 100%;
-    }
-
-    .founder-card {
-      background: #fafafa;
-      border: 1px solid #eee;
-      border-radius: 12px;
-      padding: 15px 10px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      flex: 1 1 0;
-      min-width: 0;
-    }
-
-    .founder-card.lead-founder {
-      background: #fffdf8;
-      border: 1.5px solid #800000;
-      max-width: 350px !important;
-      width: 100% !important;
-      margin: 0 auto 10px auto;
-      box-sizing: border-box;
-    }
-
-    .founder-card img {
-      width: 100% !important;
-      max-width: 170px !important;
-      height: 200px !important;
-      object-fit: cover !important;
-      object-position: top center !important;
-      border-radius: 10px;
-      margin-bottom: 12px;
-      display: block;
-    }
-
-    .founder-card.lead-founder img {
-      max-width: 200px !important;
-      height: 230px !important;
-    }
-
-    .founder-info {
-      font-size: 12.5px;
-      line-height: 1.4;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      width: 100%;
-    }
-
-    .founder-card.lead-founder .founder-info {
-      font-size: 14px;
-    }
-
-    .founder-info .name {
-      font-weight: bold;
-      font-size: 13.5px;
-      color: #800000;
-      margin-bottom: 6px;
-      min-height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .founder-card.lead-founder .name {
-      font-size: 16.5px;
-      min-height: auto;
-    }
-
-    .founder-info .role-title {
-      font-weight: bold;
-      color: #111;
-      margin-bottom: 8px;
-      min-height: 55px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .founder-info .italic-text {
-      font-style: italic;
-    }
-
     /* GALERI */
     .gallery {
       display: flex;
@@ -506,23 +412,8 @@
         padding-top: 50%;
       }
 
-      .founders-grid {
-        flex-wrap: wrap;
-      }
-
-      .founder-card {
-        flex: 1 1 45%;
-        margin-bottom: 10px;
-      }
-
       .gallery img {
         width: 100%;
-      }
-    }
-
-    @media(max-width: 480px) {
-      .founder-card {
-        flex: 1 1 100%;
       }
     }
   </style>
@@ -608,7 +499,6 @@
         </p>
       </div>
 
-      <!-- KARD TENTANG KAMI RINGKAS DENGAN BUTANG MERAH -->
       <div class="card">
         <h2>TENTANG KAMI</h2>
         <p>
@@ -629,6 +519,7 @@
         </div>
       </div>
 
+      <!-- KARD MUZIUM DAN GALERI -->
       <div class="card">
         <h2>MUZIUM DAN GALERI UNIVERSITI MALAYA</h2>
         <p>
@@ -755,6 +646,8 @@
     function updateHeaderImage(url) {
       if (url && url.includes("sekretariat.html")) {
         mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png")';
+      } else if (url && url.includes("muzium-galeri.html")) {
+        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png")';
       } else {
         mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png")';
       }
