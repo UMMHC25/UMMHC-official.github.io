@@ -77,7 +77,7 @@
 
     /* CONTENT */
     section {
-      padding: 40px 10%;
+      padding: 40px 5%;
     }
 
     .card {
@@ -104,8 +104,8 @@
     /* GRID PENGASAS BERSAMA */
     .founders-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
       margin-top: 20px;
       align-items: stretch;
     }
@@ -114,7 +114,7 @@
       background: #fafafa;
       border: 1px solid #eee;
       border-radius: 12px;
-      padding: 20px 15px;
+      padding: 15px 10px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -122,55 +122,72 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
 
-    /* Kad Utama untuk Encik Bariq (Besar Sikit) */
+    /* Kad Utama Encik Bariq (Besar Sikit) */
     .founder-card.lead-founder {
       background: #fffdf8;
       border: 1.5px solid #800000;
+      grid-column: 1 / -1; /* Berada di atas sekiranya skrin lebar, atau boleh mengikut susunan */
+      max-width: 350px;
+      margin: 0 auto 10px auto;
+      width: 100%;
     }
 
+    /* Pemotongan gambar dari kepala hingga bahu */
     .founder-card img {
       width: 100%;
-      max-width: 190px;
-      height: 230px;
+      max-width: 170px;
+      height: 200px;
       object-fit: cover;
       object-position: top center;
       border-radius: 10px;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       display: block;
     }
 
-    /* Gambar Encik Bariq Besar Sikit */
+    /* Gambar Encik Bariq */
     .founder-card.lead-founder img {
-      max-width: 210px;
-      height: 250px;
+      max-width: 200px;
+      height: 230px;
     }
 
     .founder-info {
-      font-size: 13px;
-      line-height: 1.5;
+      font-size: 12.5px;
+      line-height: 1.4;
       color: #333;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      width: 100%;
     }
 
-    /* Tulisan Encik Bariq Besar Sikit */
     .founder-card.lead-founder .founder-info {
-      font-size: 14.5px;
+      font-size: 14px;
     }
 
     .founder-info .name {
       font-weight: bold;
-      font-size: 15px;
+      font-size: 14px;
       color: #800000;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
+      min-height: 38px; /* Menyelaraskan paras nama */
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .founder-card.lead-founder .name {
-      font-size: 17px;
+      font-size: 16.5px;
+      min-height: auto;
     }
 
     .founder-info .role-title {
       font-weight: bold;
       color: #111;
-      margin-bottom: 4px;
+      margin-bottom: 8px;
+      min-height: 52px; /* Menyelaraskan paras Pengasas Bersama supaya tidak naik turun */
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .founder-info .italic-text {
@@ -231,21 +248,23 @@
     <!-- KAD PENGASAS BERSAMA -->
     <div class="card">
       <h2>PENGASAS BERSAMA</h2>
+
+      <!-- PENGASAS UTAMA (ENCIK BARIQ) -->
+      <div class="founder-card lead-founder">
+        <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/Carta%20Organisasi%20UMMHC.png" alt="Encik Rizqullah Al-Bariq Bin Azmi">
+        <div class="founder-info">
+          <div class="name">Encik Rizqullah Al-Bariq Bin Azmi</div>
+          <div class="role-title">Pengasas Bersama Kelab Muzium dan Warisan Universiti Malaya</div>
+          <div class="italic-text">Kurator</div>
+          <div class="italic-text">Muzium Perubatan Tan Sri Dr. Lim Wee Chai,</div>
+          <div class="italic-text">Fakulti Perubatan, Universiti Malaya</div>
+        </div>
+      </div>
+
+      <!-- 4 PENGASAS SEBARIS -->
       <div class="founders-grid">
         
-        <!-- PENGASAS 1 (ENCIK BARIQ - BESAR SIKIT) -->
-        <div class="founder-card lead-founder">
-          <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/Carta%20Organisasi%20UMMHC.png" alt="Encik Rizqullah Al-Bariq Bin Azmi">
-          <div class="founder-info">
-            <div class="name">Encik Rizqullah Al-Bariq Bin Azmi</div>
-            <div class="role-title">Pengasas Bersama Kelab Muzium dan Warisan Universiti Malaya</div>
-            <div class="italic-text">Kurator</div>
-            <div class="italic-text">Muzium Perubatan Tan Sri Dr. Lim Wee Chai,</div>
-            <div class="italic-text">Fakulti Perubatan, Universiti Malaya</div>
-          </div>
-        </div>
-
-        <!-- PENGASAS 2 -->
+        <!-- PENGASAS 2 (KAI) -->
         <div class="founder-card">
           <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/photo_2026-08-17_10-52-53-Picsart-AiImageEnhancer-removebg-preview.png" alt="Mendiang Tan Aik Kai">
           <div class="founder-info">
@@ -257,7 +276,7 @@
           </div>
         </div>
 
-        <!-- PENGASAS 3 -->
+        <!-- PENGASAS 3 (FAIZ) -->
         <div class="founder-card">
           <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/LATIHAN%20INDUSTRI%20MUZIUM%20PERUBATAN%20TAN%20SRI%20DR.%20LIM%20WEE%20CHAI%20(1).png" alt="Muhamad Faiz Azrin Bin Sapuwan">
           <div class="founder-info">
@@ -269,7 +288,7 @@
           </div>
         </div>
 
-        <!-- PENGASAS 4 -->
+        <!-- PENGASAS 4 (FAISAL) -->
         <div class="founder-card">
           <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/LATIHAN%20INDUSTRI%20MUZIUM%20PERUBATAN%20TAN%20SRI%20DR.%20LIM%20WEE%20CHAI.png" alt="Muhammad Faisal Bin Zubir">
           <div class="founder-info">
@@ -281,7 +300,7 @@
           </div>
         </div>
 
-        <!-- PENGASAS 5 -->
+        <!-- PENGASAS 5 (HAZIQ) -->
         <div class="founder-card">
           <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/LATIHAN%20INDUSTRI%20MUZIUM%20PERUBATAN%20TAN%20SRI%20DR.%20LIM%20WEE%20CHAI%20(2).png" alt="Muhammad Haziq Bin Abdullah">
           <div class="founder-info">
