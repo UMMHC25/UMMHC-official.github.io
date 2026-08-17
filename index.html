@@ -233,22 +233,28 @@
       color: #FFD700;
     }
 
-    /* HEADER FULL */
+    /* HEADER TERKAWAL SAiZ (PUNCA UTAMA TERJAWAB DI SINI) */
     header {
-      background: linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)),
-        url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png?v=4");
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-color: #800000;
       width: 100%;
-      height: 0;
-      padding-top: 32%;
-      transition: background 0.3s ease-in-out;
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: #800000;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .header-banner {
+      width: 100%;
+      height: auto;
+      max-height: 380px;
+      object-fit: cover;
+      display: block;
     }
 
     .header-space {
-      height: 20px;
+      height: 15px;
       background: #800000;
     }
 
@@ -299,7 +305,7 @@
       border-radius: 15px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
       text-align: left;
-      overflow: hidden; /* ELAKKAN KANDUNGAN TERKELUAR */
+      overflow: hidden;
     }
 
     /* HADKAN SEMUA GAMBAR DALAM KOTAK PUTIH */
@@ -423,8 +429,8 @@
         text-align: center;
       }
 
-      header {
-        padding-top: 50%;
+      .header-banner {
+        max-height: 220px;
       }
 
       .gallery img {
@@ -487,8 +493,10 @@
     </div>
   </nav>
 
-  <!-- HEADER GAMBAR FULL -->
-  <header id="mainHeader"></header>
+  <!-- HEADER GAMBAR ELEGAN TERKAWAL -->
+  <header>
+    <img id="headerBanner" class="header-banner" src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png?v=4" alt="Header UMMHC">
+  </header>
 
   <!-- BAR MERAH BAWAH HEADER -->
   <div class="header-space"></div>
@@ -611,7 +619,7 @@
 
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
-    const mainHeader = document.getElementById("mainHeader");
+    const headerBanner = document.getElementById("headerBanner");
 
     menuToggle.addEventListener("click", () => {
       navLinks.classList.toggle("active");
@@ -658,13 +666,12 @@
     document.addEventListener('click', startAudio, { once: true });
     document.addEventListener('touchstart', startAudio, { once: true });
 
+    /* FUNGSI TUKAR GAMBAR HEADER TANPA MENJEJASKAN SAIZ */
     function updateHeaderImage(url) {
       if (url && url.includes("sekretariat.html")) {
-        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png")';
-      } else if (url && url.includes("muzium-galeri.html")) {
-        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png")';
+        headerBanner.src = "https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png";
       } else {
-        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png")';
+        headerBanner.src = "https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png";
       }
     }
 
