@@ -107,6 +107,7 @@
       border-radius: 15px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
       text-align: center;
+      overflow: hidden; /* Mencegah kandungan terkeluar */
     }
 
     .card h2 {
@@ -124,18 +125,21 @@
     /* CARTA ORGANISASI */
     .org img {
       max-width: 100%;
+      height: auto;
       border-radius: 10px;
       margin: 0 auto;
       display: block;
+      object-fit: contain;
     }
 
     /* GRID GAMBAR AHIL SEKRETARIAT */
     .grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
       margin-top: 20px;
       justify-items: center;
+      align-items: stretch;
     }
 
     .item {
@@ -149,14 +153,16 @@
       align-items: center;
       justify-content: center;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      overflow: hidden; /* Mencegah gambar melimpah */
     }
 
     .item img {
       width: 100%;
-      max-width: 350px;
+      max-width: 100%;
       height: auto;
+      aspect-ratio: 4 / 5; /* Memastikan nisbah saiz gambar seragam */
+      object-fit: cover; /* Memastikan gambar dipotong kemas tanpa penyet/terkeluar */
       border-radius: 10px;
-      margin: 0 auto;
       display: block;
     }
 
@@ -206,6 +212,10 @@
         padding-top: 50%;
       }
 
+      section {
+        padding: 20px 5%;
+      }
+
       .grid {
         grid-template-columns: 1fr;
       }
@@ -235,7 +245,7 @@
   <!-- BAR MERAH BAWAH HEADER -->
   <div class="header-space"></div>
 
-  <!-- KANDUNGAN UTAMA (AKAN DITARIK OLEH SPA/FETCH DALAM INDEX) -->
+  <!-- KANDUNGAN UTAMA -->
   <section>
 
     <!-- CARTA ORGANISASI -->
