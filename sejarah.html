@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- ARAHAN PENTING: Mencegah pelayar simpan cache lama -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
+  <!-- KAWALAN CACHE SUPAYA TIADA DATA LAMA TERSIMPAN -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
 
   <title>Sejarah UMMHC | Kelab Muzium dan Warisan Universiti Malaya</title>
   <meta name="description" content="Sejarah penubuhan Kelab Muzium dan Warisan Universiti Malaya (UMMHC), visi, misi dan objektif kelab.">
@@ -108,13 +108,13 @@
       margin-top: 15px;
     }
 
-    /* GRID PENGASAS BERSAMA - KUNCI 4 KOLUM PADA SKRIN LEBAR */
+    /* PENGGUNAAN FLEXBOX BAGI MENGELAKKAN RUANG RUNTUH ATAU LARI */
     .founders-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr); /* DIPAKSA 4 SEBARIS */
+      display: flex;
+      flex-wrap: nowrap; /* Memaksa 4 kad sentiasa sebaris */
+      justify-content: space-between;
       gap: 15px;
       margin-top: 20px;
-      align-items: stretch;
       width: 100%;
     }
 
@@ -128,20 +128,20 @@
       flex-direction: column;
       align-items: center;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      width: 100%;
+      flex: 1 1 0; /* Agihan kelebaran kad secara sama rata secara automatik */
+      min-width: 0; /* Menghalang kad melimpah */
     }
 
     /* Kad Utama Encik Bariq */
     .founder-card.lead-founder {
       background: #fffdf8;
       border: 1.5px solid #800000;
-      grid-column: 1 / -1;
       max-width: 350px;
       margin: 0 auto 10px auto;
       width: 100%;
     }
 
-    /* Kunci saiz dan pemotongan imej (Kepala ke Bahu) */
+    /* Saiz imej tetap (Kepala ke Bahu) */
     .founder-card img {
       width: 100%;
       max-width: 170px;
@@ -151,14 +151,12 @@
       border-radius: 10px;
       margin-bottom: 12px;
       display: block;
-      aspect-ratio: 17 / 20;
     }
 
     /* Gambar Encik Bariq */
     .founder-card.lead-founder img {
       max-width: 200px;
       height: 230px;
-      aspect-ratio: 20 / 23;
     }
 
     .founder-info {
@@ -177,10 +175,10 @@
 
     .founder-info .name {
       font-weight: bold;
-      font-size: 14px;
+      font-size: 13.5px;
       color: #800000;
       margin-bottom: 6px;
-      min-height: 38px;
+      min-height: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -195,7 +193,7 @@
       font-weight: bold;
       color: #111;
       margin-bottom: 8px;
-      min-height: 52px;
+      min-height: 55px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -213,20 +211,24 @@
       padding: 20px;
     }
 
-    /* RESPONSIF: Telefon bimbit sahaja baru disusun kebawah */
-    @media(max-width: 850px) {
+    /* SKRIN TELEFON (SUSUN KE BAWAH HANYA PADA FON) */
+    @media(max-width: 768px) {
       .founders-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 sebaris di tablet */
+        flex-wrap: wrap; /* Pada skrin telefon baru kad disusun ke bawah */
       }
-    }
-
-    @media(max-width: 500px) {
-      .founders-grid {
-        grid-template-columns: 1fr; /* 1 sebaris di telefon pintar */
+      .founder-card {
+        flex: 1 1 45%; /* 2 kad sebaris di tablet */
+        margin-bottom: 10px;
       }
       nav a {
         display: block;
         margin: 10px;
+      }
+    }
+
+    @media(max-width: 480px) {
+      .founder-card {
+        flex: 1 1 100%; /* 1 kad sebaris di telefon pintar */
       }
     }
   </style>
@@ -275,7 +277,7 @@
         <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/Carta%20Organisasi%20UMMHC.png" alt="Encik Rizqullah Al-Bariq Bin Azmi">
         <div class="founder-info">
           <div class="name">Encik Rizqullah Al-Bariq Bin Azmi</div>
-          <div class="role-title">Pengasas Bersama Kelab Muzium dan Warisan Universiti Malaya</div>
+          <div class="role-title">Pengasas Bersama<br>Kelab Muzium dan Warisan Universiti Malaya</div>
           <div class="italic-text">Kurator</div>
           <div class="italic-text">Muzium Perubatan Tan Sri Dr. Lim Wee Chai,</div>
           <div class="italic-text">Fakulti Perubatan, Universiti Malaya</div>
@@ -290,7 +292,7 @@
           <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/photo_2026-08-17_10-52-53-Picsart-AiImageEnhancer-removebg-preview.png" alt="Mendiang Tan Aik Kai">
           <div class="founder-info">
             <div class="name">Mendiang Tan Aik Kai</div>
-            <div class="role-title">Pengasas Bersama Kelab Muzium dan Warisan Universiti Malaya</div>
+            <div class="role-title">Pengasas Bersama<br>Kelab Muzium dan Warisan Universiti Malaya</div>
             <div class="italic-text">Pelajar Latihan Industri</div>
             <div class="italic-text">Muzium Perubatan Tan Sri Dr. Lim Wee Chai,</div>
             <div class="italic-text">Fakulti Perubatan, Universiti Malaya</div>
@@ -302,7 +304,7 @@
           <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/LATIHAN%20INDUSTRI%20MUZIUM%20PERUBATAN%20TAN%20SRI%20DR.%20LIM%20WEE%20CHAI%20(1).png" alt="Muhamad Faiz Azrin Bin Sapuwan">
           <div class="founder-info">
             <div class="name">Muhamad Faiz Azrin Bin Sapuwan</div>
-            <div class="role-title">Pengasas Bersama Kelab Muzium dan Warisan Universiti Malaya</div>
+            <div class="role-title">Pengasas Bersama<br>Kelab Muzium dan Warisan Universiti Malaya</div>
             <div class="italic-text">Pelajar Latihan Industri</div>
             <div class="italic-text">Muzium Perubatan Tan Sri Dr. Lim Wee Chai,</div>
             <div class="italic-text">Fakulti Perubatan, Universiti Malaya</div>
@@ -314,7 +316,7 @@
           <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/LATIHAN%20INDUSTRI%20MUZIUM%20PERUBATAN%20TAN%20SRI%20DR.%20LIM%20WEE%20CHAI.png" alt="Muhammad Faisal Bin Zubir">
           <div class="founder-info">
             <div class="name">Muhammad Faisal Bin Zubir</div>
-            <div class="role-title">Pengasas Bersama Kelab Muzium dan Warisan Universiti Malaya</div>
+            <div class="role-title">Pengasas Bersama<br>Kelab Muzium dan Warisan Universiti Malaya</div>
             <div class="italic-text">Pelajar Latihan Industri</div>
             <div class="italic-text">Muzium Perubatan Tan Sri Dr. Lim Wee Chai,</div>
             <div class="italic-text">Fakulti Perubatan, Universiti Malaya</div>
@@ -326,7 +328,7 @@
           <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/LATIHAN%20INDUSTRI%20MUZIUM%20PERUBATAN%20TAN%20SRI%20DR.%20LIM%20WEE%20CHAI%20(2).png" alt="Muhammad Haziq Bin Abdullah">
           <div class="founder-info">
             <div class="name">Muhammad Haziq Bin Abdullah</div>
-            <div class="role-title">Pengasas Bersama Kelab Muzium dan Warisan Universiti Malaya</div>
+            <div class="role-title">Pengasas Bersama<br>Kelab Muzium dan Warisan Universiti Malaya</div>
             <div class="italic-text">Pelajar Latihan Industri</div>
             <div class="italic-text">Muzium Perubatan Tan Sri Dr. Lim Wee Chai,</div>
             <div class="italic-text">Fakulti Perubatan, Universiti Malaya</div>
