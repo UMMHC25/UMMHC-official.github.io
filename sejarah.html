@@ -83,6 +83,8 @@
     /* CONTENT */
     section {
       padding: 40px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .card {
@@ -108,10 +110,10 @@
       margin-top: 15px;
     }
 
-    /* PENGGUNAAN FLEXBOX BAGI MENGELAKKAN RUANG RUNTUH ATAU LARI */
+    /* FLEXBOX PENGASAS */
     .founders-grid {
       display: flex;
-      flex-wrap: nowrap; /* Memaksa 4 kad sentiasa sebaris */
+      flex-wrap: nowrap;
       justify-content: space-between;
       gap: 15px;
       margin-top: 20px;
@@ -128,8 +130,8 @@
       flex-direction: column;
       align-items: center;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      flex: 1 1 0; /* Agihan kelebaran kad secara sama rata secara automatik */
-      min-width: 0; /* Menghalang kad melimpah */
+      flex: 1 1 0;
+      min-width: 0;
     }
 
     /* Kad Utama Encik Bariq */
@@ -142,7 +144,6 @@
       box-sizing: border-box;
     }
 
-    /* Saiz imej tetap (Kepala ke Bahu) */
     .founder-card img {
       width: 100% !important;
       max-width: 170px !important;
@@ -154,7 +155,6 @@
       display: block;
     }
 
-    /* Gambar Encik Bariq */
     .founder-card.lead-founder img {
       max-width: 200px !important;
       height: 230px !important;
@@ -204,6 +204,27 @@
       font-style: italic;
     }
 
+    /* BUTANG KEMBALI */
+    .btn-back-container {
+      margin: 20px 0;
+      text-align: left;
+    }
+
+    .btn-back {
+      display: inline-block;
+      background-color: #800000;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .btn-back:hover {
+      background-color: #b38f00;
+    }
+
     /* FOOTER */
     footer {
       background: #800000;
@@ -212,13 +233,13 @@
       padding: 20px;
     }
 
-    /* SKRIN TELEFON (SUSUN KE BAWAH HANYA PADA FON) */
+    /* RESPONSIVE DESIGN */
     @media(max-width: 768px) {
       .founders-grid {
-        flex-wrap: wrap; /* Pada skrin telefon baru kad disusun ke bawah */
+        flex-wrap: wrap;
       }
       .founder-card {
-        flex: 1 1 45%; /* 2 kad sebaris di tablet */
+        flex: 1 1 45%;
         margin-bottom: 10px;
       }
       nav a {
@@ -229,7 +250,7 @@
 
     @media(max-width: 480px) {
       .founder-card {
-        flex: 1 1 100%; /* 1 kad sebaris di telefon pintar */
+        flex: 1 1 100%;
       }
     }
   </style>
@@ -254,9 +275,9 @@
 
   <section>
 
-    <div class="card">
-      <h2>PENGENALAN KELAB</h2>
-      <p></p>
+    <!-- BUTANG KEMBALI ATAS -->
+    <div class="btn-back-container">
+      <a href="index.html#tentang-kami" class="btn-back">&larr; Kembali ke Tentang Kami</a>
     </div>
 
     <div class="card">
@@ -379,6 +400,11 @@
           UMMHC berperanan sebagai penghubung antara mahasiswa, institusi muzium, komuniti serta pihak berkaitan dalam usaha memperkembangkan ilmu dan kesedaran terhadap warisan.
         </p>
       </div>
+    </div>
+
+    <!-- BUTANG KEMBALI BAWAH -->
+    <div class="btn-back-container" style="text-align: center; margin-top: 30px;">
+      <a href="index.html#tentang-kami" class="btn-back">&larr; Kembali ke Utama / Tentang Kami</a>
     </div>
 
   </section>
