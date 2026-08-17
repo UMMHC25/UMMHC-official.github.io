@@ -51,6 +51,71 @@
       color: #333;
     }
 
+    /* GAYA POPUP IKLAN (MODAL) */
+    .ad-popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .ad-popup-content {
+      position: relative;
+      background: #fff;
+      border-radius: 12px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .ad-popup-close {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      background: #800000;
+      color: white;
+      border: 2px solid white;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .ad-popup-close:hover {
+      background: #FFD700;
+      color: #800000;
+      transform: scale(1.1);
+    }
+
+    .ad-popup-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
     /* MENU MERAH ATAS */
     nav {
       background: #800000;
@@ -186,7 +251,7 @@
     }
 
     /* GAYA BUTANG SERAGAM */
-    .button, button:not(.menu-toggle) {
+    .button, button:not(.menu-toggle):not(.ad-popup-close) {
       display: inline-block;
       background: #800000 !important;
       color: white !important;
@@ -200,7 +265,7 @@
       transition: background 0.3s, color 0.3s;
     }
 
-    .button:hover, button:not(.menu-toggle):hover {
+    .button:hover, button:not(.menu-toggle):not(.ad-popup-close):hover {
       background: #FFD700 !important;
       color: #800000 !important;
     }
@@ -306,6 +371,14 @@
 </head>
 
 <body>
+
+  <!-- POPUP IKLAN -->
+  <div class="ad-popup-overlay" id="adPopup">
+    <div class="ad-popup-content">
+      <button class="ad-popup-close" id="closeAdBtn" aria-label="Tutup Iklan">&times;</button>
+      <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/photo_2026-08-17_08-50-33.jpg" alt="Iklan UMMHC" class="ad-popup-img">
+    </div>
+  </div>
 
   <!-- MENU MERAH ATAS -->
   <nav>
@@ -428,8 +501,24 @@
     <p>© 2025/2026 Kelab Muzium dan Warisan Universiti Malaya</p>
   </footer>
 
-  <!-- SCRIPT MUZIK & SPA NAVIGASI DENGAN HEADER DINAMIK -->
+  <!-- SCRIPT MUZIK, POPUP & SPA NAVIGASI DENGAN HEADER DINAMIK -->
   <script>
+    // SCRIPT POPUP IKLAN
+    const adPopup = document.getElementById("adPopup");
+    const closeAdBtn = document.getElementById("closeAdBtn");
+
+    closeAdBtn.addEventListener("click", () => {
+      adPopup.style.display = "none";
+    });
+
+    // Tutup popup jika pengguna klik di luar kawasan gambar
+    adPopup.addEventListener("click", (e) => {
+      if (e.target === adPopup) {
+        adPopup.style.display = "none";
+      }
+    });
+
+    // SCRIPT MENU
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
     const mainHeader = document.getElementById("mainHeader");
