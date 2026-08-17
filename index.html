@@ -19,7 +19,7 @@
   <meta name="keywords" content="Kelab Muzium dan Warisan Universiti Malaya, UMMHC, Museum and Heritage Club UM, Kelab Muzium UM, Warisan Universiti Malaya">
   <meta name="author" content="Kelab Muzium dan Warisan Universiti Malaya">
 
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/LOGO.png?v=4">
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png?v=4">
 
   <!-- MUAT TURUN FONT ROYAL DARI GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,14 +33,14 @@
     "name":"Kelab Muzium dan Warisan Universiti Malaya",
     "alternateName":"UMMHC",
     "url":"https://ummhc25.github.io/UMMHC-official.github.io/",
-    "logo":"https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/LOGO.png",
+    "logo":"https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png",
     "description":"Laman rasmi Kelab Muzium dan Warisan Universiti Malaya berkaitan sejarah, budaya dan warisan."
   }
   </script>
 
   <meta property="og:title" content="Kelab Muzium dan Warisan Universiti Malaya (UMMHC)">
   <meta property="og:description" content="Laman rasmi UMMHC yang memaparkan sekretariat, aktiviti, program warisan dan galeri.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/LOGO.png?v=4">
+  <meta property="og:image" content="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png?v=4">
   <meta property="og:url" content="https://ummhc25.github.io/UMMHC-official.github.io/">
   <meta property="og:type" content="website">
 
@@ -62,7 +62,7 @@
       color: #333;
     }
 
-    /* GAYA POPUP IKLAN */
+    /* GAYA POPUP IKLAN BERSEBELAHAN (SIDE BY SIDE) */
     .ad-popup-overlay {
       position: fixed;
       top: 0;
@@ -88,8 +88,8 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
       overflow: hidden;
       border: 3px solid #FFD700;
-      display: flex;
-      flex-direction: row;
+      display: table;
+      table-layout: fixed;
     }
 
     .ad-popup-close {
@@ -119,11 +119,11 @@
     }
 
     .ad-poster-col {
+      display: table-cell;
       width: 45%;
+      vertical-align: middle;
       background: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      text-align: center;
     }
 
     .ad-popup-img {
@@ -132,10 +132,13 @@
       max-height: 80vh;
       object-fit: contain;
       display: block;
+      margin: 0 auto;
     }
 
     .ad-caption-col {
+      display: table-cell;
       width: 55%;
+      vertical-align: top;
       padding: 30px 25px;
       background: #ffffff;
       overflow-y: auto;
@@ -233,7 +236,7 @@
       color: #FFD700;
     }
 
-    /* HEADER FULL */
+    /* HEADER FULL - DENGAN ASPECT RATIO */
     header {
       background: linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)),
         url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png?v=4");
@@ -247,6 +250,7 @@
       transition: background 0.3s ease-in-out;
     }
 
+    /* BAR MERAH BAWAH HEADER */
     .header-space {
       height: 20px;
       background: #800000;
@@ -265,7 +269,6 @@
     .music-player h3 {
       color: #800000;
       text-align: center;
-      margin-top: 0;
     }
 
     .music-player p {
@@ -299,22 +302,11 @@
       border-radius: 15px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
       text-align: left;
-      overflow: hidden; /* ELAKKAN KANDUNGAN TERKELUAR */
-    }
-
-    /* HADKAN SEMUA GAMBAR DALAM KOTAK PUTIH */
-    .card img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 15px auto;
-      border-radius: 8px;
     }
 
     .card h2 {
       color: #800000;
       text-align: center;
-      margin-top: 0;
     }
 
     .card p {
@@ -353,6 +345,111 @@
       color: #800000 !important;
     }
 
+    /* --- GAYA PENGASAS (SOLUSI PENGAPLIKASIAN SPA GLOBAL) --- */
+    #app-content .founders-grid, 
+    .founders-grid {
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      justify-content: space-between !important;
+      gap: 15px !important;
+      margin-top: 20px !important;
+      width: 100% !important;
+    }
+
+    #app-content .founder-card, 
+    .founder-card {
+      background: #fafafa !important;
+      border: 1px solid #eee !important;
+      border-radius: 12px !important;
+      padding: 15px 10px !important;
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+      flex: 1 1 0 !important;
+      min-width: 0 !important;
+    }
+
+    #app-content .founder-card.lead-founder, 
+    .founder-card.lead-founder {
+      background: #fffdf8 !important;
+      border: 1.5px solid #800000 !important;
+      max-width: 350px !important;
+      width: 100% !important;
+      margin: 0 auto 10px auto !important;
+      box-sizing: border-box !important;
+    }
+
+    /* SEKATAN SAIZ GAMBAR PENGASAS SUPAYA TAK JADI GERGASI */
+    #app-content .founder-card img, 
+    .founder-card img {
+      width: 100% !important;
+      max-width: 170px !important;
+      height: 200px !important;
+      object-fit: cover !important;
+      object-position: top center !important;
+      border-radius: 10px !important;
+      margin-bottom: 12px !important;
+      display: block !important;
+    }
+
+    #app-content .founder-card.lead-founder img, 
+    .founder-card.lead-founder img {
+      max-width: 200px !important;
+      height: 230px !important;
+    }
+
+    #app-content .founder-info, 
+    .founder-info {
+      font-size: 12.5px !important;
+      line-height: 1.4 !important;
+      color: #333 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      flex-grow: 1 !important;
+      width: 100% !important;
+    }
+
+    #app-content .founder-card.lead-founder .founder-info, 
+    .founder-card.lead-founder .founder-info {
+      font-size: 14px !important;
+    }
+
+    #app-content .founder-info .name, 
+    .founder-info .name {
+      font-weight: bold !important;
+      font-size: 13.5px !important;
+      color: #800000 !important;
+      margin-bottom: 6px !important;
+      min-height: 40px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    #app-content .founder-card.lead-founder .name, 
+    .founder-card.lead-founder .name {
+      font-size: 16.5px !important;
+      min-height: auto !important;
+    }
+
+    #app-content .founder-info .role-title, 
+    .founder-info .role-title {
+      font-weight: bold !important;
+      color: #111 !important;
+      margin-bottom: 8px !important;
+      min-height: 55px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    #app-content .founder-info .italic-text, 
+    .founder-info .italic-text {
+      font-style: italic !important;
+    }
+
     /* GALERI */
     .gallery {
       display: flex;
@@ -363,7 +460,6 @@
 
     .gallery img {
       width: 30%;
-      max-width: 100%;
       border-radius: 10px;
     }
 
@@ -381,16 +477,13 @@
 
     /* RESPONSIVE DESIGN */
     @media(max-width:850px) {
-      section {
-        padding: 20px 5%;
-      }
-
       .ad-popup-content {
-        flex-direction: column;
+        display: block;
         overflow-y: auto;
       }
 
       .ad-poster-col, .ad-caption-col {
+        display: block;
         width: 100%;
         max-height: none;
       }
@@ -427,8 +520,26 @@
         padding-top: 50%;
       }
 
+      #app-content .founders-grid,
+      .founders-grid {
+        flex-wrap: wrap !important;
+      }
+
+      #app-content .founder-card,
+      .founder-card {
+        flex: 1 1 45% !important;
+        margin-bottom: 10px !important;
+      }
+
       .gallery img {
         width: 100%;
+      }
+    }
+
+    @media(max-width: 480px) {
+      #app-content .founder-card,
+      .founder-card {
+        flex: 1 1 100% !important;
       }
     }
   </style>
@@ -442,7 +553,7 @@
       <button class="ad-popup-close" id="closeAdBtn" aria-label="Tutup Iklan">&times;</button>
       
       <div class="ad-poster-col">
-        <img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/photo_2026-08-17_08-50-33.jpg?v=4" alt="Iklan UMMHC" class="ad-popup-img">
+        <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/photo_2026-08-17_08-50-33.jpg?v=4" alt="Iklan UMMHC" class="ad-popup-img">
       </div>
       
       <div class="ad-caption-col">
@@ -499,7 +610,7 @@
     <p style="color:#800000; font-weight:bold;">
       ✨ Muzik warisan akan dimainkan secara automatik untuk mengiringi perjalanan anda di laman rasmi Kelab Muzium dan Warisan (UMMHC).
     </p>
-    <audio id="audioPlayer" controls></audio>
+    <audio id="audioPlayer" controls autoplay></audio>
     <p id="songName"></p>
   </div>
 
@@ -514,6 +625,7 @@
         </p>
       </div>
 
+      <!-- KARD TENTANG KAMI RINGKAS DENGAN BUTANG MERAH -->
       <div class="card">
         <h2>TENTANG KAMI</h2>
         <p>
@@ -534,7 +646,6 @@
         </div>
       </div>
 
-      <!-- KARD MUZIUM DAN GALERI -->
       <div class="card">
         <h2>MUZIUM DAN GALERI UNIVERSITI MALAYA</h2>
         <p>
@@ -624,7 +735,7 @@
       },
       {
         name: "Dato' Sri Siti Nurhaliza - Rencong",
-        src: "https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/Dato'%20Sri%20Siti%20Nurhaliza%20-%20Rencong%20(%20Lirik%20).mp3"
+        src: "https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/Dato'%20Sri%20Siti%20Nurhaliza%20-%20Rencong%20(%20Lirik%20).mp3"
       }
     ];
 
@@ -642,7 +753,7 @@
     player.addEventListener("ended", () => {
       currentTrack = (currentTrack + 1) % songList.length;
       loadTrack(currentTrack);
-      player.play().catch(err => console.log("Menunggu interaksi pengguna."));
+      player.play();
     });
 
     function startAudio() {
@@ -655,16 +766,17 @@
       });
     }
 
-    document.addEventListener('click', startAudio, { once: true });
-    document.addEventListener('touchstart', startAudio, { once: true });
+    player.play().catch(() => {
+      document.addEventListener('click', startAudio);
+      document.addEventListener('touchstart', startAudio);
+      document.addEventListener('scroll', startAudio);
+    });
 
     function updateHeaderImage(url) {
-      if (url && url.includes("sekretariat.html")) {
-        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png")';
-      } else if (url && url.includes("muzium-galeri.html")) {
-        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png")';
+      if (url.includes("sekretariat.html")) {
+        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url("https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png")';
       } else {
-        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png")';
+        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url("https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png")';
       }
     }
 
@@ -702,7 +814,7 @@
           link.addEventListener('click', function(e) {
             e.preventDefault();
             if (player.paused) {
-              player.play().catch(() => {});
+              player.play();
             }
             loadPage(href);
             history.pushState({ page: href }, '', href);
