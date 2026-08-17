@@ -15,7 +15,7 @@
 
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png">
 
-  <!-- MUAT TURUN FONT ROYAL / ELEGANT DARI GOOGLE FONTS -->
+  <!-- MUAT TURUN FONT ROYAL DARI GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
@@ -56,19 +56,19 @@
       color: #333;
     }
 
-    /* GAYA POPUP IKLAN (MODAL) */
+    /* GAYA POPUP IKLAN BERSEBELAHAN (SIDE BY SIDE) */
     .ad-popup-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.85);
       z-index: 9999;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 15px;
+      padding: 20px;
       animation: fadeIn 0.3s ease-in-out;
     }
 
@@ -76,13 +76,14 @@
       position: relative;
       background: #ffffff;
       border-radius: 15px;
-      max-width: 520px;
-      max-height: 90vh;
+      max-width: 900px;
       width: 100%;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-      overflow-y: auto;
-      text-align: center;
+      max-height: 90vh;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+      overflow: hidden;
       border: 3px solid #FFD700;
+      display: table;
+      table-layout: fixed;
     }
 
     .ad-popup-close {
@@ -101,7 +102,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      z-index: 10;
+      z-index: 20;
       transition: background 0.2s, transform 0.2s;
     }
 
@@ -111,46 +112,63 @@
       transform: scale(1.1);
     }
 
+    /* SUSUNAN 2 RUANGAN SEBELAH-MENSEBELAH */
+    .ad-poster-col {
+      display: table-cell;
+      width: 45%;
+      vertical-align: middle;
+      background: #000;
+      text-align: center;
+    }
+
     .ad-popup-img {
       width: 100%;
       height: auto;
+      max-height: 80vh;
+      object-fit: contain;
       display: block;
+      margin: 0 auto;
     }
 
-    /* BAHAGIAN TEXT / CAPTION POPUP */
-    .ad-caption-body {
-      padding: 20px 25px;
+    .ad-caption-col {
+      display: table-cell;
+      width: 55%;
+      vertical-align: top;
+      padding: 30px 25px;
+      background: #ffffff;
+      overflow-y: auto;
+      max-height: 80vh;
       text-align: left;
-      background: #fff;
     }
 
     .royal-heading {
       font-family: 'Cinzel', 'Georgia', serif;
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 800;
       color: #800000;
       text-align: center;
-      margin: 10px 0 5px 0;
-      letter-spacing: 3px;
+      margin: 0 0 5px 0;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      text-shadow: 1px 1px 2px rgba(212, 175, 55, 0.5);
+      text-shadow: 1px 1px 2px rgba(212, 175, 55, 0.4);
     }
 
     .royal-subheading {
       font-family: 'Playfair Display', serif;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 600;
       color: #b38f00;
       text-align: center;
-      margin-bottom: 18px;
-      letter-spacing: 1px;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+      border-bottom: 2px solid #f2e6b7;
+      padding-bottom: 10px;
     }
 
     .ad-caption-text {
-      font-size: 14px;
+      font-size: 13.5px;
       line-height: 1.6;
       color: #2c2c2c;
-      white-space: pre-line;
     }
 
     .ad-caption-text p {
@@ -160,9 +178,9 @@
     .hashtags {
       color: #800000;
       font-weight: bold;
-      font-size: 13px;
+      font-size: 12.5px;
       margin-top: 15px;
-      word-wrap: break-word;
+      line-height: 1.5;
     }
 
     @keyframes fadeIn {
@@ -352,6 +370,17 @@
 
     /* RESPONSIVE DESIGN */
     @media(max-width:850px) {
+      .ad-popup-content {
+        display: block;
+        overflow-y: auto;
+      }
+
+      .ad-poster-col, .ad-caption-col {
+        display: block;
+        width: 100%;
+        max-height: none;
+      }
+
       nav {
         justify-content: space-between;
         padding: 10px 20px;
@@ -393,16 +422,18 @@
 
 <body>
 
-  <!-- POPUP IKLAN DENGAN TAJUK ROYAL & KAPSYEN -->
+  <!-- POPUP IKLAN (SEBELAH-MENSEBELAH: POSTER KIRI, KAPSYEN KANAN) -->
   <div class="ad-popup-overlay" id="adPopup">
     <div class="ad-popup-content">
       <button class="ad-popup-close" id="closeAdBtn" aria-label="Tutup Iklan">&times;</button>
       
-      <!-- GAMBAR IKLAN -->
-      <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/photo_2026-08-17_08-50-33.jpg" alt="Iklan UMMHC" class="ad-popup-img">
+      <!-- RUANGAN KIRI: POSTER -->
+      <div class="ad-poster-col">
+        <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/photo_2026-08-17_08-50-33.jpg" alt="Iklan UMMHC" class="ad-popup-img">
+      </div>
       
-      <!-- KANDUNGAN KAPSYEN -->
-      <div class="ad-caption-body">
+      <!-- RUANGAN KANAN: KAPSYEN & FONT ROYAL -->
+      <div class="ad-caption-col">
         <div class="royal-heading">✨ AKAN DATANG ✨</div>
         <div class="royal-subheading">SATU SIRI: JEJAK WARISAN NEGERI 🌿</div>
         
@@ -426,6 +457,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
 
