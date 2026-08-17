@@ -148,7 +148,7 @@
       max-width: 170px !important;
       height: 200px !important;
       object-fit: cover !important;
-      object-position: top center !important;
+      object-position: center 15% !important; /* Diselaraskan secara umum */
       border-radius: 10px;
       margin-bottom: 12px;
       display: block;
@@ -158,6 +158,12 @@
     .founder-card.lead-founder img {
       max-width: 200px !important;
       height: 230px !important;
+      object-position: top center !important;
+    }
+
+    /* Penyelarasan Khas Gambar Haziq Supaya Sejajar */
+    .founder-card img.img-haziq {
+      object-position: center 30% !important; /* Menurunkan kedudukan potongan gambar Haziq */
     }
 
     .founder-info {
@@ -262,7 +268,7 @@
     <div class="card">
       <h2>SEJARAH PENUBUHAN</h2>
       <p>
-        Kelab Muzium dan Warisan Universiti Malaya merupakan sebuah kelab yang ditubuhkan untuk menjadi badan pelajar dalam mempromosikan Muzium dan Galeri yang terdapat di Universiti Malaya. Pembentukannya bermula pada 02 Oktober 2025 oleh Kurator dan empat pelajar Latihan Industri di Muzium Perubatan Tan Sri Dr. Lim Wee Chai, Fakulti Perubatan, Universiti Malaya iaitu Encik Rizqullah Al-Bariq Bin Azmi (Kurator) bersama Mendiang Tan Aik Kai, Muhamad Faiz Azrin Bin Sapuwan, Muhamad Faisal Bin Zubir, Muhammad Haziq Bin Abdullah (Pelajar Latihan Industri). Setelah mendapat sokongan semua wakil muzium dan galeri di Universiti Malaya, borang pendaftaran penubuhan kelab telah dihantar pada 17 November 2025 dan diluluskan pada 02 Disember 2025 oleh Dato’ Seri Naib Canselor Universiti Malaya.
+        Kelab Muzium dan Warisan Universiti Malaya merupakan sebuah kelab yang ditubuhkan untuk menjadi badan pelajar dalam mempromosikan Muzium dan Galeri yang terdapat di Universiti Malaya. Pembentukannya bermula pada 02 Oktober 2025 oleh Kurator dan empat pelajar Latihan Industri di Muzium Perubatan Tan Sri Dr. Lim Wee Chai, Fakulti Perubatan, Universiti Malaya iaitu <strong>Encik Rizqullah Al-Bariq Bin Azmi</strong> (Kurator) bersama <strong>Mendiang Tan Aik Kai</strong>, <strong>Muhamad Faiz Azrin Bin Sapuwan</strong>, <strong>Muhammad Faisal Bin Zubir</strong>, <strong>Muhammad Haziq Bin Abdullah</strong> (Pelajar Latihan Industri). Setelah mendapat sokongan semua wakil muzium dan galeri di Universiti Malaya, borang pendaftaran penubuhan kelab telah dihantar pada 17 November 2025 dan diluluskan pada 02 Disember 2025 oleh Dato’ Seri Naib Canselor Universiti Malaya.
       </p>
       <p>
         Bagi sesi 2025/2026 (tahun pertama penubuhan), kelab ini memiliki 48 orang ahli Sekretariat serta dinasihati oleh Lembaga Penasihat Kelab yang dianggotai pegawai - pegawai Universiti Malaya yang bekerja sebagai Kurator, Penyelia atau Ketua bagi Muzium dan Galeri yang terdapat di Universiti Malaya.
@@ -277,7 +283,7 @@
       <div class="founder-card lead-founder">
         <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/photo_2026-08-17_11-57-11.jpg?v=4" alt="Encik Rizqullah Al-Bariq Bin Azmi">
         <div class="founder-info">
-          <div class="name">Encik Rizqullah Al-Bariq Bin Azmi</div>
+          <div class="name"><strong>Encik Rizqullah Al-Bariq Bin Azmi</strong></div>
           <div class="role-title">Pengasas Bersama<br>Kelab Muzium dan Warisan Universiti Malaya</div>
           <div class="italic-text">Kurator</div>
           <div class="italic-text">Muzium Perubatan Tan Sri Dr. Lim Wee Chai,</div>
@@ -292,7 +298,7 @@
         <div class="founder-card">
           <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/photo_2026-08-17_11-57-09.jpg?v=4" alt="Mendiang Tan Aik Kai">
           <div class="founder-info">
-            <div class="name">Mendiang Tan Aik Kai</div>
+            <div class="name"><strong>Mendiang Tan Aik Kai</strong></div>
             <div class="role-title">Pengasas Bersama<br>Kelab Muzium dan Warisan Universiti Malaya</div>
             <div class="italic-text">Pelajar Latihan Industri</div>
             <div class="italic-text">Muzium Perubatan Tan Sri Dr. Lim Wee Chai,</div>
@@ -304,7 +310,7 @@
         <div class="founder-card">
           <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/LATIHAN%20INDUSTRI%20MUZIUM%20PERUBATAN%20TAN%20SRI%20DR.%20LIM%20WEE%20CHAI%20(1).png?v=4" alt="Muhamad Faiz Azrin Bin Sapuwan">
           <div class="founder-info">
-            <div class="name">Muhamad Faiz Azrin Bin Sapuwan</div>
+            <div class="name"><strong>Muhamad Faiz Azrin Bin Sapuwan</strong></div>
             <div class="role-title">Pengasas Bersama<br>Kelab Muzium dan Warisan Universiti Malaya</div>
             <div class="italic-text">Pelajar Latihan Industri</div>
             <div class="italic-text">Muzium Perubatan Tan Sri Dr. Lim Wee Chai,</div>
@@ -316,7 +322,7 @@
         <div class="founder-card">
           <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/LATIHAN%20INDUSTRI%20MUZIUM%20PERUBATAN%20TAN%20SRI%20DR.%20LIM%20WEE%20CHAI.png?v=4" alt="Muhammad Faisal Bin Zubir">
           <div class="founder-info">
-            <div class="name">Muhammad Faisal Bin Zubir</div>
+            <div class="name"><strong>Muhammad Faisal Bin Zubir</strong></div>
             <div class="role-title">Pengasas Bersama<br>Kelab Muzium dan Warisan Universiti Malaya</div>
             <div class="italic-text">Pelajar Latihan Industri</div>
             <div class="italic-text">Muzium Perubatan Tan Sri Dr. Lim Wee Chai,</div>
@@ -326,9 +332,9 @@
 
         <!-- PENGASAS 5 (HAZIQ) -->
         <div class="founder-card">
-          <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/LATIHAN%20INDUSTRI%20MUZIUM%20PERUBATAN%20TAN%20SRI%20DR.%20LIM%20WEE%20CHAI%20(2).png?v=4" alt="Muhammad Haziq Bin Abdullah">
+          <img class="img-haziq" src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/LATIHAN%20INDUSTRI%20MUZIUM%20PERUBATAN%20TAN%20SRI%20DR.%20LIM%20WEE%20CHAI%20(2).png?v=4" alt="Muhammad Haziq Bin Abdullah">
           <div class="founder-info">
-            <div class="name">Muhammad Haziq Bin Abdullah</div>
+            <div class="name"><strong>Muhammad Haziq Bin Abdullah</strong></div>
             <div class="role-title">Pengasas Bersama<br>Kelab Muzium dan Warisan Universiti Malaya</div>
             <div class="italic-text">Pelajar Latihan Industri</div>
             <div class="italic-text">Muzium Perubatan Tan Sri Dr. Lim Wee Chai,</div>
