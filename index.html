@@ -19,7 +19,7 @@
   <meta name="keywords" content="Kelab Muzium dan Warisan Universiti Malaya, UMMHC, Museum and Heritage Club UM, Kelab Muzium UM, Warisan Universiti Malaya">
   <meta name="author" content="Kelab Muzium dan Warisan Universiti Malaya">
 
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png?v=4">
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png?v=5">
 
   <!-- MUAT TURUN FONT ROYAL DARI GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +40,7 @@
 
   <meta property="og:title" content="Kelab Muzium dan Warisan Universiti Malaya (UMMHC)">
   <meta property="og:description" content="Laman rasmi UMMHC yang memaparkan sekretariat, aktiviti, program warisan dan galeri.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png?v=4">
+  <meta property="og:image" content="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png?v=5">
   <meta property="og:url" content="https://ummhc25.github.io/UMMHC-official.github.io/">
   <meta property="og:type" content="website">
 
@@ -54,7 +54,7 @@
       margin: 0;
       font-family: "Segoe UI", Arial, sans-serif;
       background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
-        url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/77527381-a7e9-48d4-b26f-6abc8b8e22df.png?v=4");
+        url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/77527381-a7e9-48d4-b26f-6abc8b8e22df.png?v=5");
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -62,7 +62,7 @@
       color: #333;
     }
 
-    /* GAYA POPUP IKLAN BERSEBELAHAN (SIDE BY SIDE) */
+    /* GAYA POPUP IKLAN */
     .ad-popup-overlay {
       position: fixed;
       top: 0;
@@ -239,7 +239,7 @@
     /* HEADER FULL - DENGAN ASPECT RATIO */
     header {
       background: linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)),
-        url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png?v=4");
+        url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png?v=5");
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
@@ -302,6 +302,7 @@
       border-radius: 15px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
       text-align: left;
+      overflow: hidden;
     }
 
     .card h2 {
@@ -345,109 +346,43 @@
       color: #800000 !important;
     }
 
-    /* --- GAYA PENGASAS (SOLUSI PENGAPLIKASIAN SPA GLOBAL) --- */
-    #app-content .founders-grid, 
-    .founders-grid {
-      display: flex !important;
-      flex-wrap: nowrap !important;
-      justify-content: space-between !important;
-      gap: 15px !important;
+    /* --- GAYA KHAS SEKRETARIAT & PENGASAS (MEMAKSA GAMBAR SERAGAM AWAL-AWAL) --- */
+    #app-content .grid,
+    .grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+      gap: 20px !important;
       margin-top: 20px !important;
-      width: 100% !important;
+      justify-items: center !important;
+      align-items: stretch !important;
     }
 
-    #app-content .founder-card, 
-    .founder-card {
+    #app-content .item,
+    .item {
       background: #fafafa !important;
-      border: 1px solid #eee !important;
-      border-radius: 12px !important;
-      padding: 15px 10px !important;
+      padding: 15px !important;
+      border-radius: 15px !important;
       text-align: center !important;
+      width: 100% !important;
       display: flex !important;
       flex-direction: column !important;
       align-items: center !important;
+      justify-content: center !important;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
-      flex: 1 1 0 !important;
-      min-width: 0 !important;
+      overflow: hidden !important;
     }
 
-    #app-content .founder-card.lead-founder, 
-    .founder-card.lead-founder {
-      background: #fffdf8 !important;
-      border: 1.5px solid #800000 !important;
-      max-width: 350px !important;
+    #app-content .item img,
+    .item img {
       width: 100% !important;
-      margin: 0 auto 10px auto !important;
-      box-sizing: border-box !important;
-    }
-
-    /* SEKATAN SAIZ GAMBAR PENGASAS SUPAYA TAK JADI GERGASI */
-    #app-content .founder-card img, 
-    .founder-card img {
-      width: 100% !important;
-      max-width: 170px !important;
-      height: 200px !important;
+      max-width: 250px !important;
+      height: auto !important;
+      aspect-ratio: 4 / 5 !important;
       object-fit: cover !important;
       object-position: top center !important;
       border-radius: 10px !important;
-      margin-bottom: 12px !important;
       display: block !important;
-    }
-
-    #app-content .founder-card.lead-founder img, 
-    .founder-card.lead-founder img {
-      max-width: 200px !important;
-      height: 230px !important;
-    }
-
-    #app-content .founder-info, 
-    .founder-info {
-      font-size: 12.5px !important;
-      line-height: 1.4 !important;
-      color: #333 !important;
-      display: flex !important;
-      flex-direction: column !important;
-      flex-grow: 1 !important;
-      width: 100% !important;
-    }
-
-    #app-content .founder-card.lead-founder .founder-info, 
-    .founder-card.lead-founder .founder-info {
-      font-size: 14px !important;
-    }
-
-    #app-content .founder-info .name, 
-    .founder-info .name {
-      font-weight: bold !important;
-      font-size: 13.5px !important;
-      color: #800000 !important;
-      margin-bottom: 6px !important;
-      min-height: 40px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-    }
-
-    #app-content .founder-card.lead-founder .name, 
-    .founder-card.lead-founder .name {
-      font-size: 16.5px !important;
-      min-height: auto !important;
-    }
-
-    #app-content .founder-info .role-title, 
-    .founder-info .role-title {
-      font-weight: bold !important;
-      color: #111 !important;
-      margin-bottom: 8px !important;
-      min-height: 55px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-    }
-
-    #app-content .founder-info .italic-text, 
-    .founder-info .italic-text {
-      font-style: italic !important;
+      margin: 0 auto !important;
     }
 
     /* GALERI */
@@ -520,26 +455,8 @@
         padding-top: 50%;
       }
 
-      #app-content .founders-grid,
-      .founders-grid {
-        flex-wrap: wrap !important;
-      }
-
-      #app-content .founder-card,
-      .founder-card {
-        flex: 1 1 45% !important;
-        margin-bottom: 10px !important;
-      }
-
       .gallery img {
         width: 100%;
-      }
-    }
-
-    @media(max-width: 480px) {
-      #app-content .founder-card,
-      .founder-card {
-        flex: 1 1 100% !important;
       }
     }
   </style>
@@ -553,7 +470,7 @@
       <button class="ad-popup-close" id="closeAdBtn" aria-label="Tutup Iklan">&times;</button>
       
       <div class="ad-poster-col">
-        <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/photo_2026-08-17_08-50-33.jpg?v=4" alt="Iklan UMMHC" class="ad-popup-img">
+        <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/photo_2026-08-17_08-50-33.jpg?v=5" alt="Iklan UMMHC" class="ad-popup-img">
       </div>
       
       <div class="ad-caption-col">
@@ -682,8 +599,8 @@
       <div class="card">
         <h2>GALERI</h2>
         <div class="gallery">
-          <img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/cb2299ee-0988-419d-9f19-971a9c5b275e.png?v=4" alt="Header UMMHC">
-          <img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/LOGO.png?v=4" alt="Logo UMMHC">
+          <img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/cb2299ee-0988-419d-9f19-971a9c5b275e.png?v=5" alt="Header UMMHC">
+          <img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/LOGO.png?v=5" alt="Logo UMMHC">
         </div>
       </div>
 
@@ -774,14 +691,17 @@
 
     function updateHeaderImage(url) {
       if (url.includes("sekretariat.html")) {
-        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url("https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png")';
+        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url("https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png?v=5")';
       } else {
-        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url("https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png")';
+        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url("https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png?v=5")';
       }
     }
 
     function loadPage(url) {
-      fetch(url)
+      // Tambah v=5 untuk memintas cache lama
+      const fetchUrl = url.includes('?') ? url : url + '?v=5';
+      
+      fetch(fetchUrl)
         .then(response => {
           if (!response.ok) throw new Error("Halaman tidak dijumpai");
           return response.text();
