@@ -4,7 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- KAWALAN CACHE SUPAYA TIADA DATA LAMA TERSIMPAN -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
   <title>Sekretariat UMMHC Sesi 2025/2026 | Kelab Muzium dan Warisan UM</title>
+
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png?v=4">
 
   <style>
     * {
@@ -16,53 +24,15 @@
       margin: 0;
       font-family: "Segoe UI", Arial, sans-serif;
       background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
-        url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/77527381-a7e9-48d4-b26f-6abc8b8e22df.png");
+        url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/77527381-a7e9-48d4-b26f-6abc8b8e22df.png?v=4");
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
       background-repeat: no-repeat;
       color: #333;
-      text-align: center;
     }
 
-    /* HEADER SAMA MACAM INDEX */
-    header {
-      background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-        url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/2cc73193-f7f9-4326-a5e7-a58cdb55d0c0.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      min-height: 350px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    .header-logo {
-      max-width: 140px;
-      height: auto;
-      margin-bottom: 15px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.2rem;
-      letter-spacing: 1px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-    header p {
-      margin: 10px 0 0 0;
-      font-size: 1.1rem;
-      color: #FFD700;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    }
-
-    /* MENU */
+    /* MENU MERAH ATAS */
     nav {
       background: #800000;
       padding: 15px;
@@ -76,25 +46,60 @@
       flex-wrap: wrap;
     }
 
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 5px 15px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
     nav a {
       color: white;
       text-decoration: none;
-      margin: 5px 15px;
+      margin: 5px 12px;
       font-weight: bold;
-      text-align: center;
+      padding: 5px 0;
+      font-size: 14px;
     }
 
     nav a:hover {
       color: #FFD700;
     }
 
+    /* HEADER KASUS SEKRETARIAT */
+    header {
+      background: linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)),
+        url("https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #800000;
+      width: 100%;
+      height: 0;
+      padding-top: 32%;
+      transition: background 0.3s ease-in-out;
+    }
+
+    /* BAR MERAH BAWAH HEADER */
+    .header-space {
+      height: 20px;
+      background: #800000;
+    }
+
     /* CONTENT */
     section {
       padding: 40px 10%;
-      text-align: center;
     }
 
-    /* KOTAK & AYAT KE TENGAH */
     .card {
       background: white;
       padding: 30px;
@@ -117,10 +122,6 @@
     }
 
     /* CARTA ORGANISASI */
-    .org {
-      text-align: center;
-    }
-
     .org img {
       max-width: 100%;
       border-radius: 10px;
@@ -128,18 +129,18 @@
       display: block;
     }
 
-    /* GRID GAMBAR */
+    /* GRID GAMBAR AHIL SEKRETARIAT */
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
+      gap: 25px;
       margin-top: 20px;
       justify-items: center;
     }
 
     .item {
       background: #fafafa;
-      padding: 20px;
+      padding: 15px;
       border-radius: 15px;
       text-align: center;
       width: 100%;
@@ -147,16 +148,18 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
 
     .item img {
       width: 100%;
       max-width: 350px;
+      height: auto;
       border-radius: 10px;
       margin: 0 auto;
+      display: block;
     }
 
-    /* FOOTER */
     footer {
       background: #800000;
       color: white;
@@ -169,18 +172,42 @@
       margin: 0;
     }
 
-    @media(max-width:700px) {
-      header h1 {
-        font-size: 1.6rem;
+    /* RESPONSIVE DESIGN */
+    @media(max-width:850px) {
+      nav {
+        justify-content: space-between;
+        padding: 10px 20px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      nav a {
+        margin: 6px 0;
+        padding: 8px;
+        background: #660000;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      header {
+        padding-top: 50%;
       }
 
       .grid {
         grid-template-columns: 1fr;
-      }
-
-      nav a {
-        display: block;
-        margin: 10px 0;
       }
     }
   </style>
@@ -188,21 +215,27 @@
 
 <body>
 
-  <!-- HEADER SAMA DENGAN INDEX -->
-  <header>
-    <img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/2cc73193-f7f9-4326-a5e7-a58cdb55d0c0.png" alt="Logo UMMHC" class="header-logo">
-    <h1>KELAB MUZIUM DAN WARISAN</h1>
-    <p>UNIVERSITI MALAYA (UMMHC)</p>
-  </header>
-
+  <!-- MENU MERAH ATAS -->
   <nav>
-    <a href="index.html">UTAMA</a>
-    <a href="sekretariat.html">SEKRETARIAT</a>
-    <a href="aktiviti.html">AKTIVITI</a>
-    <a href="galeri.html">GALERI</a>
-    <a href="hubungi.html">HUBUNGI</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Buka Menu">☰ MENU</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">UTAMA</a>
+      <a href="sejarah.html">TENTANG KAMI</a>
+      <a href="sekretariat.html">SEKRETARIAT</a>
+      <a href="muzium-galeri.html">MUZIUM DAN GALERI UNIVERSITI MALAYA</a>
+      <a href="aktiviti.html">AKTIVITI</a>
+      <a href="galeri.html">GALERI</a>
+      <a href="hubungi.html">HUBUNGI KAMI</a>
+    </div>
   </nav>
 
+  <!-- HEADER GAMBAR BANNER SEKRETARIAT -->
+  <header></header>
+
+  <!-- BAR MERAH BAWAH HEADER -->
+  <div class="header-space"></div>
+
+  <!-- KANDUNGAN UTAMA (AKAN DITARIK OLEH SPA/FETCH DALAM INDEX) -->
   <section>
 
     <!-- CARTA ORGANISASI -->
@@ -323,6 +356,17 @@
   <footer>
     <p>© 2025/2026 Kelab Muzium dan Warisan Universiti Malaya</p>
   </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    if (menuToggle) {
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    }
+  </script>
 
 </body>
 
