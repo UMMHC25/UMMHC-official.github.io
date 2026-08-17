@@ -12,7 +12,7 @@
 
   <title>Sekretariat UMMHC Sesi 2025/2026 | Kelab Muzium dan Warisan UM</title>
 
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png?v=4">
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png?v=new">
 
   <style>
     * {
@@ -24,7 +24,7 @@
       margin: 0;
       font-family: "Segoe UI", Arial, sans-serif;
       background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
-        url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/77527381-a7e9-48d4-b26f-6abc8b8e22df.png?v=4");
+        url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/77527381-a7e9-48d4-b26f-6abc8b8e22df.png?v=new");
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -78,10 +78,10 @@
       border-bottom: 2px solid #FFD700;
     }
 
-    /* HEADER KASUS SEKRETARIAT */
+    /* HEADER BANNER SEKRETARIAT */
     header {
       background: linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)),
-        url("https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png");
+        url("https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png?v=new");
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
@@ -110,19 +110,21 @@
       border-radius: 15px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
       text-align: center;
-      overflow: hidden; /* Mencegah kandungan terkeluar */
+      overflow: hidden; /* Mencegah sebarang kandungan terkeluar */
+      width: 100%;
     }
 
     .card h2 {
-      color: #800000;
-      text-align: center;
+      color: #800000 !important;
+      text-align: center !important;
       margin-top: 0;
+      margin-bottom: 15px;
     }
 
     .card p {
       text-align: center;
       line-height: 1.6;
-      margin: 10px 0;
+      margin: 10px 0 20px 0;
     }
 
     /* CARTA ORGANISASI */
@@ -135,14 +137,15 @@
       object-fit: contain;
     }
 
-    /* GRID GAMBAR AHLI SEKRETARIAT */
+    /* GRID GAMBAR AHLI (MAKSIMUM 3 SEBARIS) */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(3, 1fr); /* Tetapan maksimum 3 sebaris */
       gap: 20px;
       margin-top: 20px;
       justify-items: center;
       align-items: stretch;
+      width: 100%;
     }
 
     .item {
@@ -156,7 +159,7 @@
       align-items: center;
       justify-content: center;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      overflow: hidden; /* Mencegah gambar melimpah */
+      overflow: hidden;
       border: 1px solid #eee;
     }
 
@@ -164,8 +167,8 @@
       width: 100%;
       max-width: 100%;
       height: auto;
-      aspect-ratio: 4 / 5; /* Memastikan nisbah saiz gambar seragam */
-      object-fit: cover; /* Memastikan gambar dipotong kemas */
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
       object-position: top center;
       border-radius: 10px;
       display: block;
@@ -184,6 +187,12 @@
     }
 
     /* RESPONSIVE DESIGN */
+    @media(max-width:900px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 sebaris untuk tablet */
+      }
+    }
+
     @media(max-width:850px) {
       nav {
         justify-content: space-between;
@@ -227,15 +236,11 @@
       section {
         padding: 20px 5%;
       }
-
-      .grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      }
     }
 
-    @media(max-width:480px) {
+    @media(max-width:550px) {
       .grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 1 sebaris untuk telefon pintar */
       }
     }
   </style>
@@ -270,7 +275,7 @@
     <div class="card org">
       <h2>CARTA ORGANISASI</h2>
       <p>Carta organisasi rasmi Kelab Muzium dan Warisan Universiti Malaya sesi 2025/2026.</p>
-      <img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/1.png" alt="Carta Organisasi UMMHC Sesi 2025/2026" loading="lazy">
+      <img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/1.png?v=new" alt="Carta Organisasi UMMHC Sesi 2025/2026" loading="lazy">
     </div>
 
     <!-- LEMBAGA PENASIHAT -->
@@ -278,14 +283,14 @@
       <h2>LEMBAGA PENASIHAT</h2>
       <p>Barisan Lembaga Penasihat Kelab Muzium dan Warisan Universiti Malaya Sesi 2025/2026.</p>
       <div class="grid">
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/2.png" alt="Ahli Lembaga Penasihat UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/3.png" alt="Ahli Lembaga Penasihat UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/4.png" alt="Ahli Lembaga Penasihat UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/5.png" alt="Ahli Lembaga Penasihat UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/6.png" alt="Ahli Lembaga Penasihat UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/7.png" alt="Ahli Lembaga Penasihat UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/8.png" alt="Ahli Lembaga Penasihat UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/9.png" alt="Ahli Lembaga Penasihat UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/2.png?v=new" alt="Ahli Lembaga Penasihat UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/3.png?v=new" alt="Ahli Lembaga Penasihat UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/4.png?v=new" alt="Ahli Lembaga Penasihat UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/5.png?v=new" alt="Ahli Lembaga Penasihat UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/6.png?v=new" alt="Ahli Lembaga Penasihat UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/7.png?v=new" alt="Ahli Lembaga Penasihat UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/8.png?v=new" alt="Ahli Lembaga Penasihat UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/9.png?v=new" alt="Ahli Lembaga Penasihat UMMHC" loading="lazy"></div>
       </div>
     </div>
 
@@ -294,15 +299,15 @@
       <h2>MAJLIS TERTINGGI</h2>
       <p>Barisan Majlis Tertinggi Kelab Muzium dan Warisan Universiti Malaya Sesi 2025/2026.</p>
       <div class="grid">
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/10.png" alt="Ahli Majlis Tertinggi UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/11.png" alt="Ahli Majlis Tertinggi UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/12.png" alt="Ahli Majlis Tertinggi UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/13.png" alt="Ahli Majlis Tertinggi UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/14.png" alt="Ahli Majlis Tertinggi UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/15.png" alt="Ahli Majlis Tertinggi UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/16.png" alt="Ahli Majlis Tertinggi UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/17.png" alt="Ahli Majlis Tertinggi UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/18.png" alt="Ahli Majlis Tertinggi UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/10.png?v=new" alt="Ahli Majlis Tertinggi UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/11.png?v=new" alt="Ahli Majlis Tertinggi UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/12.png?v=new" alt="Ahli Majlis Tertinggi UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/13.png?v=new" alt="Ahli Majlis Tertinggi UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/14.png?v=new" alt="Ahli Majlis Tertinggi UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/15.png?v=new" alt="Ahli Majlis Tertinggi UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/16.png?v=new" alt="Ahli Majlis Tertinggi UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/17.png?v=new" alt="Ahli Majlis Tertinggi UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/18.png?v=new" alt="Ahli Majlis Tertinggi UMMHC" loading="lazy"></div>
       </div>
     </div>
 
@@ -317,14 +322,14 @@
       <h2>EXCO PERHUBUNGAN LUAR</h2>
       <p>Barisan Exco Perhubungan Luar Kelab Muzium dan Warisan Universiti Malaya Sesi 2025/2026.</p>
       <div class="grid">
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/56.png" alt="Exco Perhubungan Luar UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/57.png" alt="Exco Perhubungan Luar UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/58.png" alt="Exco Perhubungan Luar UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/59.png" alt="Exco Perhubungan Luar UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/60.png" alt="Exco Perhubungan Luar UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/61.png" alt="Exco Perhubungan Luar UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/62.png" alt="Exco Perhubungan Luar UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/63.png" alt="Exco Perhubungan Luar UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/56.png?v=new" alt="Exco Perhubungan Luar UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/57.png?v=new" alt="Exco Perhubungan Luar UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/58.png?v=new" alt="Exco Perhubungan Luar UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/59.png?v=new" alt="Exco Perhubungan Luar UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/60.png?v=new" alt="Exco Perhubungan Luar UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/61.png?v=new" alt="Exco Perhubungan Luar UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/62.png?v=new" alt="Exco Perhubungan Luar UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/63.png?v=new" alt="Exco Perhubungan Luar UMMHC" loading="lazy"></div>
       </div>
     </div>
 
@@ -333,13 +338,13 @@
       <h2>EXCO DANA DAN TAJAAN</h2>
       <p>Barisan Exco Dana dan Tajaan Kelab Muzium dan Warisan Universiti Malaya Sesi 2025/2026.</p>
       <div class="grid">
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/26.png" alt="Exco Dana dan Tajaan UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/27.png" alt="Exco Dana dan Tajaan UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/28.png" alt="Exco Dana dan Tajaan UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/29.png" alt="Exco Dana dan Tajaan UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/30.png" alt="Exco Dana dan Tajaan UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/31.png" alt="Exco Dana dan Tajaan UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/32.png" alt="Exco Dana dan Tajaan UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/26.png?v=new" alt="Exco Dana dan Tajaan UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/27.png?v=new" alt="Exco Dana dan Tajaan UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/28.png?v=new" alt="Exco Dana dan Tajaan UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/29.png?v=new" alt="Exco Dana dan Tajaan UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/30.png?v=new" alt="Exco Dana dan Tajaan UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/31.png?v=new" alt="Exco Dana dan Tajaan UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/32.png?v=new" alt="Exco Dana dan Tajaan UMMHC" loading="lazy"></div>
       </div>
     </div>
 
@@ -348,13 +353,13 @@
       <h2>EXCO MULTIMEDIA DAN PUBLISITI</h2>
       <p>Barisan Exco Multimedia dan Publisiti Kelab Muzium dan Warisan Universiti Malaya Sesi 2025/2026.</p>
       <div class="grid">
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/33.png" alt="Exco Multimedia dan Publisiti UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/34.png" alt="Exco Multimedia dan Publisiti UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/35.png" alt="Exco Multimedia dan Publisiti UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/36.png" alt="Exco Multimedia dan Publisiti UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/37.png" alt="Exco Multimedia dan Publisiti UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/38.png" alt="Exco Multimedia dan Publisiti UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/39.png" alt="Exco Multimedia dan Publisiti UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/33.png?v=new" alt="Exco Multimedia dan Publisiti UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/34.png?v=new" alt="Exco Multimedia dan Publisiti UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/35.png?v=new" alt="Exco Multimedia dan Publisiti UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/36.png?v=new" alt="Exco Multimedia dan Publisiti UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/37.png?v=new" alt="Exco Multimedia dan Publisiti UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/38.png?v=new" alt="Exco Multimedia dan Publisiti UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/39.png?v=new" alt="Exco Multimedia dan Publisiti UMMHC" loading="lazy"></div>
       </div>
     </div>
 
@@ -363,13 +368,13 @@
       <h2>EXCO AKADEMIK DAN INTELEKTUAL</h2>
       <p>Barisan Exco Akademik dan Intelektual Kelab Muzium dan Warisan Universiti Malaya Sesi 2025/2026.</p>
       <div class="grid">
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/19.png" alt="Exco Akademik dan Intelektual UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/20.png" alt="Exco Akademik dan Intelektual UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/21.png" alt="Exco Akademik dan Intelektual UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/22.png" alt="Exco Akademik dan Intelektual UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/23.png" alt="Exco Akademik dan Intelektual UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/24.png" alt="Exco Akademik dan Intelektual UMMHC" loading="lazy"></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/25.png" alt="Exco Akademik dan Intelektual UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/19.png?v=new" alt="Exco Akademik dan Intelektual UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/20.png?v=new" alt="Exco Akademik dan Intelektual UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/21.png?v=new" alt="Exco Akademik dan Intelektual UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/22.png?v=new" alt="Exco Akademik dan Intelektual UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/23.png?v=new" alt="Exco Akademik dan Intelektual UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/24.png?v=new" alt="Exco Akademik dan Intelektual UMMHC" loading="lazy"></div>
+        <div class="item"><img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/25.png?v=new" alt="Exco Akademik dan Intelektual UMMHC" loading="lazy"></div>
       </div>
     </div>
 
