@@ -191,6 +191,28 @@
       margin: 0;
     }
 
+    /* STYLING BUTANG MUZIK LATAR */
+    .music-control-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      background: #FFD700;
+      color: #800000;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 50px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .music-control-btn:hover {
+      transform: scale(1.05);
+    }
+
     /* RESPONSIVE DESIGN */
     @media(max-width:900px) {
       .grid {
@@ -253,6 +275,16 @@
 
 <body>
 
+  <!-- ELEMEN AUDIO & BUTANG KAWALAN MUZIK -->
+  <audio id="bgmAudio" loop preload="auto">
+    <!-- Gantikan pautan URL di bawah dengan link MP3 lagu rasmi/pilihan anda -->
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="musicBtn" class="music-control-btn" onclick="toggleMusic()" aria-label="Kawal Muzik">
+    🎵 Mainkan Lagu
+  </button>
+
   <!-- MENU MERAH ATAS -->
   <nav>
     <button class="menu-toggle" id="menuToggle" aria-label="Buka Menu">☰ MENU</button>
@@ -271,7 +303,7 @@
   <!-- BAR MERAH BAWAH HEADER -->
   <div class="header-space"></div>
 
-  <!-- KANDUNGAN UTAMA (WRAPPED IN MAIN FOR SPA COMPATIBILITY) -->
+  <!-- KANDUNGAN UTAMA -->
   <main id="app-content">
     <section>
 
@@ -395,8 +427,38 @@
     <p>© 2025/2026 Kelab Muzium dan Warisan Universiti Malaya</p>
   </footer>
 
-  <!-- SCRIPT UNTUK MENU HAMBURGER DAN ENGIN NAVIGASI SPA -->
+  <!-- SCRIPT KAWALAN MUZIK, MENU HAMBURGER & SPA NAVIGASI -->
   <script>
+    /* 1. SKRIP KAWALAN AUDIO */
+    const audio = document.getElementById("bgmAudio");
+    const musicBtn = document.getElementById("musicBtn");
+
+    function toggleMusic() {
+      if (audio.paused) {
+        audio.play();
+        musicBtn.innerHTML = "🔊 Hentikan Lagu";
+        musicBtn.style.background = "#800000";
+        musicBtn.style.color = "#FFD700";
+      } else {
+        audio.pause();
+        musicBtn.innerHTML = "🎵 Mainkan Lagu";
+        musicBtn.style.background = "#FFD700";
+        musicBtn.style.color = "#800000";
+      }
+    }
+
+    // Autoplay bermula sebaik sahaja pengguna menyentuh/klik di mana-mana bahagian skrin
+    document.addEventListener('click', function startAudioOnInteraction() {
+      if (audio.paused) {
+        audio.play().then(() => {
+          musicBtn.innerHTML = "🔊 Hentikan Lagu";
+          musicBtn.style.background = "#800000";
+          musicBtn.style.color = "#FFD700";
+        }).catch(err => console.log("Autoplay dihalang pelayar: ", err));
+      }
+    }, { once: true });
+
+    /* 2. SKRIP MENU TOGGLE */
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
 
@@ -406,7 +468,7 @@
       });
     }
 
-    /* ENGIN FETCH UNTUK BANYAKKAN KAWALAN CACHE */
+    /* 3. ENGIN FETCH UNTUK KAWALAN CACHE & SPA */
     function loadPage(url) {
       const fetchUrl = url.includes('?') ? `${url}&v=2026` : `${url}?v=2026`;
 
