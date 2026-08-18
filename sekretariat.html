@@ -5,6 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="3MooSAGjA9Aqjdldq0f4K9h3Ft1CknMscefnj5NdBMw">
+  
+  <!-- KAWALAN CACHE PERINGKAT HEADER -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
   <title>Sekretariat | Kelab Muzium dan Warisan Universiti Malaya (UMMHC)</title>
 
   <meta name="application-name" content="Kelab Muzium dan Warisan Universiti Malaya">
@@ -13,7 +19,7 @@
   <meta name="keywords" content="Kelab Muzium dan Warisan Universiti Malaya, UMMHC, Museum and Heritage Club UM, Sekretariat UMMHC">
   <meta name="author" content="Kelab Muzium dan Warisan Universiti Malaya">
 
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png">
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png?v=2026">
 
   <script type="application/ld+json">
   {
@@ -29,7 +35,7 @@
 
   <meta property="og:title" content="Sekretariat UMMHC">
   <meta property="og:description" content="Maklumat barisan sekretariat Kelab Muzium dan Warisan Universiti Malaya.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png">
+  <meta property="og:image" content="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png?v=2026">
   <meta property="og:url" content="https://ummhc25.github.io/UMMHC-official.github.io/sekretariat.html">
   <meta property="og:type" content="website">
 
@@ -43,7 +49,7 @@
       margin: 0;
       font-family: "Segoe UI", Arial, sans-serif;
       background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
-        url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/77527381-a7e9-48d4-b26f-6abc8b8e22df.png");
+        url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/77527381-a7e9-48d4-b26f-6abc8b8e22df.png?v=2026");
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -91,14 +97,15 @@
       font-size: 14px;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav a.active {
       color: #FFD700;
     }
 
     /* HEADER GAMBAR KHAS SEKRETARIAT */
     header {
       background: linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)),
-        url("https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png");
+        url("https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png?v=2026");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -124,6 +131,7 @@
     .music-player h3 {
       color: #800000;
       text-align: center;
+      margin-top: 0;
     }
 
     .music-player p {
@@ -148,6 +156,8 @@
     /* CONTENT & TEKS */
     section {
       padding: 40px 10%;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .card {
@@ -157,12 +167,16 @@
       border-radius: 15px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
       text-align: left;
+      overflow: hidden;
+      width: 100%;
+      box-sizing: border-box;
     }
 
-    /* PEMBETULAN: TAJUK DI TENGAH DAN WARNA MERAH MAROON */
+    /* TAJUK DI TENGAH DAN WARNA MERAH MAROON */
     .card h1, .card h2 {
       color: #800000 !important;
       text-align: center !important;
+      margin-top: 0;
       margin-bottom: 20px;
     }
 
@@ -175,7 +189,7 @@
     /* CONTAINER BUTANG SUPAYA KEKAL DI TENGAH */
     .btn-container {
       text-align: center;
-      margin-top: 15px;
+      margin-top: 25px;
     }
 
     /* GAYA BUTANG SERAGAM */
@@ -244,6 +258,14 @@
       header {
         height: 250px;
       }
+
+      section {
+        padding: 20px 5%;
+      }
+
+      .music-player {
+        margin: 20px 5%;
+      }
     }
   </style>
 </head>
@@ -254,15 +276,15 @@
   <nav>
     <button class="menu-toggle" id="menuToggle" aria-label="Buka Menu">☰ MENU</button>
     <div class="nav-links" id="navLinks">
-      <a href="index.html">UTAMA</a>
-      <a href="sejarah.html">SEJARAH UMMHC</a>
-      <a href="sekretariat.html">SEKRETARIAT</a>
-      <a href="aktiviti.html">AKTIVITI</a>
-      <a href="galeri.html">GALERI</a>
+      <a href="index.html?v=2026">UTAMA</a>
+      <a href="sejarah.html?v=2026">SEJARAH UMMHC</a>
+      <a href="sekretariat.html?v=2026" class="active">SEKRETARIAT</a>
+      <a href="aktiviti.html?v=2026">AKTIVITI</a>
+      <a href="galeri.html?v=2026">GALERI</a>
     </div>
   </nav>
 
-  <!-- HEADER GAMBAR KHAS SEKRETARIAT (KEKAL) -->
+  <!-- HEADER GAMBAR KHAS SEKRETARIAT -->
   <header></header>
 
   <!-- BAR MERAH BAWAH HEADER -->
@@ -287,7 +309,8 @@
           Laman ini memaparkan maklumat berkaitan barisan sekretariat Kelab Muzium dan Warisan Universiti Malaya.
         </p>
         <div class="btn-container">
-          <a href="sekretariat-2025.html" class="button">
+          <!-- PAUTAN DENGAN PARAMETER VERSI TERKINI -->
+          <a href="sekretariat-2025.html?v=2026" class="button">
             SEKRETARIAT UMMHC SESI 2025/2026
           </a>
         </div>
@@ -300,23 +323,25 @@
     <p>© 2025/2026 Kelab Muzium dan Warisan Universiti Malaya</p>
   </footer>
 
-  <!-- SCRIPT MUZIK & SPA NAVIGASI -->
+  <!-- SCRIPT MUZIK & SPA NAVIGASI TERKINI (DENGAN PEMBETULAN CACHE) -->
   <script>
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
 
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
+    if (menuToggle) {
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    }
 
     let songList = [
       {
         name: "Dato' Sri Siti Nurhaliza - Kesuma",
-        src: "https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/Dato'_Sri_Siti_Nurhaliza_Kesuma_Accurate_Lyrics_Reupload_lirik.mp3"
+        src: "https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/Dato'_Sri_Siti_Nurhaliza_Kesuma_Accurate_Lyrics_Reupload_lirik.mp3?v=2026"
       },
       {
         name: "Dato' Sri Siti Nurhaliza - Rencong",
-        src: "https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/Dato'%20Sri%20Siti%20Nurhaliza%20-%20Rencong%20(%20Lirik%20).mp3"
+        src: "https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/Dato'%20Sri%20Siti%20Nurhaliza%20-%20Rencong%20(%20Lirik%20).mp3?v=2026"
       }
     ];
 
@@ -353,8 +378,12 @@
       document.addEventListener('scroll', startAudio);
     });
 
+    /* FUNGSI SPA (FETCH) YANG DIBAIKI UNTUK MEMAKSA SKRIP MENGAMBIL FAIL TERKINI */
     function loadPage(url) {
-      fetch(url)
+      // Tambah parameter versi jika belum ada untuk bypass cache pelayar
+      const fetchUrl = url.includes('?') ? `${url}&v=2026` : `${url}?v=2026`;
+
+      fetch(fetchUrl, { cache: "no-store" }) // Memaksa server GitHub menghantar fail baharu
         .then(response => {
           if (!response.ok) throw new Error("Halaman tidak dijumpai");
           return response.text();
@@ -381,7 +410,7 @@
       document.querySelectorAll('a').forEach(link => {
         const href = link.getAttribute('href');
 
-        if (href && href.endsWith('.html') && !href.startsWith('http') && !link.dataset.spaBound) {
+        if (href && (href.endsWith('.html') || href.includes('.html?')) && !href.startsWith('http') && !link.dataset.spaBound) {
           link.dataset.spaBound = "true";
           link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -396,7 +425,7 @@
     }
 
     window.addEventListener('popstate', (e) => {
-      const page = e.state ? e.state.page : 'sekretariat.html';
+      const page = e.state ? e.state.page : 'sekretariat.html?v=2026';
       loadPage(page);
     });
 
