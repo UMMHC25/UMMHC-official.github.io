@@ -325,6 +325,10 @@
 
   <!-- SCRIPT MUZIK & SPA NAVIGASI TERKINI -->
   <script>
+    // SIMPAN KEADAAN LOKASI AWAL SPA
+    const initialPage = window.location.pathname.split('/').pop() || 'sekretariat.html';
+    history.replaceState({ page: initialPage }, '', window.location.href);
+
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
 
@@ -334,6 +338,7 @@
       });
     }
 
+    // SENARAI LAGU-LAGU WARISAN UMMHC
     const songList = [
       {
         name: "Dato' Sri Siti Nurhaliza - Kesuma",
@@ -342,6 +347,22 @@
       {
         name: "Dato' Sri Siti Nurhaliza - Rencong",
         src: "rencong.mp3"
+      },
+      {
+        name: "Dato' Sri Siti Nurhaliza - Cindai",
+        src: "cindai.mp3"
+      },
+      {
+        name: "Dato' Sri Siti Nurhaliza - Nirmala",
+        src: "nirmala.mp3"
+      },
+      {
+        name: "Dato' Sri Siti Nurhaliza - Kurik Kundi",
+        src: "kurik-kundi.mp3"
+      },
+      {
+        name: "Dato' Sri Siti Nurhaliza - Ya Maulai",
+        src: "ya-maulai.mp3"
       }
     ];
 
@@ -366,6 +387,7 @@
       player.play().then(() => {
         document.removeEventListener('click', startAudio);
         document.removeEventListener('touchstart', startAudio);
+        document.removeEventListener('scroll', startAudio);
       }).catch(err => {
         console.log("Menunggu interaksi pengguna untuk memainkan lagu.");
       });
@@ -374,6 +396,7 @@
     player.play().catch(() => {
       document.addEventListener('click', startAudio);
       document.addEventListener('touchstart', startAudio);
+      document.addEventListener('scroll', startAudio);
     });
 
     // FUNGSI UNTUK KEMASKINI PENUNJUK MENU AKTIF
@@ -403,7 +426,7 @@
           const parser = new DOMParser();
           const doc = parser.parseFromString(html, 'text/html');
 
-          const newContent = doc.querySelector('main') || doc.querySelector('section');
+          const newContent = doc.getElementById('app-content') || doc.querySelector('main') || doc.querySelector('section');
           const contentContainer = document.getElementById('app-content');
 
           if (newContent && contentContainer) {
