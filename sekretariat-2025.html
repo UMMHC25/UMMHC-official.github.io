@@ -12,7 +12,7 @@
 
   <title>Sekretariat UMMHC Sesi 2025/2026 | Kelab Muzium dan Warisan UM</title>
 
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png?v=2026">
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png?v=2026">
 
   <style>
     * {
@@ -81,7 +81,7 @@
     /* HEADER BANNER SEKRETARIAT */
     header {
       background: linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)),
-        url("https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png?v=2026");
+        url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png?v=2026");
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
@@ -275,7 +275,7 @@
 
 <body>
 
-  <!-- ELEMEN AUDIO & BUTANG KAWALAN MUZIK (LAGU KESUMA & RENCONG) -->
+  <!-- ELEMEN AUDIO & BUTANG KAWALAN MUZIK -->
   <audio id="bgmAudio" loop preload="auto">
     <source src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/Kesuma%20Dan%20Rencong.mp3" type="audio/mpeg">
   </audio>
@@ -432,30 +432,41 @@
     const audio = document.getElementById("bgmAudio");
     const musicBtn = document.getElementById("musicBtn");
 
-    function toggleMusic() {
-      if (audio.paused) {
-        audio.play();
+    function updateMusicBtnUI() {
+      if (!musicBtn) return;
+      if (!audio.paused) {
         musicBtn.innerHTML = "🔊 Hentikan Lagu";
         musicBtn.style.background = "#800000";
         musicBtn.style.color = "#FFD700";
       } else {
-        audio.pause();
         musicBtn.innerHTML = "🎵 Mainkan Kesuma & Rencong";
         musicBtn.style.background = "#FFD700";
         musicBtn.style.color = "#800000";
       }
     }
 
-    // Autoplay bermula sebaik sahaja pengguna menyentuh/klik di mana-mana bahagian skrin
-    document.addEventListener('click', function startAudioOnInteraction() {
+    function toggleMusic() {
+      if (audio.paused) {
+        audio.play().then(() => updateMusicBtnUI()).catch(err => console.log(err));
+      } else {
+        audio.pause();
+        updateMusicBtnUI();
+      }
+    }
+
+    // Pemula audio bila skrin diusik/diklik
+    function startAudioOnInteraction() {
       if (audio.paused) {
         audio.play().then(() => {
-          musicBtn.innerHTML = "🔊 Hentikan Lagu";
-          musicBtn.style.background = "#800000";
-          musicBtn.style.color = "#FFD700";
+          updateMusicBtnUI();
+          document.removeEventListener('click', startAudioOnInteraction);
+          document.removeEventListener('touchstart', startAudioOnInteraction);
         }).catch(err => console.log("Autoplay dihalang pelayar: ", err));
       }
-    }, { once: true });
+    }
+
+    document.addEventListener('click', startAudioOnInteraction);
+    document.addEventListener('touchstart', startAudioOnInteraction);
 
     /* 2. SKRIP MENU TOGGLE */
     const menuToggle = document.getElementById("menuToggle");
@@ -467,9 +478,23 @@
       });
     }
 
+    // Kemaskini penunjuk active menu
+    function updateActiveNav(targetUrl) {
+      const cleanTarget = targetUrl.split('?')[0].split('#')[0];
+      document.querySelectorAll('#navLinks a').forEach(link => {
+        const linkHref = link.getAttribute('href').split('?')[0].split('#')[0];
+        if (linkHref === cleanTarget) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+
     /* 3. ENGIN FETCH UNTUK KAWALAN CACHE & SPA */
     function loadPage(url) {
-      const fetchUrl = url.includes('?') ? `${url}&v=2026` : `${url}?v=2026`;
+      const baseUrl = url.split('?')[0];
+      const fetchUrl = `${baseUrl}?v=2026`;
 
       fetch(fetchUrl, { cache: "no-store" })
         .then(response => {
@@ -487,6 +512,7 @@
             contentContainer.innerHTML = newSection.outerHTML;
             document.title = doc.title || "Kelab Muzium dan Warisan Universiti Malaya";
             window.scrollTo(0, 0);
+            updateActiveNav(url);
             attachLinkListeners();
             if (navLinks) navLinks.classList.remove("active");
           }
@@ -502,12 +528,19 @@
           link.dataset.spaBound = "true";
           link.addEventListener('click', function(e) {
             e.preventDefault();
+            // Kekalkan lagu berjalan semasa tukar muka surat
+            if (audio.paused) {
+              audio.play().then(() => updateMusicBtnUI()).catch(() => {});
+            }
             loadPage(href);
             history.pushState({ page: href }, '', href);
           });
         }
       });
     }
+
+    // Tetapkan state awal navigasi
+    history.replaceState({ page: window.location.pathname.split('/').pop() || 'sekretariat-2025.html?v=2026' }, '', window.location.href);
 
     window.addEventListener('popstate', (e) => {
       const page = e.state ? e.state.page : 'sekretariat-2025.html?v=2026';
