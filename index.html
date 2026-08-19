@@ -19,7 +19,7 @@
   <meta name="keywords" content="Kelab Muzium dan Warisan Universiti Malaya, UMMHC, Museum and Heritage Club UM, Kelab Muzium UM, Warisan Universiti Malaya">
   <meta name="author" content="Kelab Muzium dan Warisan Universiti Malaya">
 
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png?v=5">
+  <link rel="icon" type="image/png" href="LOGO.png">
 
   <!-- MUAT TURUN FONT ROYAL DARI GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,14 +33,14 @@
     "name":"Kelab Muzium dan Warisan Universiti Malaya",
     "alternateName":"UMMHC",
     "url":"https://ummhc25.github.io/ummhc25-official.github.io/",
-    "logo":"https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png",
+    "logo":"LOGO.png",
     "description":"Laman rasmi Kelab Muzium dan Warisan Universiti Malaya berkaitan sejarah, budaya dan warisan."
   }
   </script>
 
   <meta property="og:title" content="Kelab Muzium dan Warisan Universiti Malaya (UMMHC)">
   <meta property="og:description" content="Laman rasmi UMMHC yang memaparkan sekretariat, aktiviti, program warisan dan galeri.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png?v=5">
+  <meta property="og:image" content="LOGO.png">
   <meta property="og:url" content="https://ummhc25.github.io/ummhc25-official.github.io/">
   <meta property="og:type" content="website">
 
@@ -54,7 +54,7 @@
       margin: 0;
       font-family: "Segoe UI", Arial, sans-serif;
       background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
-        url("https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/77527381-a7e9-48d4-b26f-6abc8b8e22df.png?v=5");
+        url("77527381-a7e9-48d4-b26f-6abc8b8e22df.png");
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -236,7 +236,7 @@
     /* HEADER FULL - DENGAN ASPECT RATIO */
     header {
       background: linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)),
-        url("https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png?v=5");
+        url("22188fa7-4a58-42ad-976e-851c391351c7.png");
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
@@ -533,7 +533,7 @@
       <button class="ad-popup-close" id="closeAdBtn" aria-label="Tutup Iklan">&times;</button>
       
       <div class="ad-poster-col">
-        <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/photo_2026-08-17_08-50-33.jpg?v=5" alt="Iklan UMMHC" class="ad-popup-img">
+        <img src="photo_2026-08-17_08-50-33.jpg" alt="Iklan UMMHC" class="ad-popup-img">
       </div>
       
       <div class="ad-caption-col">
@@ -611,7 +611,7 @@
         <p>
           Kelab Muzium dan Warisan Universiti Malaya (UMMHC) merupakan sebuah organisasi pelajar di Universiti Malaya yang memberi fokus kepada aktiviti berkaitan muzium, sejarah, kebudayaan dan pemeliharaan warisan.
         </p>
-      
+        
         <div class="btn-container">
           <a class="button" href="sejarah.html">BACA SEJARAH</a>
         </div>
@@ -663,8 +663,8 @@
       <div class="card">
         <h2>GALERI</h2>
         <div class="gallery">
-          <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/cb2299ee-0988-419d-9f19-971a9c5b275e.png?v=5" alt="Header UMMHC">
-          <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/LOGO.png?v=5" alt="Logo UMMHC">
+          <img src="cb2299ee-0988-419d-9f19-971a9c5b275e.png" alt="Header UMMHC">
+          <img src="LOGO.png" alt="Logo UMMHC">
         </div>
       </div>
 
@@ -713,14 +713,15 @@
       navLinks.classList.toggle("active");
     });
 
+    // DIGUNAKAN PAUTAN RINGKAS PASTIKAN DITUKAR NAMA FAIL DALAM REPO
     let songList = [
       {
         name: "Dato' Sri Siti Nurhaliza - Kesuma",
-        src: "https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/Dato'_Sri_Siti_Nurhaliza_Kesuma_Accurate_Lyrics_Reupload_lirik.mp3"
+        src: "kesuma.mp3"
       },
       {
         name: "Dato' Sri Siti Nurhaliza - Rencong",
-        src: "https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/Dato'%20Sri%20Siti%20Nurhaliza%20-%20Rencong%20(%20Lirik%20).mp3"
+        src: "rencong.mp3"
       }
     ];
 
@@ -738,7 +739,7 @@
     player.addEventListener("ended", () => {
       currentTrack = (currentTrack + 1) % songList.length;
       loadTrack(currentTrack);
-      player.play();
+      player.play().catch(() => {});
     });
 
     function startAudio() {
@@ -746,9 +747,7 @@
         document.removeEventListener('click', startAudio);
         document.removeEventListener('touchstart', startAudio);
         document.removeEventListener('scroll', startAudio);
-      }).catch(err => {
-        console.log("Menunggu interaksi pengguna untuk memainkan lagu.");
-      });
+      }).catch(() => {});
     }
 
     player.play().catch(() => {
@@ -759,9 +758,9 @@
 
     function updateHeaderImage(url) {
       if (url.includes("sekretariat.html")) {
-        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url("https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png?v=5")';
+        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url("34c4eba3-5852-4688-a3a7-47fa59256273.png")';
       } else {
-        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url("https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png?v=5")';
+        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url("22188fa7-4a58-42ad-976e-851c391351c7.png")';
       }
     }
 
@@ -776,11 +775,11 @@
           const parser = new DOMParser();
           const doc = parser.parseFromString(html, 'text/html');
 
-          const newSection = doc.querySelector('section');
+          const newContent = doc.getElementById('app-content');
           const contentContainer = document.getElementById('app-content');
 
-          if (newSection && contentContainer) {
-            contentContainer.innerHTML = newSection.outerHTML;
+          if (newContent && contentContainer) {
+            contentContainer.innerHTML = newContent.innerHTML;
             document.title = doc.title || "Kelab Muzium dan Warisan Universiti Malaya";
             updateHeaderImage(url);
             window.scrollTo(0, 0);
@@ -800,7 +799,7 @@
           link.addEventListener('click', function(e) {
             e.preventDefault();
             if (player.paused) {
-              player.play();
+              player.play().catch(() => {});
             }
             loadPage(href);
             history.pushState({ page: href }, '', href);
