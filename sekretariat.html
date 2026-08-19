@@ -19,23 +19,23 @@
   <meta name="keywords" content="Kelab Muzium dan Warisan Universiti Malaya, UMMHC, Museum and Heritage Club UM, Sekretariat UMMHC">
   <meta name="author" content="Kelab Muzium dan Warisan Universiti Malaya">
 
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png?v=2026">
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png?v=2026">
 
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Kelab Muzium dan Warisan Universiti Malaya",
-    "alternateName":"UMMHC",
-    "url":"https://ummhc25.github.io/UMMHC-official.github.io/",
-    "logo":"https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png",
-    "description":"Laman rasmi Sekretariat Kelab Muzium dan Warisan Universiti Malaya."
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Kelab Muzium dan Warisan Universiti Malaya",
+    "alternateName": "UMMHC",
+    "url": "https://ummhc25.github.io/UMMHC-official.github.io/",
+    "logo": "https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png",
+    "description": "Laman rasmi Sekretariat Kelab Muzium dan Warisan Universiti Malaya."
   }
   </script>
 
   <meta property="og:title" content="Sekretariat UMMHC">
   <meta property="og:description" content="Maklumat barisan sekretariat Kelab Muzium dan Warisan Universiti Malaya.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png?v=2026">
+  <meta property="og:image" content="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png?v=2026">
   <meta property="og:url" content="https://ummhc25.github.io/UMMHC-official.github.io/sekretariat.html">
   <meta property="og:type" content="website">
 
@@ -105,7 +105,7 @@
     /* HEADER GAMBAR KHAS SEKRETARIAT */
     header {
       background: linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)),
-        url("https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png?v=2026");
+        url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png?v=2026");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -323,7 +323,7 @@
     <p>© 2025/2026 Kelab Muzium dan Warisan Universiti Malaya</p>
   </footer>
 
-  <!-- SCRIPT MUZIK & SPA NAVIGASI TERKINI (DENGAN PEMBETULAN CACHE) -->
+  <!-- SCRIPT MUZIK & SPA NAVIGASI TERKINI -->
   <script>
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
@@ -334,20 +334,20 @@
       });
     }
 
-    let songList = [
+    const songList = [
       {
         name: "Dato' Sri Siti Nurhaliza - Kesuma",
         src: "https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/Dato'_Sri_Siti_Nurhaliza_Kesuma_Accurate_Lyrics_Reupload_lirik.mp3?v=2026"
       },
       {
         name: "Dato' Sri Siti Nurhaliza - Rencong",
-        src: "https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/Dato'%20Sri%20Siti%20Nurhaliza%20-%20Rencong%20(%20Lirik%20).mp3?v=2026"
+        src: "https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/Dato'%20Sri%20Siti%20Nurhaliza%20-%20Rencong%20(%20Lirik%20).mp3?v=2026"
       }
     ];
 
     let currentTrack = 0;
-    let player = document.getElementById("audioPlayer");
-    let title = document.getElementById("songName");
+    const player = document.getElementById("audioPlayer");
+    const title = document.getElementById("songName");
 
     function loadTrack(index) {
       player.src = songList[index].src;
@@ -366,7 +366,6 @@
       player.play().then(() => {
         document.removeEventListener('click', startAudio);
         document.removeEventListener('touchstart', startAudio);
-        document.removeEventListener('scroll', startAudio);
       }).catch(err => {
         console.log("Menunggu interaksi pengguna untuk memainkan lagu.");
       });
@@ -375,15 +374,28 @@
     player.play().catch(() => {
       document.addEventListener('click', startAudio);
       document.addEventListener('touchstart', startAudio);
-      document.addEventListener('scroll', startAudio);
     });
 
-    /* FUNGSI SPA (FETCH) YANG DIBAIKI UNTUK MEMAKSA SKRIP MENGAMBIL FAIL TERKINI */
-    function loadPage(url) {
-      // Tambah parameter versi jika belum ada untuk bypass cache pelayar
-      const fetchUrl = url.includes('?') ? `${url}&v=2026` : `${url}?v=2026`;
+    // FUNGSI UNTUK KEMASKINI PENUNJUK MENU AKTIF
+    function updateActiveNav(targetUrl) {
+      const cleanTarget = targetUrl.split('?')[0].split('#')[0];
+      document.querySelectorAll('#navLinks a').forEach(link => {
+        const linkHref = link.getAttribute('href').split('?')[0].split('#')[0];
+        if (linkHref === cleanTarget) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
 
-      fetch(fetchUrl, { cache: "no-store" }) // Memaksa server GitHub menghantar fail baharu
+    // FUNGSI SPA (FETCH)
+    function loadPage(url) {
+      // Bersihkan query lama sebelum menambah parameter versi cache
+      const baseUrl = url.split('?')[0];
+      const fetchUrl = `${baseUrl}?v=2026`;
+
+      fetch(fetchUrl, { cache: "no-store" })
         .then(response => {
           if (!response.ok) throw new Error("Halaman tidak dijumpai");
           return response.text();
@@ -399,8 +411,9 @@
             contentContainer.innerHTML = newSection.outerHTML;
             document.title = doc.title || "Kelab Muzium dan Warisan Universiti Malaya";
             window.scrollTo(0, 0);
+            updateActiveNav(url);
             attachLinkListeners();
-            navLinks.classList.remove("active");
+            if (navLinks) navLinks.classList.remove("active");
           }
         })
         .catch(err => console.error("Ralat muat halaman:", err));
@@ -415,7 +428,7 @@
           link.addEventListener('click', function(e) {
             e.preventDefault();
             if (player.paused) {
-              player.play();
+              player.play().catch(() => {});
             }
             loadPage(href);
             history.pushState({ page: href }, '', href);
@@ -423,6 +436,9 @@
         }
       });
     }
+
+    // Simpan keadaan awal halaman
+    history.replaceState({ page: window.location.pathname.split('/').pop() || 'sekretariat.html?v=2026' }, '', window.location.href);
 
     window.addEventListener('popstate', (e) => {
       const page = e.state ? e.state.page : 'sekretariat.html?v=2026';
