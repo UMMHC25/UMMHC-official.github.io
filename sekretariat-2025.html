@@ -222,7 +222,7 @@
 
     @media(max-width:850px) {
       nav {
-        justify-content: space-between;
+        justify-between: space-between;
         padding: 10px 20px;
       }
 
@@ -446,9 +446,9 @@
     <p>© 2025/2026 Kelab Muzium dan Warisan Universiti Malaya</p>
   </footer>
 
-  <!-- SCRIPT KAWALAN MUZIK, MENU HAMBURGER & SPA NAVIGASI -->
+  <!-- SCRIPT KAWALAN MUZIK, INGATAN MASA, MENU & SPA NAVIGASI -->
   <script>
-    /* 1. SKRIP KAWALAN AUDIO */
+    /* 1. SKRIP KAWALAN AUDIO & SESSIONSTORAGE */
     const audio = document.getElementById("bgmAudio");
     const musicBtn = document.getElementById("musicBtn");
 
@@ -465,6 +465,33 @@
       }
     }
 
+    if (audio) {
+      // Simpan detik/masa dan status lagu semasa secara berterusan
+      audio.addEventListener("timeupdate", () => {
+        sessionStorage.setItem("bgm_time", audio.currentTime);
+      });
+      audio.addEventListener("play", () => {
+        sessionStorage.setItem("bgm_playing", "true");
+        updateMusicBtnUI();
+      });
+      audio.addEventListener("pause", () => {
+        sessionStorage.setItem("bgm_playing", "false");
+        updateMusicBtnUI();
+      });
+
+      // Pulihkan kedudukan masa lagu dari halaman sebelumnya
+      const savedTime = sessionStorage.getItem("bgm_time");
+      const wasPlaying = sessionStorage.getItem("bgm_playing");
+
+      if (savedTime) {
+        audio.currentTime = parseFloat(savedTime);
+      }
+
+      if (wasPlaying === "true") {
+        audio.play().then(() => updateMusicBtnUI()).catch(() => {});
+      }
+    }
+
     function toggleMusic() {
       if (audio.paused) {
         audio.play().then(() => updateMusicBtnUI()).catch(err => console.log(err));
@@ -476,13 +503,20 @@
 
     // Pemula audio bila skrin diusik/diklik
     function startAudioOnInteraction() {
-      if (audio.paused) {
+      const wasPlaying = sessionStorage.getItem("bgm_playing");
+      if (audio.paused && (wasPlaying === "true" || !wasPlaying)) {
         audio.play().then(() => {
           updateMusicBtnUI();
-          document.removeEventListener('click', startAudioOnInteraction);
-          document.removeEventListener('touchstart', startAudioOnInteraction);
+          removeInteractionListeners();
         }).catch(err => console.log("Autoplay dihalang pelayar: ", err));
+      } else {
+        removeInteractionListeners();
       }
+    }
+
+    function removeInteractionListeners() {
+      document.removeEventListener('click', startAudioOnInteraction);
+      document.removeEventListener('touchstart', startAudioOnInteraction);
     }
 
     document.addEventListener('click', startAudioOnInteraction);
@@ -503,7 +537,7 @@
       const cleanTarget = targetUrl.split('?')[0].split('#')[0];
       document.querySelectorAll('#navLinks a').forEach(link => {
         const linkHref = link.getAttribute('href').split('?')[0].split('#')[0];
-        if (linkHref === cleanTarget) {
+        if (linkHref === cleanTarget || (cleanTarget === '' && linkHref === 'sekretariat.html')) {
           link.classList.add('active');
         } else {
           link.classList.remove('active');
@@ -511,7 +545,7 @@
       });
     }
 
-    /* 3. ENGIN FETCH UNTUK KAWALAN CACHE & SPA */
+    /* 3. ENGIN FETCH UNTUK SPA NAVIGASI & CACHE CONTROL */
     function loadPage(url) {
       const baseUrl = url.split('?')[0];
       const fetchUrl = `${baseUrl}?v=2026`;
@@ -525,11 +559,17 @@
           const parser = new DOMParser();
           const doc = parser.parseFromString(html, 'text/html');
 
-          const newSection = doc.querySelector('section');
+          const newMain = doc.getElementById('app-content') || doc.querySelector('main');
           const contentContainer = document.getElementById('app-content');
+          const newHeader = doc.querySelector('header');
+          const currentHeader = document.querySelector('header');
 
-          if (newSection && contentContainer) {
-            contentContainer.innerHTML = newSection.outerHTML;
+          if (newHeader && currentHeader) {
+            currentHeader.style.backgroundImage = newHeader.style.backgroundImage;
+          }
+
+          if (newMain && contentContainer) {
+            contentContainer.innerHTML = newMain.innerHTML;
             document.title = doc.title || "Kelab Muzium dan Warisan Universiti Malaya";
             window.scrollTo(0, 0);
             updateActiveNav(url);
@@ -537,7 +577,10 @@
             if (navLinks) navLinks.classList.remove("active");
           }
         })
-        .catch(err => console.error("Ralat muat halaman:", err));
+        .catch(err => {
+          console.error("Ralat muat halaman (Beralih ke navigasi biasa):", err);
+          window.location.href = url;
+        });
     }
 
     function attachLinkListeners() {
@@ -547,11 +590,8 @@
         if (href && (href.endsWith('.html') || href.includes('.html?')) && !href.startsWith('http') && !link.dataset.spaBound) {
           link.dataset.spaBound = "true";
           link.addEventListener('click', function(e) {
+            if (e.metaKey || e.ctrlKey) return;
             e.preventDefault();
-            // Kekalkan lagu berjalan semasa tukar muka surat
-            if (audio.paused) {
-              audio.play().then(() => updateMusicBtnUI()).catch(() => {});
-            }
             loadPage(href);
             history.pushState({ page: href }, '', href);
           });
