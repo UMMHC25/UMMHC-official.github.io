@@ -276,11 +276,11 @@
   <nav>
     <button class="menu-toggle" id="menuToggle" aria-label="Buka Menu">☰ MENU</button>
     <div class="nav-links" id="navLinks">
-      <a href="index.html?v=2026">UTAMA</a>
-      <a href="sejarah.html?v=2026">SEJARAH UMMHC</a>
-      <a href="sekretariat.html?v=2026" class="active">SEKRETARIAT</a>
-      <a href="aktiviti.html?v=2026">AKTIVITI</a>
-      <a href="galeri.html?v=2026">GALERI</a>
+      <a href="index.html">UTAMA</a>
+      <a href="sejarah.html">SEJARAH UMMHC</a>
+      <a href="sekretariat.html" class="active">SEKRETARIAT</a>
+      <a href="aktiviti.html">AKTIVITI</a>
+      <a href="galeri.html">GALERI</a>
     </div>
   </nav>
 
@@ -309,8 +309,8 @@
           Laman ini memaparkan maklumat berkaitan barisan sekretariat Kelab Muzium dan Warisan Universiti Malaya.
         </p>
         <div class="btn-container">
-          <!-- PAUTAN DENGAN PARAMETER VERSI TERKINI -->
-          <a href="sekretariat-2025.html?v=2026" class="button">
+          <!-- PAUTAN KEPADA HALAMAN SEKRETARIAT SESI 2025/2026 -->
+          <a href="sekretariat-2025.html" class="button">
             SEKRETARIAT UMMHC SESI 2025/2026
           </a>
         </div>
@@ -323,7 +323,7 @@
     <p>© 2025/2026 Kelab Muzium dan Warisan Universiti Malaya</p>
   </footer>
 
-  <!-- SCRIPT MUZIK & SPA NAVIGASI TERKINI -->
+  <!-- SCRIPT MUZIK & SPA NAVIGASI TERKINI (DIBETULKAN) -->
   <script>
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
@@ -378,9 +378,9 @@
 
     // FUNGSI UNTUK KEMASKINI PENUNJUK MENU AKTIF
     function updateActiveNav(targetUrl) {
-      const cleanTarget = targetUrl.split('?')[0].split('#')[0];
+      const cleanTarget = targetUrl.split('?')[0].split('#')[0].split('/').pop();
       document.querySelectorAll('#navLinks a').forEach(link => {
-        const linkHref = link.getAttribute('href').split('?')[0].split('#')[0];
+        const linkHref = link.getAttribute('href').split('?')[0].split('#')[0].split('/').pop();
         if (linkHref === cleanTarget) {
           link.classList.add('active');
         } else {
@@ -389,11 +389,11 @@
       });
     }
 
-    // FUNGSI SPA (FETCH)
-    function loadPage(url) {
-      // Bersihkan query lama sebelum menambah parameter versi cache
+    // FUNGSI SPA (FETCH) DENGAN PEMUSNAHAN CACHE DINAMIK
+    function loadPage(url, pushToHistory = true) {
       const baseUrl = url.split('?')[0];
-      const fetchUrl = `${baseUrl}?v=2026`;
+      // Menggunakan timestamp automatik untuk mengelakkan isu browser caching kandungan lama
+      const fetchUrl = `${baseUrl}?t=${Date.now()}`;
 
       fetch(fetchUrl, { cache: "no-store" })
         .then(response => {
@@ -404,47 +404,54 @@
           const parser = new DOMParser();
           const doc = parser.parseFromString(html, 'text/html');
 
-          const newSection = doc.querySelector('section');
+          const newContent = doc.querySelector('main') || doc.querySelector('section');
           const contentContainer = document.getElementById('app-content');
 
-          if (newSection && contentContainer) {
-            contentContainer.innerHTML = newSection.outerHTML;
+          if (newContent && contentContainer) {
+            contentContainer.innerHTML = newContent.innerHTML;
             document.title = doc.title || "Kelab Muzium dan Warisan Universiti Malaya";
             window.scrollTo(0, 0);
             updateActiveNav(url);
+            
+            if (pushToHistory) {
+              history.pushState({ page: url }, '', url);
+            }
+
+            // Panggil semula pengikat pautan untuk butang dinamik baharu di dalam kandungan
             attachLinkListeners();
+
             if (navLinks) navLinks.classList.remove("active");
           }
         })
-        .catch(err => console.error("Ralat muat halaman:", err));
+        .catch(err => {
+          console.error("Ralat muat halaman, memuatkan secara biasa:", err);
+          window.location.href = url;
+        });
     }
 
     function attachLinkListeners() {
       document.querySelectorAll('a').forEach(link => {
         const href = link.getAttribute('href');
 
-        if (href && (href.endsWith('.html') || href.includes('.html?')) && !href.startsWith('http') && !link.dataset.spaBound) {
-          link.dataset.spaBound = "true";
-          link.addEventListener('click', function(e) {
+        if (href && (href.includes('.html') || href === './') && !href.startsWith('http') && !href.startsWith('mailto:')) {
+          link.onclick = function(e) {
             e.preventDefault();
             if (player.paused) {
               player.play().catch(() => {});
             }
-            loadPage(href);
-            history.pushState({ page: href }, '', href);
-          });
+            loadPage(href, true);
+          };
         }
       });
     }
 
-    // Simpan keadaan awal halaman
-    history.replaceState({ page: window.location.pathname.split('/').pop() || 'sekretariat.html?v=2026' }, '', window.location.href);
-
+    // Mengendalikan butang 'Back' dan 'Forward' pelayar
     window.addEventListener('popstate', (e) => {
-      const page = e.state ? e.state.page : 'sekretariat.html?v=2026';
-      loadPage(page);
+      const page = e.state ? e.state.page : window.location.pathname.split('/').pop() || 'sekretariat.html';
+      loadPage(page, false);
     });
 
+    // Inisialisasi awal
     attachLinkListeners();
   </script>
 
