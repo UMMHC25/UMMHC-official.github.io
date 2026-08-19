@@ -275,14 +275,13 @@
 
 <body>
 
-  <!-- ELEMEN AUDIO & BUTANG KAWALAN MUZIK -->
+  <!-- ELEMEN AUDIO & BUTANG KAWALAN MUZIK (LAGU KESUMA & RENCONG) -->
   <audio id="bgmAudio" loop preload="auto">
-    <!-- Gantikan pautan URL di bawah dengan link MP3 lagu rasmi/pilihan anda -->
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    <source src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/Kesuma%20Dan%20Rencong.mp3" type="audio/mpeg">
   </audio>
 
   <button id="musicBtn" class="music-control-btn" onclick="toggleMusic()" aria-label="Kawal Muzik">
-    🎵 Mainkan Lagu
+    🎵 Mainkan Kesuma & Rencong
   </button>
 
   <!-- MENU MERAH ATAS -->
@@ -441,7 +440,7 @@
         musicBtn.style.color = "#FFD700";
       } else {
         audio.pause();
-        musicBtn.innerHTML = "🎵 Mainkan Lagu";
+        musicBtn.innerHTML = "🎵 Mainkan Kesuma & Rencong";
         musicBtn.style.background = "#FFD700";
         musicBtn.style.color = "#800000";
       }
