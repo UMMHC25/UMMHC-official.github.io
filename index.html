@@ -1,481 +1,191 @@
 <!DOCTYPE html>
 <html lang="ms">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="3MooSAGjA9Aqjdldq0f4K9h3Ft1CknMscefnj5NdBMw">
-  
-  <!-- KAWALAN CACHE KETAT UNTUK MEMAKSA MUAT TURUN GAMBAR BAHARU -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0, post-check=0, pre-check=0" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
-
-  <title>Kelab Muzium dan Warisan Universiti Malaya (UMMHC) | Laman Rasmi</title>
-
-  <meta name="application-name" content="Kelab Muzium dan Warisan Universiti Malaya">
-  <meta property="og:site_name" content="Kelab Muzium dan Warisan Universiti Malaya">
-  <meta name="description" content="Laman rasmi Kelab Muzium dan Warisan Universiti Malaya (UMMHC). Maklumat kelab, sekretariat, aktiviti, program warisan dan galeri.">
-  <meta name="keywords" content="Kelab Muzium dan Warisan Universiti Malaya, UMMHC, Museum and Heritage Club UM, Kelab Muzium UM, Warisan Universiti Malaya">
-  <meta name="author" content="Kelab Muzium dan Warisan Universiti Malaya">
-
-  <link rel="icon" type="image/png" href="LOGO.png">
-
-  <!-- MUAT TURUN FONT ROYAL DARI GOOGLE FONTS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Kelab Muzium dan Warisan Universiti Malaya",
-    "alternateName":"UMMHC",
-    "url":"https://ummhc25.github.io/ummhc25-official.github.io/",
-    "logo":"LOGO.png",
-    "description":"Laman rasmi Kelab Muzium dan Warisan Universiti Malaya berkaitan sejarah, budaya dan warisan."
-  }
-  </script>
-
-  <meta property="og:title" content="Kelab Muzium dan Warisan Universiti Malaya (UMMHC)">
-  <meta property="og:description" content="Laman rasmi UMMHC yang memaparkan sekretariat, aktiviti, program warisan dan galeri.">
-  <meta property="og:image" content="LOGO.png">
-  <meta property="og:url" content="https://ummhc25.github.io/ummhc25-official.github.io/">
-  <meta property="og:type" content="website">
-
+  <title>Kelab Muzium dan Warisan Universiti Malaya</title>
   <style>
     * {
       box-sizing: border-box;
-      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
-        url("77527381-a7e9-48d4-b26f-6abc8b8e22df.png");
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      color: #333;
+      background-color: #f4f1ea;
+      color: #2c2c2c;
     }
 
-    /* GAYA POPUP IKLAN BERSEBELAHAN (FLEXBOX MODEN) */
-    .ad-popup-overlay {
+    /* HEADER & NAVIGATION */
+    header#mainHeader {
+      background-color: #1a252f;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("22188fa7-4a58-42ad-976e-851c391351c7.png");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 20px 0;
+      transition: background-image 0.5s ease;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: #e6c687;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #e6c687;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    /* HERO SECTION */
+    .hero-content {
+      max-width: 1200px;
+      margin: 60px auto 40px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #f3e5ab;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* MUSIC PLAYER BAR */
+    .music-bar {
+      background: #2b1d0c;
+      color: #e6c687;
+      padding: 12px 20px;
+      border-top: 2px solid #e6c687;
+      border-bottom: 2px solid #e6c687;
+    }
+
+    .music-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    #songName {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    audio {
+      height: 35px;
+      outline: none;
+    }
+
+    /* MAIN CONTENT CONTAINER */
+    #app-content {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      min-height: 400px;
+    }
+
+    .content-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      line-height: 1.8;
+    }
+
+    .content-card h2 {
+      color: #4a3525;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #e6c687;
+      padding-bottom: 8px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #1a252f;
+      color: #aaa;
+      text-align: center;
+      padding: 25px 20px;
+      margin-top: 60px;
+      font-size: 0.9rem;
+    }
+
+    /* POPUP IKLAN / NOTIS */
+    .ad-popup {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.85);
-      z-index: 9999;
+      background: rgba(0, 0, 0, 0.7);
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
-      animation: fadeIn 0.3s ease-in-out;
+      z-index: 1000;
     }
 
-    .ad-popup-content {
+    .ad-content {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 450px;
+      width: 90%;
+      text-align: center;
       position: relative;
-      background: #ffffff;
-      border-radius: 15px;
-      max-width: 900px;
-      width: 100%;
-      max-height: 90vh;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-      overflow: hidden;
-      border: 3px solid #FFD700;
-      display: flex;
-      flex-direction: row;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
     }
 
-    .ad-popup-close {
+    .close-btn {
       position: absolute;
       top: 10px;
-      right: 12px;
-      background: #800000;
-      color: #FFD700;
-      border: 2px solid #FFD700;
-      border-radius: 50%;
-      width: 35px;
-      height: 35px;
-      font-size: 20px;
-      font-weight: bold;
+      right: 15px;
+      font-size: 1.5rem;
       cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 20;
-      transition: background 0.2s, transform 0.2s;
-    }
-
-    .ad-popup-close:hover {
-      background: #FFD700;
-      color: #800000;
-      transform: scale(1.1);
-    }
-
-    .ad-poster-col {
-      width: 45%;
-      background: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .ad-popup-img {
-      width: 100%;
-      height: auto;
-      max-height: 80vh;
-      object-fit: contain;
-      display: block;
-    }
-
-    .ad-caption-col {
-      width: 55%;
-      padding: 30px 25px;
-      background: #ffffff;
-      overflow-y: auto;
-      max-height: 80vh;
-      text-align: left;
-    }
-
-    .royal-heading {
-      font-family: 'Cinzel', 'Georgia', serif;
-      font-size: 26px;
-      font-weight: 800;
-      color: #800000;
-      text-align: center;
-      margin: 0 0 5px 0;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      text-shadow: 1px 1px 2px rgba(212, 175, 55, 0.4);
-    }
-
-    .royal-subheading {
-      font-family: 'Playfair Display', serif;
-      font-size: 15px;
-      font-weight: 600;
-      color: #b38f00;
-      text-align: center;
-      margin-bottom: 20px;
-      letter-spacing: 0.5px;
-      border-bottom: 2px solid #f2e6b7;
-      padding-bottom: 10px;
-    }
-
-    .ad-caption-text {
-      font-size: 13.5px;
-      line-height: 1.6;
-      color: #2c2c2c;
-    }
-
-    .ad-caption-text p {
-      margin: 0 0 12px 0;
-    }
-
-    .hashtags {
-      color: #800000;
-      font-weight: bold;
-      font-size: 12.5px;
-      margin-top: 15px;
-      line-height: 1.5;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    /* MENU MERAH ATAS */
-    nav {
-      background: #800000;
-      padding: 15px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 24px;
-      cursor: pointer;
-      padding: 5px 15px;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 5px 12px;
-      font-weight: bold;
-      padding: 5px 0;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      color: #FFD700;
-    }
-
-    /* HEADER FULL - DENGAN ASPECT RATIO */
-    header {
-      background: linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)),
-        url("22188fa7-4a58-42ad-976e-851c391351c7.png");
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-color: #800000;
-      width: 100%;
-      height: 0;
-      padding-top: 32%;
-      transition: background 0.3s ease-in-out;
-    }
-
-    /* BAR MERAH BAWAH HEADER */
-    .header-space {
-      height: 20px;
-      background: #800000;
-    }
-
-    /* MUSIC PLAYER */
-    .music-player {
-      background: white;
-      padding: 25px;
-      margin: 30px 10%;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
-    }
-
-    .music-player h3 {
-      color: #800000;
-      text-align: center;
-    }
-
-    .music-player p {
-      text-align: center;
-    }
-
-    .music-player audio {
-      width: 100%;
-      margin: 15px 0;
-    }
-
-    #songName {
-      color: #800000;
-      font-weight: bold;
-      margin-top: 15px;
-      padding: 10px;
-      background: #fff5f5;
-      border-radius: 8px;
-      text-align: center;
-    }
-
-    /* CONTENT & TEKS */
-    section {
-      padding: 40px 10%;
-    }
-
-    .card {
-      background: white;
-      padding: 30px;
-      margin-bottom: 30px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
-      text-align: left;
-    }
-
-    .card h2 {
-      color: #800000;
-      text-align: center;
-    }
-
-    .card p {
-      line-height: 1.6;
-      text-align: left;
-    }
-
-    .card ul {
-      list-style-position: inside;
-      padding-left: 0;
-      text-align: left;
-      line-height: 1.8;
-    }
-
-    .btn-container {
-      text-align: center;
-      margin-top: 15px;
-    }
-
-    .button, button:not(.menu-toggle):not(.ad-popup-close) {
-      display: inline-block;
-      background: #800000 !important;
-      color: white !important;
-      padding: 12px 25px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .button:hover, button:not(.menu-toggle):not(.ad-popup-close):hover {
-      background: #FFD700 !important;
-      color: #800000 !important;
-    }
-
-    /* GAYA PENGASAS */
-    .founders-grid {
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: space-between;
-      gap: 15px;
-      margin-top: 20px;
-      width: 100%;
-    }
-
-    .founder-card {
-      background: #fafafa;
-      border: 1px solid #eee;
-      border-radius: 12px;
-      padding: 15px 10px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      flex: 1 1 0;
-      min-width: 0;
-    }
-
-    .founder-card.lead-founder {
-      background: #fffdf8;
-      border: 1.5px solid #800000;
-      max-width: 350px;
-      width: 100%;
-      margin: 0 auto 10px auto;
-    }
-
-    .founder-card img {
-      width: 100%;
-      max-width: 170px;
-      height: 200px;
-      object-fit: cover;
-      object-position: top center;
-      border-radius: 10px;
-      margin-bottom: 12px;
-      display: block;
-    }
-
-    .founder-card.lead-founder img {
-      max-width: 200px;
-      height: 230px;
-    }
-
-    .founder-info {
-      font-size: 12.5px;
-      line-height: 1.4;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      width: 100%;
-    }
-
-    .founder-card.lead-founder .founder-info {
-      font-size: 14px;
-    }
-
-    .founder-info .name {
-      font-weight: bold;
-      font-size: 13.5px;
-      color: #800000;
-      margin-bottom: 6px;
-      min-height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .founder-card.lead-founder .name {
-      font-size: 16.5px;
-      min-height: auto;
-    }
-
-    .founder-info .role-title {
-      font-weight: bold;
-      color: #111;
-      margin-bottom: 8px;
-      min-height: 55px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .founder-info .italic-text {
-      font-style: italic;
-    }
-
-    /* GALERI */
-    .gallery {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .gallery img {
-      width: 30%;
-      border-radius: 10px;
-    }
-
-    footer {
-      background: #800000;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-
-    footer p {
-      text-align: center;
-      margin: 0;
+      color: #666;
     }
 
     /* RESPONSIVE DESIGN */
-    @media(max-width:850px) {
-      .ad-popup-content {
-        flex-direction: column;
-        overflow-y: auto;
-      }
-
-      .ad-poster-col, .ad-caption-col {
-        width: 100%;
-        max-height: none;
-      }
-
-      nav {
-        justify-content: space-between;
-        padding: 10px 20px;
-      }
-
+    @media (max-width: 768px) {
       .menu-toggle {
         display: block;
       }
@@ -483,210 +193,81 @@
       .nav-links {
         display: none;
         flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
         width: 100%;
-        margin-top: 10px;
+        background: #1a252f;
+        padding: 20px;
+        text-align: center;
       }
 
       .nav-links.active {
         display: flex;
       }
 
-      nav a {
-        margin: 6px 0;
-        padding: 8px;
-        background: #660000;
-        border-radius: 5px;
+      .music-container {
+        flex-direction: column;
         text-align: center;
-      }
-
-      header {
-        padding-top: 50%;
-      }
-
-      .founders-grid {
-        flex-wrap: wrap;
-      }
-
-      .founder-card {
-        flex: 1 1 45%;
-        margin-bottom: 10px;
-      }
-
-      .gallery img {
-        width: 100%;
-      }
-    }
-
-    @media(max-width: 480px) {
-      .founder-card {
-        flex: 1 1 100%;
       }
     }
   </style>
 </head>
-
 <body>
 
-  <!-- POPUP IKLAN -->
-  <div class="ad-popup-overlay" id="adPopup">
-    <div class="ad-popup-content">
-      <button class="ad-popup-close" id="closeAdBtn" aria-label="Tutup Iklan">&times;</button>
-      
-      <div class="ad-poster-col">
-        <img src="photo_2026-08-17_08-50-33.jpg" alt="Iklan UMMHC" class="ad-popup-img">
-      </div>
-      
-      <div class="ad-caption-col">
-        <div class="royal-heading">✨ AKAN DATANG ✨</div>
-        <div class="royal-subheading">SATU SIRI: JEJAK WARISAN NEGERI 🌿</div>
-        
-        <div class="ad-caption-text">
-          <p>Sejarah bukan sekadar untuk dikenang, tetapi untuk ditelusuri, dipelajari dan dihayati.</p>
-          
-          <p>PSUM dan UMMHC bekerjasama dan akan membawa anda menyusuri sebuah jelajah ilmu ke Terengganu untuk menyingkap warisan, budaya dan sejarah yang menjadi sebahagian daripada identiti negeri di Pantai Timur.</p>
-          
-          <p>Dari tinggalan sejarah hingga warisan budaya, setiap sudut menyimpan cerita, setiap warisan membawa makna. 🏛</p>
-          
-          <p>Satu warisan.<br>
-          Seribu cerita.<br>
-          Bersiap sedia untuk sebuah pengalaman pembelajaran yang pastinya berbeza.</p>
-          
-          <p><strong>SATU SIRI: JELAJAH WARISAN NEGERI</strong><br>
-          PSUM x UMMHC<br>
-          <em>NANTIKAN…</em></p>
-          
-          <div class="hashtags">
-            #PSUM #UMMHC #JelajahWarisanNegeri #Sejarah #Budaya #Warisan #Terengganu #UniversitiMalaya #PSUMxUMMHC #UMisONE
-          </div>
-        </div>
-      </div>
-
+  <!-- POPUP IKLAN / PENGUMUMAN -->
+  <div id="adPopup" class="ad-popup">
+    <div class="ad-content">
+      <span id="closeAdBtn" class="close-btn">&times;</span>
+      <h3>Selamat Datang ke UMMHC</h3>
+      <p style="margin-top: 10px; color: #555;">Selamat meneroka Portal Rasmi Kelab Muzium dan Warisan Universiti Malaya. Nikmati alunan lagu warisan sambil melayari laman kami.</p>
     </div>
   </div>
 
-  <!-- MENU MERAH ATAS -->
-  <nav>
-    <button class="menu-toggle" id="menuToggle" aria-label="Buka Menu">☰ MENU</button>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html">UTAMA</a>
-      <a href="sejarah.html">TENTANG KAMI</a>
-      <a href="sekretariat.html">SEKRETARIAT</a>
-      <a href="muzium-galeri.html">MUZIUM DAN GALERI UNIVERSITI MALAYA</a>
-      <a href="aktiviti.html">AKTIVITI</a>
-      <a href="galeri.html">GALERI</a>
-      <a href="hubungi.html">HUBUNGI KAMI</a>
+  <!-- HEADER & NAVIGATION -->
+  <header id="mainHeader">
+    <div class="nav-container">
+      <div class="logo">UMMHC WARISAN</div>
+      <div class="menu-toggle" id="menuToggle">&#9776;</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Utama</a></li>
+        <li><a href="sekretariat.html">Sekretariat</a></li>
+        <li><a href="galeri.html">Galeri</a></li>
+        <li><a href="aktiviti.html">Aktiviti</a></li>
+        <li><a href="hubungi.html">Hubungi Kami</a></li>
+      </ul>
     </div>
-  </nav>
 
-  <!-- HEADER GAMBAR FULL -->
-  <header id="mainHeader"></header>
+    <div class="hero-content">
+      <h1>Kelab Muzium dan Warisan</h1>
+      <p>Universiti Malaya — Memelihara Khazanah, Memperkasakan Warisan Bangsa</p>
+    </div>
+  </header>
 
-  <!-- BAR MERAH BAWAH HEADER -->
-  <div class="header-space"></div>
-
-  <!-- MUSIC PLAYER -->
-  <div class="music-player">
-    <h3>🎵 MAINKAN MUZIK KELAB MUZIUM DAN WARISAN UNIVERSITI MALAYA (UMMHC)</h3>
-    <p style="color:#800000; font-weight:bold;">
-      ✨ Muzik warisan akan dimainkan secara automatik untuk mengiringi perjalanan anda di laman rasmi Kelab Muzium dan Warisan (UMMHC).
-    </p>
-    <audio id="audioPlayer" controls></audio>
-    <p id="songName"></p>
+  <!-- AUDIO PLAYER WARISAN -->
+  <div class="music-bar">
+    <div class="music-container">
+      <div id="songName">Memuatkan lagu warisan...</div>
+      <audio id="audioPlayer" controls></audio>
+    </div>
   </div>
 
-  <!-- KANDUNGAN UTAMA -->
+  <!-- KANDUNGAN UTAMA (SPA CONTAINER) -->
   <main id="app-content">
-    <section>
-      <div class="card">
-        <h2>SELAMAT DATANG KE LAMAN RASMI KELAB MUZIUM DAN WARISAN UNIVERSITI MALAYA (UMMHC)</h2>
-        <p>
-          Selamat datang ke laman rasmi Kelab Muzium dan Warisan Universiti Malaya (UMMHC).
-          Kelab Muzium dan Warisan Universiti Malaya (UMMHC) merupakan sebuah kelab mahasiswa yang berperanan dalam mempromosikan pemeliharaan sejarah, budaya dan warisan.
-        </p>
-      </div>
-
-      <!-- KARD TENTANG KAMI & SEJARAH LENGKAP -->
-      <div class="card">
-        <h2>TENTANG KAMI & SEJARAH PENUBUHAN UMMHC</h2>
-        <p>
-          Kelab Muzium dan Warisan Universiti Malaya (UMMHC) merupakan sebuah organisasi pelajar di Universiti Malaya yang memberi fokus kepada aktiviti berkaitan muzium, sejarah, kebudayaan dan pemeliharaan warisan.
-        </p>
-        
-        <div class="btn-container">
-          <a class="button" href="sejarah.html">BACA SEJARAH</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>SEKRETARIAT KELAB MUZIUM DAN WARISAN UNIVERSITI MALAYA (UMMHC) SESI 2025/2026</h2>
-        <p>
-          Ketahui struktur organisasi yang menggerakkan Kelab Muzium dan Warisan Universiti Malaya (UMMHC) yang dinasihati oleh Lembaga Penasihat, dipimpin oleh Majlis Tertinggi (MT) dan digerakkan oleh barisan Exco kelab.
-        </p>
-        <div class="btn-container">
-          <a class="button" href="sekretariat.html">LIHAT SEKRETARIAT</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>MUZIUM DAN GALERI UNIVERSITI MALAYA</h2>
-        <p>
-          Universiti Malaya mempunyai pelbagai muzium dan galeri warisan yang memelihara koleksi sejarah, kebudayaan, geologi, sains perubatan dan biodiversiti.
-        </p>
-        <ul>
-          <li>Muzium Seni Asia</li>
-          <li>Muzium Etnografi Melayu</li>
-          <li>Muzium Zoologi</li>
-          <li>Muzium Geologi</li>
-          <li>Muzium Perubatan Tan Sri Dr. Lim Wee Chai</li>
-          <li>Galeri Sultan Nazrin Shah</li>
-          <li>Galeri Rimba Ilmu</li>
-        </ul>
-        <div class="btn-container">
-          <a class="button" href="muzium-galeri.html">TEROKAI MUZIUM DAN GALERI</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>AKTIVITI UMMHC</h2>
-        <ul>
-          <li>Jelajah Warisan</li>
-          <li>Program Muzium</li>
-          <li>Pameran Kebudayaan</li>
-          <li>Seminar dan Wacana Warisan</li>
-          <li>Kolaborasi Bersama Agensi</li>
-        </ul>
-        <div class="btn-container">
-          <a class="button" href="aktiviti.html">LIHAT AKTIVITI</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>GALERI</h2>
-        <div class="gallery">
-          <img src="cb2299ee-0988-419d-9f19-971a9c5b275e.png" alt="Header UMMHC">
-          <img src="LOGO.png" alt="Logo UMMHC">
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>HUBUNGI KAMI</h2>
-        <p>
-          Kelab Muzium dan Warisan<br>
-          Universiti Malaya<br>
-          Kuala Lumpur, Malaysia
-        </p>
-        <div class="btn-container">
-          <a class="button" href="hubungi.html">HUBUNGI KAMI</a>
-        </div>
-      </div>
-    </section>
+    <div class="content-card">
+      <h2>Selamat Datang ke Portal Rasmi UMMHC</h2>
+      <p>Kelab Muzium dan Warisan Universiti Malaya (UMMHC) komited dalam memelihara, mendokumentasi, dan mempromosikan warisan sejarah serta budaya bangsa kepada warga kampus dan masyarakat luar.</p>
+      <br>
+      <p>Gunakan menu navigasi di atas untuk meneroka maklumat sekretariat, aktiviti tahunan, serta koleksi galeri warisan kami.</p>
+    </div>
   </main>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025/2026 Kelab Muzium dan Warisan Universiti Malaya</p>
+    <p>&copy; 2026 Kelab Muzium dan Warisan Universiti Malaya (UMMHC). Hak Cipta Terpelihara.</p>
   </footer>
 
+  <!-- JAVASCRIPT SPA & AUDIO -->
   <script>
     // SIMPAN KEADAAN LOKASI AWAL SPA
     const initialPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -713,7 +294,7 @@
       navLinks.classList.toggle("active");
     });
 
-    // DIGUNAKAN PAUTAN RINGKAS PASTIKAN DITUKAR NAMA FAIL DALAM REPO
+    // SENARAI LAGU-LAGU WARISAN UMMHC
     let songList = [
       {
         name: "Dato' Sri Siti Nurhaliza - Kesuma",
@@ -722,6 +303,22 @@
       {
         name: "Dato' Sri Siti Nurhaliza - Rencong",
         src: "rencong.mp3"
+      },
+      {
+        name: "Dato' Sri Siti Nurhaliza - Cindai",
+        src: "cindai.mp3"
+      },
+      {
+        name: "Dato' Sri Siti Nurhaliza - Nirmala",
+        src: "nirmala.mp3"
+      },
+      {
+        name: "Dato' Sri Siti Nurhaliza - Kurik Kundi",
+        src: "kurik-kundi.mp3"
+      },
+      {
+        name: "Dato' Sri Siti Nurhaliza - Ya Maulai",
+        src: "ya-maulai.mp3"
       }
     ];
 
@@ -758,9 +355,9 @@
 
     function updateHeaderImage(url) {
       if (url.includes("sekretariat.html")) {
-        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url("34c4eba3-5852-4688-a3a7-47fa59256273.png")';
+        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("34c4eba3-5852-4688-a3a7-47fa59256273.png")';
       } else {
-        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url("22188fa7-4a58-42ad-976e-851c391351c7.png")';
+        mainHeader.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("22188fa7-4a58-42ad-976e-851c391351c7.png")';
       }
     }
 
