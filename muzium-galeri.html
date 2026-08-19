@@ -1,504 +1,226 @@
 <!DOCTYPE html>
 <html lang="ms">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri & Muzium - UMMHC</title>
+    <style>
+        /* --- RESET & BASIC STYLES --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-  <!-- KAWALAN CACHE SUPAYA TIADA DATA LAMA TERSIMPAN -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
 
-  <title>Muzium dan Galeri Universiti Malaya | UMMHC</title>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png?v=2026">
+        h1.page-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #1a365d;
+        }
 
-  <style>
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+        /* --- SUSUNAN SEBELAH-MENYEBELAH (SIDE-BY-SIDE GRID) --- */
+        .side-by-side-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 2 kolum saksama: Muzium (Kiri) | Galeri (Kanan) */
+            gap: 30px;
+        }
 
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
-        url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/77527381-a7e9-48d4-b26f-6abc8b8e22df.png?v=2026");
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      color: #333;
-    }
+        .section-title {
+            font-size: 1.5rem;
+            color: #2c5282;
+            border-bottom: 3px solid #3182ce;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
 
-    /* MENU MERAH ATAS */
-    nav {
-      background: #800000;
-      padding: 15px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+        .cards-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 24px;
-      cursor: pointer;
-      padding: 5px 15px;
-    }
+        /* --- KAD (CARD) STYLES --- */
+        .museum-card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            overflow: hidden; /* Mengelakkan kandungan/gambar terkeluar dari bucu tajam kad */
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
 
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+        .museum-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 5px 12px;
-      font-weight: bold;
-      padding: 5px 0;
-      font-size: 14px;
-      display: inline-block;
-    }
+        /* --- KAWALAN GAMBAR (PENTING: GAMBAR TAK TERKELUAR) --- */
+        .card-image-box {
+            width: 100%;
+            height: 220px; /* Tinggi tetap untuk kekemasan */
+            overflow: hidden; /* Potong lebihan gambar jika ada */
+            position: relative;
+            background-color: #e2e8f0;
+        }
 
-    nav a:hover,
-    nav a.active {
-      color: #FFD700;
-      border-bottom: 2px solid #FFD700;
-    }
+        .card-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Gambar dipotong kemas mengikut nisbah kotak tanpa herot/terkeluar */
+            display: block;
+            transition: transform 0.3s ease;
+        }
 
-    /* KANDUNGAN UTAMA */
-    section {
-      padding: 30px 5%;
-      max-width: 1100px;
-      margin: 0 auto;
-      width: 100%;
-      box-sizing: border-box;
-    }
+        .museum-card:hover .card-image-box img {
+            transform: scale(1.05); /* Kesan zum halus */
+        }
 
-    /* SUSUNAN GRID 2 KOLUM SEBELAH-MENYEBELAH */
-    .museum-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-      align-items: stretch;
-      width: 100%;
-    }
+        .card-content {
+            padding: 20px;
+        }
 
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
-      width: 100%;
-      overflow: hidden;
-      border: 1px solid #e2e8f0;
-      box-sizing: border-box;
-    }
+        .card-content h3 {
+            margin-bottom: 10px;
+            color: #1a202c;
+        }
 
-    /* KOTAK GAMBAR KEMAS DENGAN ASPECT RATIO MEMATUHI SAIZ KAD */
-    .card-image-box {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border-radius: 8px;
-      overflow: hidden;
-      margin-bottom: 8px;
-      background: #f8f9fa;
-      display: block;
-      position: relative;
-    }
+        .card-content p {
+            font-size: 0.95rem;
+            color: #4a5568;
+        }
 
-    .card-image-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 8px;
-      display: block;
-    }
-
-    /* KREDIT GAMBAR COMPACT */
-    .image-credit {
-      font-size: 11px;
-      color: #666;
-      text-align: center;
-      margin-bottom: 12px;
-      width: 100%;
-    }
-
-    .image-credit a {
-      color: #800000;
-      text-decoration: underline;
-      font-weight: bold;
-    }
-
-    .image-credit a:hover {
-      color: #b38f00;
-    }
-
-    .card h2 {
-      color: #800000;
-      text-align: center;
-      margin-top: 0;
-      margin-bottom: 10px;
-      border-bottom: 2px solid #800000;
-      padding-bottom: 6px;
-      font-size: 1.05rem;
-      width: 100%;
-      letter-spacing: 0.5px;
-    }
-
-    .card p {
-      line-height: 1.5;
-      color: #333;
-      font-size: 0.9rem;
-      margin-top: 0;
-      margin-bottom: 12px;
-      width: 100%;
-    }
-
-    .card ul {
-      line-height: 1.5;
-      color: #444;
-      font-size: 0.85rem;
-      padding-left: 18px;
-      margin-top: auto;
-      margin-bottom: 0;
-      width: 100%;
-    }
-
-    .card ul li {
-      margin-bottom: 4px;
-    }
-
-    footer {
-      background: #800000;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-
-    footer p {
-      text-align: center;
-      margin: 0;
-    }
-
-    /* STYLING BUTANG MUZIK LATAR */
-    .music-control-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 999;
-      background: #FFD700;
-      color: #800000;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 50px;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      font-size: 14px;
-      transition: all 0.3s ease;
-    }
-
-    .music-control-btn:hover {
-      transform: scale(1.05);
-    }
-
-    /* RESPONSIVE DESIGN */
-    @media (max-width: 850px) {
-      nav {
-        justify-content: space-between;
-        padding: 10px 20px;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      nav a {
-        margin: 6px 0;
-        padding: 8px;
-        background: #660000;
-        border-radius: 5px;
-        text-align: center;
-      }
-
-      nav a:hover,
-      nav a.active {
-        border-bottom: none;
-        background: #800000;
-        color: #FFD700;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .museum-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      section {
-        padding: 20px 4%;
-      }
-    }
-  </style>
+        /* --- MEDIA QUERY (RESPONSIF TELEFON) --- */
+        @media (max-width: 850px) {
+            .side-by-side-layout {
+                grid-template-columns: 1fr; /* Bertukar ke 1 kolum pada skrin kecil */
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-  <!-- ELEMEN AUDIO & BUTANG KAWALAN MUZIK -->
-  <audio id="bgmAudio" loop preload="auto">
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-  </audio>
+    <div class="container" id="app-content">
+        <h1 class="page-title">Galeri & Muzium Universiti Malaya</h1>
 
-  <button id="musicBtn" class="music-control-btn" onclick="toggleMusic()" aria-label="Kawal Muzik">
-    🎵 Mainkan Lagu
-  </button>
+        <!-- SECTIONS SEBELAH-MENYEBELAH -->
+        <div class="side-by-side-layout">
+            
+            <!-- KOLUM KIRI: MUZIUM -->
+            <section class="column">
+                <h2 class="section-title">🏛️ Muzium</h2>
+                <div class="cards-list">
+                    
+                    <div class="museum-card">
+                        <div class="card-image-box">
+                            <img src="images/muzium-seni-asia.jpg" alt="Muzium Seni Asia" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3>Muzium Seni Asia</h3>
+                            <p>Menempatkan koleksi seni bina, seramik, dan tekstil dari pelbagai rantau Asia.</p>
+                        </div>
+                    </div>
 
-  <!-- MENU MERAH ATAS -->
-  <nav>
-    <button class="menu-toggle" id="menuToggle" aria-label="Buka Menu">☰ MENU</button>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html?v=2026">UTAMA</a>
-      <a href="sejarah.html?v=2026">SEJARAH UMMHC</a>
-      <a href="sekretariat.html?v=2026">SEKRETARIAT</a>
-      <a href="aktiviti.html?v=2026">AKTIVITI</a>
-      <a href="galeri.html?v=2026" class="active">GALERI</a>
+                    <div class="museum-card">
+                        <div class="card-image-box">
+                            <img src="images/muzium-anatomi.jpg" alt="Muzium Anatomi Perubatan" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3>Muzium Anatomi Perubatan</h3>
+                            <p>Koleksi spesimen anatomi dan sejarah perubatan untuk tujuan pendidikan sains.</p>
+                        </div>
+                    </div>
+
+                    <div class="museum-card">
+                        <div class="card-image-box">
+                            <img src="images/muzium-zoologi.jpg" alt="Muzium Zoologi" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3>Muzium Zoologi</h3>
+                            <p>Pameran kepelbagaian fauna dan spesimen zoologi terawat dari seluruh Malaysia.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- KOLUM KANAN: GALERI -->
+            <section class="column">
+                <h2 class="section-title">🖼️ Galeri</h2>
+                <div class="cards-list">
+
+                    <div class="museum-card">
+                        <div class="card-image-box">
+                            <img src="images/galeri-nazrin-shah.jpg" alt="Galeri Sultan Nazrin Shah" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3>Galeri Sultan Nazrin Shah</h3>
+                            <p>Pameran sejarah, penceritaan warisan, dan pencapaian cemerlang warga UM.</p>
+                        </div>
+                    </div>
+
+                    <div class="museum-card">
+                        <div class="card-image-box">
+                            <img src="images/galeri-rimba-ilmu.jpg" alt="Galeri Rimba Ilmu" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3>Galeri Rimba Ilmu</h3>
+                            <p>Pusat maklumat biodiversiti flora dan konservasi alam sekitar kampus.</p>
+                        </div>
+                    </div>
+
+                    <div class="museum-card">
+                        <div class="card-image-box">
+                            <img src="images/galeri-seni.jpg" alt="Galeri Seni UM" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <h3>Galeri Seni UM</h3>
+                            <p>Ruang pameran seni visual bertema, karya pelajar, dan seniman jemputan.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
     </div>
-  </nav>
 
-  <!-- KANDUNGAN UTAMA (WRAPPED IN MAIN FOR SPA COMPATIBILITY) -->
-  <main id="app-content">
-    <section>
-      <div class="museum-grid">
-        
-        <!-- KOTAK 1 -->
-        <div class="card">
-          <div class="card-image-box">
-            <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/images%20(2).jfif" alt="Muzium Seni Asia" loading="lazy">
-          </div>
-          <div class="image-credit">
-            Sumber Gambar: <a href="https://www.instagram.com/p/Cz77Yp4vUcz/" target="_blank" rel="noopener noreferrer">Instagram Muzium Seni Asia</a>
-          </div>
-          <h2>1. MUZIUM SENI ASIA</h2>
-          <p>
-            Merumuskan kepelbagaian seni dan kebudayaan dari pelbagai tamadun Asia termasuk tamadun Melayu, Cina, India dan Asia Tenggara. Menyimpan ribuan koleksi khazanah bersejarah seperti seramik purba, tekstil warisan, patung keagamaan, serta senjata tradisional.
-          </p>
-          <ul>
-            <li><strong>Koleksi Utama:</strong> Seramik dinasti purba, tekstil patola, arca tembaga dan keris warisan.</li>
-            <li><strong>Fungsi:</strong> Pusat penyelidikan artifacts seni visual dan kebudayaan rantau Asia.</li>
-          </ul>
-        </div>
+    <!-- SKRIP SPA (FIXED INNERHTML) -->
+    <script>
+        async function loadPage(url) {
+            try {
+                const response = await fetch(`${url}?v=${new Date().getTime()}`, {
+                    headers: { 'Cache-Control': 'no-cache' }
+                });
+                const html = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                
+                const newSection = doc.querySelector('#app-content');
+                const contentContainer = document.querySelector('#app-content');
 
-        <!-- KOTAK 2 -->
-        <div class="card">
-          <div class="card-image-box">
-            <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/MUZIUM%20ETNOGRAFI%20MELAYU.jpg" alt="Muzium Etnografi Melayu" loading="lazy">
-          </div>
-          <div class="image-credit">
-            Sumber Gambar: <a href="https://web.facebook.com/muziumetnografimelayu.apmum/?_rdc=1&_rdr#" target="_blank" rel="noopener noreferrer">Facebook Muzium Etnografi Melayu</a>
-          </div>
-          <h2>2. MUZIUM ETNOGRAFI MELAYU</h2>
-          <p>
-            Didedikasikan khas untuk memelihara dan menonjolkan cara hidup, budaya, dan kraf tradisional masyarakat Melayu. Koleksi di sini merangkumi alatan domestik, alatan pertanian, seni pertukangan kayu, pakaian tradisional, serta kelengkapan adat istiadat.
-          </p>
-          <ul>
-            <li><strong>Koleksi Utama:</strong> Peralatan menenun, senjata tradisional, model rumah Melayu, dan alat muzik.</li>
-            <li><strong>Fungsi:</strong> Memelihara warisan etnografi dan kearifan tempatan masyarakat Melayu.</li>
-          </ul>
-        </div>
-
-        <!-- KOTAK 3 -->
-        <div class="card">
-          <h2>3. MUZIUM ZOOLOGI</h2>
-          <p>
-            Terletak di bawah Fakulti Sains, merupakan muzium spesimen hidupan haiwan yang amat penting bagi tujuan pendidikan dan penyelidikan biodiversiti. Ia menyimpan pelbagai spesimen haiwan darat dan marin dari seluruh Malaysia.
-          </p>
-          <ul>
-            <li><strong>Koleksi Utama:</strong> Spesimen taksidermi haiwan liar, koleksi serangga, rangka mamalia, dan spesimen marin.</li>
-            <li><strong>Fungsi:</strong> Rujukan taksonomi, pemuliharaan spesimen fauna, dan pembelajaran biodiversiti.</li>
-          </ul>
-        </div>
-
-        <!-- KOTAK 4 -->
-        <div class="card">
-          <div class="card-image-box">
-            <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/MUZIUM%20GEOLOGI.jpg" alt="Muzium Geologi" loading="lazy">
-          </div>
-          <div class="image-credit">
-            Sumber Gambar: <a href="https://geology.um.edu.my/geology-museum" target="_blank" rel="noopener noreferrer">Laman Web Muzium Geologi UM</a>
-          </div>
-          <h2>4. MUZIUM GEOLOGI</h2>
-          <p>
-            Mempamerkan pelbagai koleksi batuan, mineral, dan fosil purba yang memberikan gambaran jelas mengenai sejarah geologi dan pembentukan bumi, terutamanya di Semenanjung Malaysia dan Borneo.
-          </p>
-          <ul>
-            <li><strong>Koleksi Utama:</strong> Fosil tumbuhan dan haiwan purba, batuan metamorf, serta spesimen mineral nadir.</li>
-            <li><strong>Fungsi:</strong> Rujukan pembelajaran sains bumi, geowarisan, dan pemetaan geologi.</li>
-          </ul>
-        </div>
-
-        <!-- KOTAK 5 -->
-        <div class="card">
-          <h2>5. MUZIUM PERUBATAN TAN SRI DR. LIM WEE CHAI</h2>
-          <p>
-            Terletak di Fakulti Perubatan Universiti Malaya dan memaparkan sejarah perkembangan sains perubatan, peralatan perubatan era awal, serta sumbangan tokoh-tokoh perubatan tempatan dan antarabangsa.
-          </p>
-          <ul>
-            <li><strong>Koleksi Utama:</strong> Alat perubatan antik, model anatomi bersejarah, serta arkib dokumentasi perubatan awal UM.</li>
-            <li><strong>Fungsi:</strong> Pusat pembelajaran sejarah perubatan dan inspirasi pendidikan sains kesihatan.</li>
-          </ul>
-        </div>
-
-        <!-- KOTAK 6 -->
-        <div class="card">
-          <h2>6. GALERI SULTAN NAZRIN SHAH</h2>
-          <p>
-            Sebuah ruang seni dan pameran eksklusif yang dinamakan sempena Canselor Universiti Malaya. Galeri ini menjadi pentas utama pameran seni halus, seni kontemporari, serta koleksi lukisan daripada seniman terkemuka.
-          </p>
-          <ul>
-            <li><strong>Koleksi Utama:</strong> Karya seni lukis kontemporari, seni arca moden, dan pameran bertema khas.</li>
-            <li><strong>Fungsi:</strong> Menggalakkan apresiasi seni visual dan wacana kebudayaan antarabangsa.</li>
-          </ul>
-        </div>
-
-        <!-- KOTAK 7 -->
-        <div class="card">
-          <h2>7. GALERI RIMBA ILMU</h2>
-          <p>
-            Terletak di dalam Taman Botani Rimba Ilmu Universiti Malaya. Galeri ini memberi fokus kepada pemeliharaan alam sekitar, pemuliharaan flora, serta biodiversiti tumbuhan hutan hujan tropika.
-          </p>
-          <ul>
-            <li><strong>Koleksi Utama:</strong> Spesimen herbarium, maklumat pemuliharaan tumbuhan terancam, dan eksibit ekologi hutan.</li>
-            <li><strong>Fungsi:</strong> Pusat kesedaran alam sekitar, pendidikan botani, dan kajian sains tumbuhan.</li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025/2026 Kelab Muzium dan Warisan Universiti Malaya</p>
-  </footer>
-
-  <!-- SCRIPT KAWALAN MUZIK, MENU HAMBURGER & SPA NAVIGASI -->
-  <script>
-    /* 1. SKRIP KAWALAN AUDIO */
-    const audio = document.getElementById("bgmAudio");
-    const musicBtn = document.getElementById("musicBtn");
-
-    function toggleMusic() {
-      if (audio.paused) {
-        audio.play();
-        musicBtn.innerHTML = "🔊 Hentikan Lagu";
-        musicBtn.style.background = "#800000";
-        musicBtn.style.color = "#FFD700";
-      } else {
-        audio.pause();
-        musicBtn.innerHTML = "🎵 Mainkan Lagu";
-        musicBtn.style.background = "#FFD700";
-        musicBtn.style.color = "#800000";
-      }
-    }
-
-    // Autoplay bermula sebaik sahaja pengguna menyentuh/klik di mana-mana bahagian skrin
-    document.addEventListener('click', function startAudioOnInteraction() {
-      if (audio.paused) {
-        audio.play().then(() => {
-          musicBtn.innerHTML = "🔊 Hentikan Lagu";
-          musicBtn.style.background = "#800000";
-          musicBtn.style.color = "#FFD700";
-        }).catch(err => console.log("Autoplay dihalang pelayar: ", err));
-      }
-    }, { once: true });
-
-    /* 2. SKRIP MENU TOGGLE */
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
-
-    if (menuToggle) {
-      menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-      });
-    }
-
-    /* 3. ENGIN FETCH UNTUK KAWALAN CACHE & SPA */
-    function loadPage(url) {
-      const fetchUrl = url.includes('?') ? `${url}&v=2026` : `${url}?v=2026`;
-
-      fetch(fetchUrl, { cache: "no-store" })
-        .then(response => {
-          if (!response.ok) throw new Error("Halaman tidak dijumpai");
-          return response.text();
-        })
-        .then(html => {
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(html, 'text/html');
-
-          const newSection = doc.querySelector('section');
-          const contentContainer = document.getElementById('app-content');
-
-          if (newSection && contentContainer) {
-            contentContainer.innerHTML = newSection.outerHTML;
-            document.title = doc.title || "Muzium dan Galeri Universiti Malaya | UMMHC";
-            window.scrollTo(0, 0);
-            attachLinkListeners();
-            if (navLinks) navLinks.classList.remove("active");
-          }
-        })
-        .catch(err => console.error("Ralat muat halaman:", err));
-    }
-
-    function attachLinkListeners() {
-      document.querySelectorAll('a').forEach(link => {
-        const href = link.getAttribute('href');
-
-        if (href && (href.endsWith('.html') || href.includes('.html?')) && !href.startsWith('http') && !link.dataset.spaBound) {
-          link.dataset.spaBound = "true";
-          link.addEventListener('click', function(e) {
-            e.preventDefault();
-            loadPage(href);
-            history.pushState({ page: href }, '', href);
-          });
+                if (newSection && contentContainer) {
+                    // Pembetulan: Gunakan innerHTML agar bekas utama kekal
+                    contentContainer.innerHTML = newSection.innerHTML;
+                    window.scrollTo(0, 0);
+                }
+            } catch (error) {
+                console.error("Ralat memuatkan halaman:", error);
+            }
         }
-      });
-    }
-
-    window.addEventListener('popstate', (e) => {
-      const page = e.state ? e.state.page : 'galeri.html?v=2026';
-      loadPage(page);
-    });
-
-    attachLinkListeners();
-  </script>
-
+    </script>
 </body>
-
 </html>
