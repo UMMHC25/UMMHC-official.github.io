@@ -19,7 +19,7 @@
   <meta name="keywords" content="Kelab Muzium dan Warisan Universiti Malaya, UMMHC, Museum and Heritage Club UM, Sekretariat UMMHC">
   <meta name="author" content="Kelab Muzium dan Warisan Universiti Malaya">
 
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png?v=2026">
+  <link rel="icon" type="image/png" href="LOGO.png">
 
   <script type="application/ld+json">
   {
@@ -28,14 +28,14 @@
     "name": "Kelab Muzium dan Warisan Universiti Malaya",
     "alternateName": "UMMHC",
     "url": "https://ummhc25.github.io/UMMHC-official.github.io/",
-    "logo": "https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png",
+    "logo": "LOGO.png",
     "description": "Laman rasmi Sekretariat Kelab Muzium dan Warisan Universiti Malaya."
   }
   </script>
 
   <meta property="og:title" content="Sekretariat UMMHC">
   <meta property="og:description" content="Maklumat barisan sekretariat Kelab Muzium dan Warisan Universiti Malaya.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png?v=2026">
+  <meta property="og:image" content="34c4eba3-5852-4688-a3a7-47fa59256273.png">
   <meta property="og:url" content="https://ummhc25.github.io/UMMHC-official.github.io/sekretariat.html">
   <meta property="og:type" content="website">
 
@@ -49,7 +49,7 @@
       margin: 0;
       font-family: "Segoe UI", Arial, sans-serif;
       background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
-        url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/77527381-a7e9-48d4-b26f-6abc8b8e22df.png?v=2026");
+        url("77527381-a7e9-48d4-b26f-6abc8b8e22df.png");
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -105,7 +105,7 @@
     /* HEADER GAMBAR KHAS SEKRETARIAT */
     header {
       background: linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)),
-        url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/34c4eba3-5852-4688-a3a7-47fa59256273.png?v=2026");
+        url("34c4eba3-5852-4688-a3a7-47fa59256273.png");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -296,7 +296,7 @@
     <p style="color:#800000; font-weight:bold;">
       ✨ Muzik warisan akan dimainkan secara automatik untuk mengiringi perjalanan anda di laman rasmi Kelab Muzium dan Warisan (UMMHC).
     </p>
-    <audio id="audioPlayer" controls autoplay></audio>
+    <audio id="audioPlayer" controls></audio>
     <p id="songName"></p>
   </div>
 
@@ -323,7 +323,7 @@
     <p>© 2025/2026 Kelab Muzium dan Warisan Universiti Malaya</p>
   </footer>
 
-  <!-- SCRIPT MUZIK & SPA NAVIGASI TERKINI (DIBETULKAN) -->
+  <!-- SCRIPT MUZIK & SPA NAVIGASI TERKINI -->
   <script>
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
@@ -337,11 +337,11 @@
     const songList = [
       {
         name: "Dato' Sri Siti Nurhaliza - Kesuma",
-        src: "https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/Dato'_Sri_Siti_Nurhaliza_Kesuma_Accurate_Lyrics_Reupload_lirik.mp3?v=2026"
+        src: "kesuma.mp3"
       },
       {
         name: "Dato' Sri Siti Nurhaliza - Rencong",
-        src: "https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/Dato'%20Sri%20Siti%20Nurhaliza%20-%20Rencong%20(%20Lirik%20).mp3?v=2026"
+        src: "rencong.mp3"
       }
     ];
 
@@ -359,7 +359,7 @@
     player.addEventListener("ended", () => {
       currentTrack = (currentTrack + 1) % songList.length;
       loadTrack(currentTrack);
-      player.play();
+      player.play().catch(() => {});
     });
 
     function startAudio() {
@@ -392,7 +392,6 @@
     // FUNGSI SPA (FETCH) DENGAN PEMUSNAHAN CACHE DINAMIK
     function loadPage(url, pushToHistory = true) {
       const baseUrl = url.split('?')[0];
-      // Menggunakan timestamp automatik untuk mengelakkan isu browser caching kandungan lama
       const fetchUrl = `${baseUrl}?t=${Date.now()}`;
 
       fetch(fetchUrl, { cache: "no-store" })
@@ -417,7 +416,6 @@
               history.pushState({ page: url }, '', url);
             }
 
-            // Panggil semula pengikat pautan untuk butang dinamik baharu di dalam kandungan
             attachLinkListeners();
 
             if (navLinks) navLinks.classList.remove("active");
