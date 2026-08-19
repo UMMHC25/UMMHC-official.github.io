@@ -32,7 +32,7 @@
     "@type":"Organization",
     "name":"Kelab Muzium dan Warisan Universiti Malaya",
     "alternateName":"UMMHC",
-    "url":"https://ummhc25.github.io/UMMHC-official.github.io/",
+    "url":"https://ummhc25.github.io/ummhc25-official.github.io/",
     "logo":"https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png",
     "description":"Laman rasmi Kelab Muzium dan Warisan Universiti Malaya berkaitan sejarah, budaya dan warisan."
   }
@@ -41,7 +41,7 @@
   <meta property="og:title" content="Kelab Muzium dan Warisan Universiti Malaya (UMMHC)">
   <meta property="og:description" content="Laman rasmi UMMHC yang memaparkan sekretariat, aktiviti, program warisan dan galeri.">
   <meta property="og:image" content="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/f027da7aea0d7e46cbb27a1557b5df99e9e3d948/LOGO.png?v=5">
-  <meta property="og:url" content="https://ummhc25.github.io/UMMHC-official.github.io/">
+  <meta property="og:url" content="https://ummhc25.github.io/ummhc25-official.github.io/">
   <meta property="og:type" content="website">
 
   <style>
@@ -54,7 +54,7 @@
       margin: 0;
       font-family: "Segoe UI", Arial, sans-serif;
       background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
-        url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/77527381-a7e9-48d4-b26f-6abc8b8e22df.png?v=5");
+        url("https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/77527381-a7e9-48d4-b26f-6abc8b8e22df.png?v=5");
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -62,7 +62,7 @@
       color: #333;
     }
 
-    /* GAYA POPUP IKLAN BERSEBELAHAN (SIDE BY SIDE) */
+    /* GAYA POPUP IKLAN BERSEBELAHAN (FLEXBOX MODEN) */
     .ad-popup-overlay {
       position: fixed;
       top: 0;
@@ -88,8 +88,8 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
       overflow: hidden;
       border: 3px solid #FFD700;
-      display: table;
-      table-layout: fixed;
+      display: flex;
+      flex-direction: row;
     }
 
     .ad-popup-close {
@@ -119,11 +119,11 @@
     }
 
     .ad-poster-col {
-      display: table-cell;
       width: 45%;
-      vertical-align: middle;
       background: #000;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .ad-popup-img {
@@ -132,13 +132,10 @@
       max-height: 80vh;
       object-fit: contain;
       display: block;
-      margin: 0 auto;
     }
 
     .ad-caption-col {
-      display: table-cell;
       width: 55%;
-      vertical-align: top;
       padding: 30px 25px;
       background: #ffffff;
       overflow-y: auto;
@@ -239,7 +236,7 @@
     /* HEADER FULL - DENGAN ASPECT RATIO */
     header {
       background: linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)),
-        url("https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png?v=5");
+        url("https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png?v=5");
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
@@ -345,109 +342,96 @@
       color: #800000 !important;
     }
 
-    /* --- GAYA PENGASAS (SOLUSI PENGAPLIKASIAN SPA GLOBAL) --- */
-    #app-content .founders-grid, 
+    /* GAYA PENGASAS */
     .founders-grid {
-      display: flex !important;
-      flex-wrap: nowrap !important;
-      justify-content: space-between !important;
-      gap: 15px !important;
-      margin-top: 20px !important;
-      width: 100% !important;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      gap: 15px;
+      margin-top: 20px;
+      width: 100%;
     }
 
-    #app-content .founder-card, 
     .founder-card {
-      background: #fafafa !important;
-      border: 1px solid #eee !important;
-      border-radius: 12px !important;
-      padding: 15px 10px !important;
-      text-align: center !important;
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
-      flex: 1 1 0 !important;
-      min-width: 0 !important;
+      background: #fafafa;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 15px 10px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      flex: 1 1 0;
+      min-width: 0;
     }
 
-    #app-content .founder-card.lead-founder, 
     .founder-card.lead-founder {
-      background: #fffdf8 !important;
-      border: 1.5px solid #800000 !important;
-      max-width: 350px !important;
-      width: 100% !important;
-      margin: 0 auto 10px auto !important;
-      box-sizing: border-box !important;
+      background: #fffdf8;
+      border: 1.5px solid #800000;
+      max-width: 350px;
+      width: 100%;
+      margin: 0 auto 10px auto;
     }
 
-    /* SEKATAN SAIZ GAMBAR PENGASAS SUPAYA TAK JADI GERGASI DAN BEBAS CACHE LAMA */
-    #app-content .founder-card img, 
     .founder-card img {
-      width: 100% !important;
-      max-width: 170px !important;
-      height: 200px !important;
-      object-fit: cover !important;
-      object-position: top center !important;
-      border-radius: 10px !important;
-      margin-bottom: 12px !important;
-      display: block !important;
+      width: 100%;
+      max-width: 170px;
+      height: 200px;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      display: block;
     }
 
-    #app-content .founder-card.lead-founder img, 
     .founder-card.lead-founder img {
-      max-width: 200px !important;
-      height: 230px !important;
+      max-width: 200px;
+      height: 230px;
     }
 
-    #app-content .founder-info, 
     .founder-info {
-      font-size: 12.5px !important;
-      line-height: 1.4 !important;
-      color: #333 !important;
-      display: flex !important;
-      flex-direction: column !important;
-      flex-grow: 1 !important;
-      width: 100% !important;
+      font-size: 12.5px;
+      line-height: 1.4;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      width: 100%;
     }
 
-    #app-content .founder-card.lead-founder .founder-info, 
     .founder-card.lead-founder .founder-info {
-      font-size: 14px !important;
+      font-size: 14px;
     }
 
-    #app-content .founder-info .name, 
     .founder-info .name {
-      font-weight: bold !important;
-      font-size: 13.5px !important;
-      color: #800000 !important;
-      margin-bottom: 6px !important;
-      min-height: 40px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
+      font-weight: bold;
+      font-size: 13.5px;
+      color: #800000;
+      margin-bottom: 6px;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    #app-content .founder-card.lead-founder .name, 
     .founder-card.lead-founder .name {
-      font-size: 16.5px !important;
-      min-height: auto !important;
+      font-size: 16.5px;
+      min-height: auto;
     }
 
-    #app-content .founder-info .role-title, 
     .founder-info .role-title {
-      font-weight: bold !important;
-      color: #111 !important;
-      margin-bottom: 8px !important;
-      min-height: 55px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
+      font-weight: bold;
+      color: #111;
+      margin-bottom: 8px;
+      min-height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    #app-content .founder-info .italic-text, 
     .founder-info .italic-text {
-      font-style: italic !important;
+      font-style: italic;
     }
 
     /* GALERI */
@@ -478,12 +462,11 @@
     /* RESPONSIVE DESIGN */
     @media(max-width:850px) {
       .ad-popup-content {
-        display: block;
+        flex-direction: column;
         overflow-y: auto;
       }
 
       .ad-poster-col, .ad-caption-col {
-        display: block;
         width: 100%;
         max-height: none;
       }
@@ -520,15 +503,13 @@
         padding-top: 50%;
       }
 
-      #app-content .founders-grid,
       .founders-grid {
-        flex-wrap: wrap !important;
+        flex-wrap: wrap;
       }
 
-      #app-content .founder-card,
       .founder-card {
-        flex: 1 1 45% !important;
-        margin-bottom: 10px !important;
+        flex: 1 1 45%;
+        margin-bottom: 10px;
       }
 
       .gallery img {
@@ -537,9 +518,8 @@
     }
 
     @media(max-width: 480px) {
-      #app-content .founder-card,
       .founder-card {
-        flex: 1 1 100% !important;
+        flex: 1 1 100%;
       }
     }
   </style>
@@ -610,7 +590,7 @@
     <p style="color:#800000; font-weight:bold;">
       ✨ Muzik warisan akan dimainkan secara automatik untuk mengiringi perjalanan anda di laman rasmi Kelab Muzium dan Warisan (UMMHC).
     </p>
-    <audio id="audioPlayer" controls autoplay></audio>
+    <audio id="audioPlayer" controls></audio>
     <p id="songName"></p>
   </div>
 
@@ -683,8 +663,8 @@
       <div class="card">
         <h2>GALERI</h2>
         <div class="gallery">
-          <img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/cb2299ee-0988-419d-9f19-971a9c5b275e.png?v=5" alt="Header UMMHC">
-          <img src="https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/LOGO.png?v=5" alt="Logo UMMHC">
+          <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/cb2299ee-0988-419d-9f19-971a9c5b275e.png?v=5" alt="Header UMMHC">
+          <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/LOGO.png?v=5" alt="Logo UMMHC">
         </div>
       </div>
 
@@ -708,6 +688,10 @@
   </footer>
 
   <script>
+    // SIMPAN KEADAAN LOKASI AWAL SPA
+    const initialPage = window.location.pathname.split('/').pop() || 'index.html';
+    history.replaceState({ page: initialPage }, '', window.location.href);
+
     const adPopup = document.getElementById("adPopup");
     const closeAdBtn = document.getElementById("closeAdBtn");
 
@@ -732,7 +716,7 @@
     let songList = [
       {
         name: "Dato' Sri Siti Nurhaliza - Kesuma",
-        src: "https://raw.githubusercontent.com/UMMHC25/UMMHC-official.github.io/main/Dato'_Sri_Siti_Nurhaliza_Kesuma_Accurate_Lyrics_Reupload_lirik.mp3"
+        src: "https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/Dato'_Sri_Siti_Nurhaliza_Kesuma_Accurate_Lyrics_Reupload_lirik.mp3"
       },
       {
         name: "Dato' Sri Siti Nurhaliza - Rencong",
@@ -782,7 +766,6 @@
     }
 
     function loadPage(url) {
-      // Menambah parameter penyingkiran cache secara dinamik semasa pemuatan SPA
       const cacheBustUrl = url.includes('?') ? `${url}&v=${Date.now()}` : `${url}?v=${Date.now()}`;
       fetch(cacheBustUrl)
         .then(response => {
