@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="3MooSAGjA9Aqjdldq0f4K9h3Ft1CknMscefnj5NdBMw">
-  
+
   <!-- KAWALAN CACHE KETAT UNTUK MEMAKSA MUAT TURUN GAMBAR BAHARU -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0" />
   <meta http-equiv="Pragma" content="no-cache" />
@@ -140,7 +140,7 @@
       background: #ffffff;
       overflow-y: auto;
       max-height: 80vh;
-      text-align: justify; /* TEKS POPUP DI-JUSTIFY */
+      text-align: justify;
     }
 
     .royal-heading {
@@ -171,7 +171,7 @@
       font-size: 13.5px;
       line-height: 1.6;
       color: #2c2c2c;
-      text-align: justify; /* JUSTIFY UNTUK KARANGAN IKLAN */
+      text-align: justify;
     }
 
     .ad-caption-text p {
@@ -291,7 +291,7 @@
       text-align: center;
     }
 
-    /* CONTENT & TEKS (JUSTIFY DIGUNAKAN DI SINI) */
+    /* CONTENT & TEKS */
     section {
       padding: 40px 10%;
     }
@@ -302,7 +302,8 @@
       margin-bottom: 30px;
       border-radius: 15px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
-      overflow: hidden;
+      overflow: hidden !important; /* HALANG LIMPAHAN ELEMEN */
+      box-sizing: border-box !important;
     }
 
     .card h2 {
@@ -311,7 +312,6 @@
       text-align: center;
     }
 
-    /* SET KEKALKAN TEKS KARANGAN DI-JUSTIFY */
     .card p, .box p {
       line-height: 1.6;
       text-align: justify;
@@ -333,7 +333,7 @@
       text-align: justify;
     }
 
-    /* STRUKTUR PENGASAS (STRICT FLEXBOX) */
+    /* STRUKTUR PENGASAS (PENAMBAHAN PEMBETULAN KETAT) */
     .founders-grid {
       display: flex;
       flex-direction: row;
@@ -343,7 +343,7 @@
       gap: 15px;
       margin-top: 20px;
       width: 100%;
-      box-sizing: border-box;
+      box-sizing: border-box !important;
     }
 
     .founder-card {
@@ -358,7 +358,8 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
       flex: 1 1 180px;
       max-width: 220px;
-      box-sizing: border-box;
+      box-sizing: border-box !important;
+      overflow: hidden !important; /* HALANG GAMBAR DARI TERKELUAR */
     }
 
     .founder-card.lead-founder {
@@ -367,9 +368,10 @@
       max-width: 350px !important;
       width: 100% !important;
       margin: 0 auto 20px auto;
-      box-sizing: border-box;
+      box-sizing: border-box !important;
     }
 
+    /* PEMBETULAN GAMBAR KETAT */
     .founder-card img {
       width: 100% !important;
       max-width: 100% !important;
@@ -380,6 +382,7 @@
       margin-bottom: 10px;
       display: block;
       flex-shrink: 0;
+      box-sizing: border-box !important;
     }
 
     .founder-card.lead-founder img {
@@ -397,7 +400,7 @@
       width: 100%;
       word-wrap: break-word;
       overflow-wrap: break-word;
-      text-align: center; /* KEKAL KAN CENTER UNTUK NAMA/JAWATAN PENGASAS */
+      text-align: center;
     }
 
     .founder-card.lead-founder .founder-info {
@@ -521,11 +524,11 @@
       header {
         padding-top: 50%;
       }
-      
+
       section {
         padding: 20px 5%;
       }
-      
+
       .music-player {
         margin: 20px 5%;
       }
@@ -546,22 +549,22 @@
   <div class="ad-popup-overlay" id="adPopup">
     <div class="ad-popup-content">
       <button class="ad-popup-close" id="closeAdBtn" aria-label="Tutup Iklan">&times;</button>
-      
+
       <div class="ad-poster-col">
         <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/photo_2026-08-17_08-50-33.jpg?v=10" alt="Iklan UMMHC - Jejak Warisan Negeri" class="ad-popup-img">
       </div>
-      
+
       <div class="ad-caption-col">
         <div class="royal-heading">✨ AKAN DATANG ✨</div>
         <div class="royal-subheading">SATU SIRI: JEJAK WARISAN NEGERI 🌿</div>
-        
+
         <div class="ad-caption-text">
           <p>Sejarah bukan sekadar untuk dikenang, tetapi untuk ditelusuri, dipelajari dan dihayati.</p>
           <p>PSUM dan UMMHC bekerjasama dan akan membawa anda menyusuri sebuah jelajah ilmu ke Terengganu untuk menyingkap warisan, budaya dan sejarah yang menjadi sebahagian daripada identiti negeri di Pantai Timur.</p>
           <p>Dari tinggalan sejarah hingga warisan budaya, setiap sudut menyimpan cerita, setiap warisan membawa makna. 🏛</p>
           <p>Satu warisan.<br>Seribu cerita.<br>Bersiap sedia untuk sebuah pengalaman pembelajaran yang pastinya berbeza.</p>
           <p><strong>SATU SIRI: JELAJAH WARISAN NEGERI</strong><br>PSUM x UMMHC<br><em>NANTIKAN…</em></p>
-          
+
           <div class="hashtags">
             #PSUM #UMMHC #JelajahWarisanNegeri #Sejarah #Budaya #Warisan #Terengganu #UniversitiMalaya #PSUMxUMMHC #UMisONE
           </div>
