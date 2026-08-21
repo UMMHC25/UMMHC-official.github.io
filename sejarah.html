@@ -234,7 +234,7 @@
       border-bottom: 2px solid #FFD700;
     }
 
-    /* HEADER FULL (SAMA DENGAN INDEX) */
+    /* HEADER FULL */
     header {
       background: linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)),
         url("https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/22188fa7-4a58-42ad-976e-851c391351c7.png?v=10");
@@ -327,14 +327,14 @@
       line-height: 1.8;
     }
 
-    /* STRUKTUR KAWALAN PENGASAS KETAT (STRICT FLEXBOX) */
+    /* STRUKTUR PENGASAS (STRICT FLEXBOX) */
     .founders-grid {
       display: flex;
       flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      justify-content: center;
       align-items: stretch;
-      gap: 8px;
+      gap: 15px;
       margin-top: 20px;
       width: 100%;
       box-sizing: border-box;
@@ -344,15 +344,14 @@
       background: #fafafa;
       border: 1px solid #eee;
       border-radius: 12px;
-      padding: 10px 6px;
+      padding: 12px 8px;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      flex: 1 1 0;
-      min-width: 0;
-      overflow: hidden;
+      flex: 1 1 180px;
+      max-width: 220px;
       box-sizing: border-box;
     }
 
@@ -420,7 +419,7 @@
       font-weight: bold;
       color: #111;
       margin-bottom: 6px;
-      min-height: 50px;
+      min-height: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -472,19 +471,7 @@
       margin: 0;
     }
 
-    /* RESPONSIVE DESIGN DENGAN SUSUNAN KETAT */
-    @media(max-width: 992px) {
-      .founders-grid {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .founder-card {
-        flex: 1 1 30%;
-        max-width: 33%;
-        margin-bottom: 12px;
-      }
-    }
-
+    /* RESPONSIVE DESIGN */
     @media(max-width: 850px) {
       .ad-popup-content {
         flex-direction: column;
@@ -527,12 +514,13 @@
       header {
         padding-top: 50%;
       }
-    }
-
-    @media(max-width: 768px) {
-      .founder-card {
-        flex: 1 1 45%;
-        max-width: 48%;
+      
+      section {
+        padding: 20px 5%;
+      }
+      
+      .music-player {
+        margin: 20px 5%;
       }
     }
 
@@ -590,7 +578,7 @@
     </div>
   </nav>
 
-  <!-- HEADER GAMBAR FULL (SAMA DENGAN INDEX) -->
+  <!-- HEADER GAMBAR FULL -->
   <header id="mainHeader"></header>
 
   <!-- BAR MERAH BAWAH HEADER -->
@@ -812,7 +800,7 @@
       }
     ];
 
-    let currentTrack = 0;
+    let currentTrack = parseInt(sessionStorage.getItem('ummhc_track_index')) || 0;
     const player = document.getElementById("audioPlayer");
     const title = document.getElementById("songName");
 
@@ -820,6 +808,7 @@
       if (!player || !title) return;
       player.src = songList[index].src;
       title.innerHTML = `Sedang dimainkan (${index + 1}/${songList.length}): ${songList[index].name}`;
+      sessionStorage.setItem('ummhc_track_index', index);
     }
 
     if (player) {
@@ -855,6 +844,17 @@
       }
     }
 
+    function updateActiveNav(url) {
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        const href = a.getAttribute('href');
+        if (href === url) {
+          a.classList.add('active');
+        } else {
+          a.classList.remove('active');
+        }
+      });
+    }
+
     function loadPage(url) {
       const cacheBustUrl = url.includes('?') ? `${url}&v=${Date.now()}` : `${url}?v=${Date.now()}`;
       fetch(cacheBustUrl)
@@ -873,6 +873,7 @@
             contentContainer.innerHTML = newSection.outerHTML;
             document.title = doc.title || "Kelab Muzium dan Warisan Universiti Malaya";
             updateHeaderImage(url);
+            updateActiveNav(url);
             window.scrollTo(0, 0);
             attachLinkListeners();
             if (navLinks) navLinks.classList.remove("active");
