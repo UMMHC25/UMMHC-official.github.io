@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="3MooSAGjA9Aqjdldq0f4K9h3Ft1CknMscefnj5NdBMw">
-  
+
   <!-- KAWALAN CACHE KETAT UNTUK MEMAKSA MUAT TURUN GAMBAR BAHARU -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0" />
   <meta http-equiv="Pragma" content="no-cache" />
@@ -82,14 +82,29 @@
       position: relative;
       background: #ffffff;
       border-radius: 15px;
-      max-width: 900px;
+      max-width: 950px;
       width: 100%;
       max-height: 90vh;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-      overflow: hidden;
+      overflow-y: auto;
       border: 3px solid #FFD700;
       display: flex;
+      flex-direction: column;
+      padding: 20px 10px;
+    }
+
+    .ad-item-row {
+      display: flex;
       flex-direction: row;
+      border-bottom: 2px dashed #f2e6b7;
+      padding-bottom: 25px;
+      margin-bottom: 25px;
+    }
+
+    .ad-item-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
     }
 
     .ad-popup-close {
@@ -124,47 +139,47 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      border-radius: 10px;
+      overflow: hidden;
     }
 
     .ad-popup-img {
       width: 100%;
       height: auto;
-      max-height: 80vh;
+      max-height: 60vh;
       object-fit: contain;
       display: block;
     }
 
     .ad-caption-col {
       width: 55%;
-      padding: 30px 25px;
+      padding: 10px 20px;
       background: #ffffff;
-      overflow-y: auto;
-      max-height: 80vh;
       text-align: left;
     }
 
     .royal-heading {
       font-family: 'Cinzel', 'Georgia', serif;
-      font-size: 26px;
+      font-size: 22px;
       font-weight: 800;
       color: #800000;
       text-align: center;
       margin: 0 0 5px 0;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
       text-shadow: 1px 1px 2px rgba(212, 175, 55, 0.4);
     }
 
     .royal-subheading {
       font-family: 'Playfair Display', serif;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 600;
       color: #b38f00;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       letter-spacing: 0.5px;
       border-bottom: 2px solid #f2e6b7;
-      padding-bottom: 10px;
+      padding-bottom: 8px;
     }
 
     .ad-caption-text {
@@ -174,15 +189,15 @@
     }
 
     .ad-caption-text p {
-      margin: 0 0 12px 0;
+      margin: 0 0 10px 0;
     }
 
     .hashtags {
       color: #800000;
       font-weight: bold;
-      font-size: 12.5px;
-      margin-top: 15px;
-      line-height: 1.5;
+      font-size: 12px;
+      margin-top: 10px;
+      line-height: 1.4;
     }
 
     @keyframes fadeIn {
@@ -369,9 +384,8 @@
 
     /* RESPONSIVE DESIGN */
     @media(max-width:850px) {
-      .ad-popup-content {
+      .ad-item-row {
         flex-direction: column;
-        overflow-y: auto;
       }
 
       .ad-poster-col, .ad-caption-col {
@@ -420,28 +434,52 @@
 
 <body>
 
-  <!-- POPUP IKLAN -->
+  <!-- POPUP IKLAN (DENGAN 2 BAHAGIAN IKLAN) -->
   <div class="ad-popup-overlay" id="adPopup">
     <div class="ad-popup-content">
       <button class="ad-popup-close" id="closeAdBtn" aria-label="Tutup Iklan">&times;</button>
-      
-      <div class="ad-poster-col">
-        <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/photo_2026-08-17_08-50-33.jpg?v=5" alt="Iklan UMMHC - Jejak Warisan Negeri" class="ad-popup-img">
+
+      <!-- IKLAN 1 (AKAN DATANG / TERENGGANU) -->
+      <div class="ad-item-row">
+        <div class="ad-poster-col">
+          <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/photo_2026-08-17_08-50-33.jpg?v=5" alt="Iklan UMMHC - Jejak Warisan Negeri" class="ad-popup-img">
+        </div>
+        <div class="ad-caption-col">
+          <div class="royal-heading">✨ AKAN DATANG ✨</div>
+          <div class="royal-subheading">SATU SIRI: JEJAK WARISAN NEGERI 🌿</div>
+          <div class="ad-caption-text">
+            <p>Sejarah bukan sekadar untuk dikenang, tetapi untuk ditelusuri, dipelajari dan dihayati.</p>
+            <p>PSUM dan UMMHC bekerjasama dan akan membawa anda menyusuri sebuah jelajah ilmu ke Terengganu untuk menyingkap warisan, budaya dan sejarah yang menjadi sebahagian daripada identiti negeri di Pantai Timur.</p>
+            <p>Dari tinggalan sejarah hingga warisan budaya, setiap sudut menyimpan cerita, setiap warisan membawa makna. 🏛</p>
+            <p>Satu warisan.<br>Seribu cerita.<br>Bersiap sedia untuk sebuah pengalaman pembelajaran yang pastinya berbeza.</p>
+            <p><strong>SATU SIRI: JELAJAH WARISAN NEGERI</strong><br>PSUM x UMMHC<br><em>NANTIKAN…</em></p>
+            <div class="hashtags">
+              #PSUM #UMMHC #JelajahWarisanNegeri #Sejarah #Budaya #Warisan #Terengganu #UniversitiMalaya #PSUMxUMMHC #UMisONE
+            </div>
+          </div>
+        </div>
       </div>
-      
-      <div class="ad-caption-col">
-        <div class="royal-heading">✨ AKAN DATANG ✨</div>
-        <div class="royal-subheading">SATU SIRI: JEJAK WARISAN NEGERI 🌿</div>
-        
-        <div class="ad-caption-text">
-          <p>Sejarah bukan sekadar untuk dikenang, tetapi untuk ditelusuri, dipelajari dan dihayati.</p>
-          <p>PSUM dan UMMHC bekerjasama dan akan membawa anda menyusuri sebuah jelajah ilmu ke Terengganu untuk menyingkap warisan, budaya dan sejarah yang menjadi sebahagian daripada identiti negeri di Pantai Timur.</p>
-          <p>Dari tinggalan sejarah hingga warisan budaya, setiap sudut menyimpan cerita, setiap warisan membawa makna. 🏛</p>
-          <p>Satu warisan.<br>Seribu cerita.<br>Bersiap sedia untuk sebuah pengalaman pembelajaran yang pastinya berbeza.</p>
-          <p><strong>SATU SIRI: JELAJAH WARISAN NEGERI</strong><br>PSUM x UMMHC<br><em>NANTIKAN…</em></p>
-          
-          <div class="hashtags">
-            #PSUM #UMMHC #JelajahWarisanNegeri #Sejarah #Budaya #Warisan #Terengganu #UniversitiMalaya #PSUMxUMMHC #UMisONE
+
+      <!-- IKLAN 2 (JOM KEMBARA MUZIUM) -->
+      <div class="ad-item-row">
+        <div class="ad-poster-col">
+          <img src="https://raw.githubusercontent.com/UMMHC25/ummhc25-official.github.io/main/photo_2026-08-21_06-40-32.jpg?v=5" alt="Jom Kembara Muzium: Jejak Warisan, Lahirkan Inspirasi" class="ad-popup-img">
+        </div>
+        <div class="ad-caption-col">
+          <div class="royal-heading">🏛✨ JOM KEMBARA MUZIUM ✨🏛</div>
+          <div class="royal-subheading">JEJAK WARISAN, LAHIRKAN INSPIRASI 🌿</div>
+          <div class="ad-caption-text">
+            <p>Ayuh terokai dunia sejarah, budaya dan warisan bersama Muzium dan Galeri Universiti Malaya! 📜🌿</p>
+            <p>Satu pengalaman istimewa menanti warga <em>Kolej Tingkatan Enam Sultan Abdul Aziz, Kuala Selangor</em> untuk menyelami kisah di sebalik koleksi, artifak dan khazanah yang menjadi saksi perjalanan masa. 🔍✨</p>
+            <p>Bukan sekadar melihat, tetapi merasai sendiri bagaimana setiap ruang muzium membawa cerita, ilmu dan inspirasi yang tidak ternilai.</p>
+            <p>📍 <strong>Muzium dan Galeri Universiti Malaya</strong><br>
+            🎓 <strong>Bersama Kolej Tingkatan Enam Sultan Abdul Aziz, Kuala Selangor</strong></p>
+            <p>Jom buka mata, buka minda dan hayati warisan kita! 🚀🏛</p>
+            <p><em>Kerana setiap artifak ada cerita, setiap warisan ada makna.</em></p>
+
+            <div class="hashtags">
+              #KembaraMuzium #UMMHC #KelabMuziumDanWarisan #UniversitiMalaya #MuziumDanGaleriUM #MuziumKitaWarisanBersama #WarisanMalaysia #KualaSelangor #KolejTingkatanEnam #EksplorasiWarisan #CintaiSejarah #GenerasiWarisan #MuseumExperience #HeritageJourney #UMFamily
+            </div>
           </div>
         </div>
       </div>
